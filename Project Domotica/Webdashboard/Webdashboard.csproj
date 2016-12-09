@@ -117,7 +117,10 @@
   <ItemGroup>
     <Content Include="DaHouseControl.aspx" />
     <Content Include="Global.asax" />
+	<Content Include="LoginPage.aspx" />
     <Content Include="Opmaak.css" />
+	 <Content Include="Global.asax" />
+	  <Content Include="FirstPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -135,8 +138,22 @@
     <Compile Include="DashboardMaster.Master.designer.cs">
       <DependentUpon>DashboardMaster.Master</DependentUpon>
     </Compile>
-    <Compile Include="Global.asax.cs">
+	<Compile Include="FirstPage.aspx.cs">
+      <DependentUpon>FirstPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FirstPage.aspx.designer.cs">
+      <DependentUpon>FirstPage.aspx</DependentUpon>
+    </Compile>
+	<Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
