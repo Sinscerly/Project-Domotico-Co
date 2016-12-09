@@ -19,10 +19,31 @@ namespace Webdashboard
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Connection_Validation() == false)
+            {
+                Connect_2_DaHouse();
+            }
+            if(Connection_Validation() == true)
+            {
+                Detect_Status_Lamp("1");
+            }
+        }
+        protected void Detect_Status_Lamp(string x)
+        {
+            String sendString = x + "\n";
+            byte[] data = Encoding.ASCII.GetBytes(sendString);
+            NetworkStream stream = Global.client.GetStream();
+            stream.Write(data, 0, data.Length);
 
+            data = new byte[1024];
+            String responseData = String.Empty;
+            Int32 bytes = stream.Read(data, 0, data.Length);
+            responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
+            // if (responseData != "")
+            Connect_info.Text = responseData;
         }
 
-        protected void Connect_Click1(object sender, EventArgs e)
+        protected void Connect_2_DaHouse()
         {
             if (Global.client != null)
             {
@@ -43,21 +64,19 @@ namespace Webdashboard
                     Connect_info.Text = "Connection Failed";
                 }
             }
-
         }
-
         protected bool Connection_Validation()
         {
             if(Global.client != null) { bool connectionvalidator = true;  return connectionvalidator; }
             else { bool connectionvalidator = false;
-                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "You should connect first to DaHouse");
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "You should connect first to DaHouse" + "');", true);
                 return connectionvalidator;
             }
         }
 
         protected void LampWindow_SendCommand(string x, string y, string z)
         {
-            String sendString = x +" " + y + " " + z + "\n";
+            String sendString = x + " " + y + " " + z + "\n";
             byte[] data = Encoding.ASCII.GetBytes(sendString);
             NetworkStream stream = Global.client.GetStream();
             stream.Write(data, 0, data.Length);
@@ -66,9 +85,8 @@ namespace Webdashboard
             String responseData = String.Empty;
             Int32 bytes = stream.Read(data, 0, data.Length);
             responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
-            // if (responseData == "")
+            // if (responseData != "")
             Connect_info.Text = responseData;
-
         }
         protected void heater(string x)
         {
@@ -111,6 +129,10 @@ namespace Webdashboard
         }
 
         #region Aanroep
+        protected void Connect_Click1(object sender, EventArgs e)
+        {
+            Connect_2_DaHouse();
+        }
         protected void cbtn_Lamp1_CheckedChanged(object sender, EventArgs e)
         {
             if (Connection_Validation() == true)
