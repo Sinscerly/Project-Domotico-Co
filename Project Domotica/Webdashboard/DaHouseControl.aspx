@@ -1,13 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DashboardMaster.Master" AutoEventWireup="true" CodeBehind="DaHouseControl.aspx.cs" Inherits="Webdashboard.DaHouseControl" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="Opmaak.css" rel="stylesheet" type="text/css" />
+    <title>DaHouse</title>
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-</asp:Content>
-
-<link href="Opmaak.css" rel="stylesheet" type="text/css" />
-    <title></title>
-
-<body>
     <form id="form1" runat="server">
     <div>
         <asp:Button ID="Connect" runat="server" Text="Connect" OnClick="Connect_Click1" />
@@ -71,4 +68,9 @@
         
 
     </form>
-</body>
+</asp:Content>
+
+
+    
+
+    
