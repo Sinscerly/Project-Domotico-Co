@@ -115,12 +115,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\DashboardDatabase.accdb" />
     <Content Include="DaHouseControl.aspx" />
     <Content Include="Global.asax" />
-	<Content Include="LoginPage.aspx" />
+    <Content Include="LoginPage.aspx" />
     <Content Include="Opmaak.css" />
-	 <Content Include="Global.asax" />
-	  <Content Include="FirstPage.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="FirstPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -138,14 +139,14 @@
     <Compile Include="DashboardMaster.Master.designer.cs">
       <DependentUpon>DashboardMaster.Master</DependentUpon>
     </Compile>
-	<Compile Include="FirstPage.aspx.cs">
+    <Compile Include="FirstPage.aspx.cs">
       <DependentUpon>FirstPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="FirstPage.aspx.designer.cs">
       <DependentUpon>FirstPage.aspx</DependentUpon>
     </Compile>
-	<Compile Include="Global.asax.cs">
+    <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="LoginPage.aspx.cs">
@@ -170,9 +171,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
