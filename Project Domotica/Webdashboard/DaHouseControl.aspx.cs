@@ -24,39 +24,30 @@ namespace Webdashboard
                 Connect_2_DaHouse();
                 ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "You're connected to your house" + "');", true);
             }
-            if(Connection_Validation() == true)
+            
+            if(Connection_Validation() == true && PreviousPage != null)
             {
                 string responseData = string.Empty;
-                int x = 0;
-                //for (int i = 0; i < Page.Controls.Count; i++)
-                //{
-                //    Detect_Status_Lamp(x.ToString(), out responseData);
-                //    lbl_info.Text = lbl_info.Text + responseData + " \n";
-                //    if (responseData.Contains("On"))
-                //    {
-                //
-                //    }
-                //    else if (responseData.Contains("Off"))
-                //    {
-                //
-                //    }
-                //    x++;
-                //}
-                CheckBox[] current = { cbtn_Lamp1, cbtn_Lamp2, cbtn_Lamp3 };
-                for (int i = 0; i < current.Length; i++) {
-                    current[i].Checked = true;
+                CheckBox[] lamp = { cbtn_Lamp1, cbtn_Lamp2, cbtn_Lamp3, cbtn_Lamp4, cbtn_Lamp5 };
+                for (int i = 0; i < lamp.Length; i++)
+                {
+                    Detect_Status("lamp", i.ToString(), out responseData);
+                    if (responseData.Contains("Off")) { lamp[i].Checked = false; }
+                    else if (responseData.Contains("On")) { lamp[i].Checked = true; }
                 }
-               //Detect_Status_Lamp(x.ToString(), out responseData);
-               //if (responseData.Contains("On"))
-               //{
-               //
-               //}
+                CheckBox[] window = { cbtn_window1, cbtn_window2 };
+                for (int i = 0; i < window.Length; i++)
+                {
+                    Detect_Status("window", i.ToString(), out responseData);
+                    if (responseData.Contains("Open")) { window[i].Checked = false; }
+                    else if (responseData.Contains("Closed")) { window[i].Checked = true; }
+                }
             }
         }
 
-        protected void Detect_Status_Lamp(string x, out string responseData)
+        protected void Detect_Status(string x, string y, out string responseData)
         {
-            String sendString = "lamp " + x + "\n";
+            String sendString = x +" " + y + "\n";
             byte[] data = Encoding.ASCII.GetBytes(sendString);
             NetworkStream stream = Global.client.GetStream();
             stream.Write(data, 0, data.Length);
