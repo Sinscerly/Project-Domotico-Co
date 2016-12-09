@@ -10,7 +10,7 @@
 namespace Webdashboard {
     
     
-    public partial class Startpagina {
+    public partial class FirstPage {
         
         /// <summary>
         /// ButtonGames control.
