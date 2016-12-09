@@ -13,6 +13,24 @@ namespace Webdashboard {
     public partial class LoginPage {
         
         /// <summary>
+        /// MultiView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.MultiView MultiView1;
+        
+        /// <summary>
+        /// View1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View View1;
+        
+        /// <summary>
         /// lblGNaam control.
         /// </summary>
         /// <remarks>
@@ -67,39 +85,57 @@ namespace Webdashboard {
         protected global::System.Web.UI.WebControls.Button BtnSignUp;
         
         /// <summary>
-        /// lblVoorNaam control.
+        /// View2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVoorNaam;
+        protected global::System.Web.UI.WebControls.View View2;
         
         /// <summary>
-        /// TxtVoornaam control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtVoornaam;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// lblAchterNaam control.
+        /// TextBox1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAchterNaam;
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
         
         /// <summary>
-        /// txtAchterNaam control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAchterNaam;
+        protected global::System.Web.UI.WebControls.Label Label2;
+        
+        /// <summary>
+        /// TextBox2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        
+        /// <summary>
+        /// Label3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label3;
     }
 }
