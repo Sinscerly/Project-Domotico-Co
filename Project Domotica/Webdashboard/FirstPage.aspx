@@ -9,9 +9,9 @@
 
             <asp:Button ID="ButtonEntertainment" runat="server" Height="43px" Text="Entertainment" OnClick="ButtonEntertainment_Click" />
 
-            <asp:Button ID="DomoticaButton" runat="server" Height="42px" Text="Domotica" Width="72px" OnClick="ButtonZorg_Click" />
+            <asp:Button ID="DomoticaButton" runat="server" Height="44px" Text="Domotica" Width="71px" OnClick="ButtonZorg_Click" />
 
-                <asp:Button ID="ToolButton" runat="server" Height="41px" OnClick="Button4_Click1" Text="Tools" Width="71px" />
+                <asp:Button ID="ToolsButton" runat="server" Height="44px" OnClick="Button4_Click1" Text="Tools" Width="74px" />
 
                 </p>
         <p>

@@ -4,6 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Net;
+using System.Net.Sockets;
+using System.IO;
 
 namespace Webdashboard
 {
@@ -91,6 +98,28 @@ namespace Webdashboard
 
         protected void ButtonZorg_Click(object sender, EventArgs e)
         {
+
+            if (Global.client != null)
+            {
+                lblError.Text = "Connection already open";
+            }
+            else
+            {
+                try
+                {
+                    Global.client = new TcpClient();
+                    Global.client.Connect("127.0.0.1", 11000);
+                   // lblError.Text = "Connection succesfull";
+
+                }
+                catch (Exception ex)
+                {
+                    Global.client = null;
+                    lblError.Text = "Connection Failed, Open DaHaus First";
+                }
+            }
+
+
             DomoticaButton.PostBackUrl = "DaHouseControl.aspx";
         }
 
