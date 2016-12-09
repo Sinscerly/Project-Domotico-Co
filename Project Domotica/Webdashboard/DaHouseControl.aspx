@@ -12,17 +12,11 @@
     <div>
         <div class="Button">
             Lamp 1
-            <label class="switch">
             <asp:CheckBox ID="cbtn_Lamp1" runat="server" OnCheckedChanged="cbtn_Lamp1_CheckedChanged" AutoPostBack="True" />
-            <div class="slider round"></div>
-            </label>
         </div>
         <div class="Button">
             Lamp 2
-            <label class="switch">
             <asp:CheckBox ID="cbtn_Lamp2" runat="server" AutoPostBack="True" OnCheckedChanged="cbtn_Lamp2_CheckedChanged" />
-            <div class="slider round"></div>
-            </label>
         </div>
         <div class="Button">
             Lamp 3
@@ -64,6 +58,8 @@
         <asp:TextBox ID="Txt_heater" runat="server"></asp:TextBox>
         <asp:Button ID="btn_heater" runat="server" Text="Button" OnClick="btn_heater_Click" />
     </div>
+
+    <asp:Label ID="lbl_info" runat="server" Text="Label"></asp:Label>
 
 </asp:Content>
 

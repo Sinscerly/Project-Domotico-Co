@@ -12,35 +12,60 @@ using System.Net;
 using System.Net.Sockets;
 using System.IO;
 
-
 namespace Webdashboard
 {
     public partial class DaHouseControl : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Connection_Validation() == false)
+            if (Connection_Validation() == false)
             {
                 Connect_2_DaHouse();
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "You're connected to your house" + "');", true);
             }
             if(Connection_Validation() == true)
             {
-                Detect_Status_Lamp("1");
+                string responseData = string.Empty;
+                int x = 0;
+                //for (int i = 0; i < Page.Controls.Count; i++)
+                //{
+                //    Detect_Status_Lamp(x.ToString(), out responseData);
+                //    lbl_info.Text = lbl_info.Text + responseData + " \n";
+                //    if (responseData.Contains("On"))
+                //    {
+                //
+                //    }
+                //    else if (responseData.Contains("Off"))
+                //    {
+                //
+                //    }
+                //    x++;
+                //}
+                CheckBox[] current = { cbtn_Lamp1, cbtn_Lamp2, cbtn_Lamp3 };
+                for (int i = 0; i < current.Length; i++) {
+                    current[i].Checked = true;
+                }
+               //Detect_Status_Lamp(x.ToString(), out responseData);
+               //if (responseData.Contains("On"))
+               //{
+               //
+               //}
             }
         }
-        protected void Detect_Status_Lamp(string x)
+
+        protected void Detect_Status_Lamp(string x, out string responseData)
         {
-            String sendString = x + "\n";
+            String sendString = "lamp " + x + "\n";
             byte[] data = Encoding.ASCII.GetBytes(sendString);
             NetworkStream stream = Global.client.GetStream();
             stream.Write(data, 0, data.Length);
 
             data = new byte[1024];
-            String responseData = String.Empty;
+            responseData = String.Empty;
             Int32 bytes = stream.Read(data, 0, data.Length);
             responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
-            // if (responseData != "")
-            Connect_info.Text = responseData;
+            if (responseData != "") { Connect_info.Text = responseData; }
         }
 
         protected void Connect_2_DaHouse()
@@ -69,7 +94,7 @@ namespace Webdashboard
         {
             if(Global.client != null) { bool connectionvalidator = true;  return connectionvalidator; }
             else { bool connectionvalidator = false;
-                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "You should connect first to DaHouse" + "');", true);
+                Connect_info.Text = "You're not connected to you're house";
                 return connectionvalidator;
             }
         }
@@ -85,8 +110,8 @@ namespace Webdashboard
             String responseData = String.Empty;
             Int32 bytes = stream.Read(data, 0, data.Length);
             responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
-            // if (responseData != "")
-            Connect_info.Text = responseData;
+            if (responseData != "") { Connect_info.Text = responseData; }
+            
         }
         protected void heater(string x)
         {
