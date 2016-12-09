@@ -45,21 +45,19 @@ namespace Webdashboard
             }
 
         }
-        protected void Lamp_Toggle(string x, string y)
+
+        protected bool Connection_Validation()
         {
-            Connect_info.Text = "command sent";
-            if (cbtn_Lamp1.Checked == true)
-            {
-                Lamp_Toggle("0", "on");
-            }
-            else if (cbtn_Lamp1.Checked == false)
-            {
-                Lamp_Toggle("0", "off");
+            if(Global.client != null) { bool connectionvalidator = true;  return connectionvalidator; }
+            else { bool connectionvalidator = false;
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "You should connect first to DaHouse");
+                return connectionvalidator;
             }
         }
-        protected void Lamp_SendCommand(string x, string y)
+
+        protected void LampWindow_SendCommand(string x, string y, string z)
         {
-            String sendString = "lamp " + x +" "+ y + "\n";
+            String sendString = x +" " + y + " " + z + "\n";
             byte[] data = Encoding.ASCII.GetBytes(sendString);
             NetworkStream stream = Global.client.GetStream();
             stream.Write(data, 0, data.Length);
@@ -69,20 +67,6 @@ namespace Webdashboard
             Int32 bytes = stream.Read(data, 0, data.Length);
             responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
             // if (responseData == "")
-            Connect_info.Text = responseData;
-
-        }
-        protected void Lamp(string x)
-        {
-            String sendString = "lamp " + x + " off" + "\n";
-            byte[] data = Encoding.ASCII.GetBytes(sendString);
-            NetworkStream stream = Global.client.GetStream();
-            stream.Write(data, 0, data.Length);
-
-            data = new byte[1024];
-            String responseData = String.Empty;
-            Int32 bytes = stream.Read(data, 0, data.Length);
-            responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
             Connect_info.Text = responseData;
 
         }
@@ -99,7 +83,6 @@ namespace Webdashboard
             responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
             Connect_info.Text = responseData;
         }
-
         protected void window_open(string x)
         {
             String sendString = "Window " + x + " open" + "\n";
@@ -126,33 +109,83 @@ namespace Webdashboard
             responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
             Connect_info.Text = responseData;
         }
+
+        #region Aanroep
         protected void cbtn_Lamp1_CheckedChanged(object sender, EventArgs e)
         {
-            
-
+            if (Connection_Validation() == true)
+            {
+                Connect_info.Text = "command sent";
+                if (cbtn_Lamp1.Checked == true)
+                {
+                    LampWindow_SendCommand("lamp", "0", "on");
+                }
+                else if (cbtn_Lamp1.Checked == false)
+                {
+                    LampWindow_SendCommand("lamp", "0", "off");
+                }
+            }
         }
-
         protected void cbtn_Lamp2_CheckedChanged(object sender, EventArgs e)
         {
-
-
+            if (Connection_Validation() == true)
+            {
+                Connect_info.Text = "command sent";
+                if (cbtn_Lamp2.Checked == true)
+                {
+                    LampWindow_SendCommand("lamp", "1", "on");
+                }
+                else if (cbtn_Lamp2.Checked == false)
+                {
+                    LampWindow_SendCommand("lamp", "1", "off");
+                }
+            }
         }
-
         protected void cbtn_Lamp3_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (Connection_Validation() == true)
+            {
+                Connect_info.Text = "command sent";
+                if (cbtn_Lamp3.Checked == true)
+                {
+                    LampWindow_SendCommand("lamp", "2", "on");
+                }
+                else if (cbtn_Lamp3.Checked == false)
+                {
+                    LampWindow_SendCommand("lamp", "2", "off");
+                }
+            }
         }
-
         protected void cbtn_Lamp4_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (Connection_Validation() == true)
+            {
+                Connect_info.Text = "command sent";
+                if (cbtn_Lamp4.Checked == true)
+                {
+                    LampWindow_SendCommand("lamp", "3", "on");
+                }
+                else if (cbtn_Lamp4.Checked == false)
+                {
+                    LampWindow_SendCommand("lamp", "3", "off");
+                }
+            }
         }
-
         protected void cbtn_Lamp5_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (Connection_Validation() == true)
+            {
+                Connect_info.Text = "command sent";
+                if (cbtn_Lamp5.Checked == true)
+                {
+                    LampWindow_SendCommand("lamp", "4", "on");
+                }
+                else if (cbtn_Lamp5.Checked == false)
+                {
+                    LampWindow_SendCommand("lamp", "4", "off");
+                }
+            }
         }
-
         protected void cbtn_window1_CheckedChanged(object sender, EventArgs e)
         {
             if (cbtn_window1.Checked == false)
@@ -182,5 +215,7 @@ namespace Webdashboard
             string S_heater = Txt_heater.Text;
             heater(S_heater);
         }
+
+        #endregion
     }
 }
