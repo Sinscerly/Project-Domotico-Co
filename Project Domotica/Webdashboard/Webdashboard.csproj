@@ -116,6 +116,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DaHouseControl.aspx" />
+    <Content Include="Opmaak.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
