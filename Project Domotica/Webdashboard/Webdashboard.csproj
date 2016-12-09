@@ -117,6 +117,8 @@
   <ItemGroup>
     <Content Include="App_Data\DashboardDatabase.accdb" />
     <Content Include="DaHouseControl.aspx" />
+    <Content Include="Games\CountryGuessing.aspx" />
+    <Content Include="Games\HitTheDot.aspx" />
     <Content Include="Global.asax" />
     <Content Include="LoginPage.aspx" />
     <Content Include="Opmaak.css" />
@@ -146,7 +148,22 @@
     <Compile Include="FirstPage.aspx.designer.cs">
       <DependentUpon>FirstPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Global.asax.cs">
+	<Compile Include="Games\CountryGuessing.aspx.cs">
+      <DependentUpon>CountryGuessing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Games\CountryGuessing.aspx.designer.cs">
+      <DependentUpon>CountryGuessing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Games\HitTheDot.aspx.cs">
+      <DependentUpon>HitTheDot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Games\HitTheDot.aspx.designer.cs">
+      <DependentUpon>HitTheDot.aspx</DependentUpon>
+    </Compile>
+    
+	<Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="LoginPage.aspx.cs">
