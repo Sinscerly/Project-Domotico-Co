@@ -115,9 +115,17 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DaHouseControl.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DaHouseControl.aspx.cs">
+      <DependentUpon>DaHouseControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DaHouseControl.aspx.designer.cs">
+      <DependentUpon>DaHouseControl.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DashboardMaster.Master.cs">
       <DependentUpon>DashboardMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
