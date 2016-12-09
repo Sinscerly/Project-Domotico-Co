@@ -23,18 +23,18 @@ namespace Webdashboard
 
         protected void ButtonGames_Click(object sender, EventArgs e)
         {
-            if (Button1.Visible == true)
-            {
-                Button1.Visible = false;
-                Button2.Visible = false;
-                Button3.Visible = false;
-                
-            }
-            else
+            if (Button1.Visible == false)
             {
                 Button1.Visible = true;
                 Button2.Visible = true;
                 Button3.Visible = true;
+                
+            }
+            else
+            {
+                Button1.Visible = false;
+                Button2.Visible = false;
+                Button3.Visible = false;
             }
         }
 
@@ -62,17 +62,17 @@ namespace Webdashboard
 
         protected void ButtonEntertainment_Click(object sender, EventArgs e)
         {
-            if (YoutubeButton.Visible == true)
+            if (YoutubeButton.Visible == false)
             {
-                YoutubeButton.Visible = false;
-                NetflixButton.Visible = false;
+                YoutubeButton.Visible = true;
+                NetflixButton.Visible = true;
                 
 
             }
             else
             {
-                YoutubeButton.Visible = true;
-                NetflixButton.Visible = true;
+                YoutubeButton.Visible = false;
+                NetflixButton.Visible = false;
                 
             }
         }
@@ -125,6 +125,36 @@ namespace Webdashboard
 
         protected void Button4_Click1(object sender, EventArgs e)
         {
+            if (CalcButton.Visible == false)
+            {
+                CalcButton.Visible = true;
+                InhollandButton.Visible = true;
+
+
+            }
+            else
+            {
+                CalcButton.Visible = false;
+                InhollandButton.Visible = false;
+
+            }
+        }
+
+        protected void CalcButton_Click(object sender, EventArgs e)
+        {
+            CalcButton.PostBackUrl = "Tools/calc.aspx";
+        }
+
+        protected void InhollandButton_Click(object sender, EventArgs e)
+        {
+
+            
+         try
+         {
+             System.Diagnostics.Process.Start("https://webmail.inholland.nl");
+         }
+         catch (Exception exc) { lblError.Text = exc.Message; }
+
 
         }
     }

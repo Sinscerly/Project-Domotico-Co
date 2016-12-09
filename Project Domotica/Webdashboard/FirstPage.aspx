@@ -26,7 +26,9 @@
 
                 </p>
         <p>
-            &nbsp;</p>
+            <asp:Button ID="CalcButton" runat="server" Height="29px" OnClick="CalcButton_Click" Text="Rekenmachine" Visible="False" Width="135px" />
+            <asp:Button ID="InhollandButton" runat="server" Height="30px" OnClick="InhollandButton_Click" Text="Email Inholland" Visible="False" Width="120px" />
+    </p>
         <p>
             <asp:Label ID="lblError" runat="server"></asp:Label>
         </p>
