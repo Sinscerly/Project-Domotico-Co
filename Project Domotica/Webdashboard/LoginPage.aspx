@@ -25,6 +25,10 @@
 
 
 
+            <asp:Label ID="lblConnectionFeedback" runat="server" Text="Label"></asp:Label>
+
+
+
         </asp:View>
     </asp:MultiView>
 </asp:Content>
