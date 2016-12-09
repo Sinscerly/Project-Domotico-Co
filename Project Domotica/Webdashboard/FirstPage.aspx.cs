@@ -33,17 +33,24 @@ namespace Webdashboard
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
+            Button1.PostBackUrl = "Games/HitTheDot.aspx";
+                 
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-
+            Button2.PostBackUrl = "Games/CountryGuessing.aspx";
         }
 
         protected void Button3_Click(object sender, EventArgs e)
         {
+            try
+            {
+                System.Diagnostics.Process.Start( "http://gabrielecirulli.github.io/2048/");
+            }
+            catch (Exception exc) { lblError.Text = exc.Message; }
 
+           
         }
 
         protected void ButtonEntertainment_Click(object sender, EventArgs e)
@@ -83,6 +90,11 @@ namespace Webdashboard
         }
 
         protected void ButtonZorg_Click(object sender, EventArgs e)
+        {
+            DomoticaButton.PostBackUrl = "DaHouseControl.aspx";
+        }
+
+        protected void Button4_Click1(object sender, EventArgs e)
         {
 
         }

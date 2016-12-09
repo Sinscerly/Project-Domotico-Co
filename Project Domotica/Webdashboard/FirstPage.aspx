@@ -7,6 +7,12 @@
      Wat wilt u doen?<p>
             <asp:Button ID="ButtonGames" runat="server" Height="43px" OnClick="ButtonGames_Click" Text="Games" Width="86px" />
 
+            <asp:Button ID="ButtonEntertainment" runat="server" Height="43px" Text="Entertainment" OnClick="ButtonEntertainment_Click" />
+
+            <asp:Button ID="DomoticaButton" runat="server" Height="42px" Text="Domotica" Width="72px" OnClick="ButtonZorg_Click" />
+
+                <asp:Button ID="ToolButton" runat="server" Height="41px" OnClick="Button4_Click1" Text="Tools" Width="71px" />
+
                 </p>
         <p>
             <asp:Button ID="Button1" runat="server" Height="38px" OnClick="Button1_Click" Text="Hit the dot" Visible="False" />
@@ -15,20 +21,17 @@
 
                 </p>
         <p>
-            <asp:Button ID="ButtonEntertainment" runat="server" Height="43px" Text="Entertainment" OnClick="ButtonEntertainment_Click" />
+            <asp:Button ID="YoutubeButton" runat="server" Height="31px" OnClick="Button4_Click" Text="Youtube" Visible="False" Width="82px" />
+            <asp:Button ID="NetflixButton" runat="server" Height="32px" Text="Netflix" Visible="False" Width="74px" OnClick="NetflixButton_Click" />
 
                 </p>
         <p>
-            <asp:Button ID="YoutubeButton" runat="server" Height="31px" OnClick="Button4_Click" Text="Youtube" Visible="False" Width="82px" />
-            <asp:Button ID="NetflixButton" runat="server" Height="32px" Text="Netflix" Visible="False" Width="74px" OnClick="NetflixButton_Click" />
-        </p>
+            &nbsp;</p>
         <p>
             <asp:Label ID="lblError" runat="server"></asp:Label>
         </p>
         <p>
-            <asp:Button ID="ButtonZorg" runat="server" Height="42px" Text="Domotica" Width="72px" OnClick="ButtonZorg_Click" />
-
-                </p>
+            &nbsp;</p>
         
 </asp:Content>
 

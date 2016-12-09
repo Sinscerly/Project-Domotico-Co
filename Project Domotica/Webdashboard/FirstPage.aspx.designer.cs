@@ -22,6 +22,33 @@ namespace Webdashboard {
         protected global::System.Web.UI.WebControls.Button ButtonGames;
         
         /// <summary>
+        /// ButtonEntertainment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonEntertainment;
+        
+        /// <summary>
+        /// DomoticaButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button DomoticaButton;
+        
+        /// <summary>
+        /// ToolButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ToolButton;
+        
+        /// <summary>
         /// Button1 control.
         /// </summary>
         /// <remarks>
@@ -49,15 +76,6 @@ namespace Webdashboard {
         protected global::System.Web.UI.WebControls.Button Button3;
         
         /// <summary>
-        /// ButtonEntertainment control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonEntertainment;
-        
-        /// <summary>
         /// YoutubeButton control.
         /// </summary>
         /// <remarks>
@@ -83,14 +101,5 @@ namespace Webdashboard {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblError;
-        
-        /// <summary>
-        /// ButtonZorg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonZorg;
     }
 }
