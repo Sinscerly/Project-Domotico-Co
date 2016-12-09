@@ -16,7 +16,7 @@ namespace Webdashboard
 
         protected void ButtonGames_Click(object sender, EventArgs e)
         {
-            if (Button1.Visible = true)
+            if (Button1.Visible == true)
             {
                 Button1.Visible = false;
                 Button2.Visible = false;
@@ -29,6 +29,62 @@ namespace Webdashboard
                 Button2.Visible = true;
                 Button3.Visible = true;
             }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ButtonEntertainment_Click(object sender, EventArgs e)
+        {
+            if (YoutubeButton.Visible == true)
+            {
+                YoutubeButton.Visible = false;
+                NetflixButton.Visible = false;
+                
+
+            }
+            else
+            {
+                YoutubeButton.Visible = true;
+                NetflixButton.Visible = true;
+                
+            }
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("www.youtube.com");
+            }
+            catch ( Exception exc) { lblError.Text = exc.Message; } 
+        }
+
+        protected void NetflixButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("https://www.netflix.com/nl/");
+            }
+            catch (Exception exc) { lblError.Text = exc.Message; }
+            
+        }
+
+        protected void ButtonZorg_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
