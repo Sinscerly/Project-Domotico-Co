@@ -115,6 +115,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\DashboardDatabase.accdb" />
     <Content Include="DaHouseControl.aspx" />
     <Content Include="Games\CountryGuessing.aspx" />
     <Content Include="Games\HitTheDot.aspx" />
@@ -147,7 +148,7 @@
     <Compile Include="FirstPage.aspx.designer.cs">
       <DependentUpon>FirstPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Games\CountryGuessing.aspx.cs">
+	<Compile Include="Games\CountryGuessing.aspx.cs">
       <DependentUpon>CountryGuessing.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -161,7 +162,8 @@
     <Compile Include="Games\HitTheDot.aspx.designer.cs">
       <DependentUpon>HitTheDot.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Global.asax.cs">
+    
+	<Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="LoginPage.aspx.cs">
@@ -186,9 +188,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

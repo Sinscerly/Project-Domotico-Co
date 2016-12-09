@@ -13,5 +13,16 @@ namespace Webdashboard
         {
 
         }
+
+        protected void BtnSignUp_Click(object sender, EventArgs e)
+        {
+            lblGNaam.Visible = false;
+            txtGNaam.Visible = false;
+            lblWachtwoord.Visible = false;
+            TxtWachtwoord.Visible = false;
+            BtnLogin.Visible = false;
+
+
+        }
     }
 }
