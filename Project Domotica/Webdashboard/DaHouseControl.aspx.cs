@@ -24,24 +24,9 @@ namespace Webdashboard
                 Connect_2_DaHouse();
                 ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "You're connected to your house" + "');", true);
             }
-            
             if(Connection_Validation() == true && PreviousPage != null)
             {
-                string responseData = string.Empty;
-                CheckBox[] lamp = { cbtn_Lamp1, cbtn_Lamp2, cbtn_Lamp3, cbtn_Lamp4, cbtn_Lamp5 };
-                for (int i = 0; i < lamp.Length; i++)
-                {
-                    Detect_Status("lamp", i.ToString(), out responseData);
-                    if (responseData.Contains("Off")) { lamp[i].Checked = false; }
-                    else if (responseData.Contains("On")) { lamp[i].Checked = true; }
-                }
-                CheckBox[] window = { cbtn_window1, cbtn_window2 };
-                for (int i = 0; i < window.Length; i++)
-                {
-                    Detect_Status("window", i.ToString(), out responseData);
-                    if (responseData.Contains("Open")) { window[i].Checked = false; }
-                    else if (responseData.Contains("Closed")) { window[i].Checked = true; }
-                }
+                Connection_Controll();
             }
         }
 
@@ -89,7 +74,24 @@ namespace Webdashboard
                 return connectionvalidator;
             }
         }
-
+        protected void Connection_Controll()
+        {
+            string responseData = string.Empty;
+            CheckBox[] lamp = { cbtn_Lamp1, cbtn_Lamp2, cbtn_Lamp3, cbtn_Lamp4, cbtn_Lamp5 };
+            for (int i = 0; i < lamp.Length; i++)
+            {
+                Detect_Status("lamp", i.ToString(), out responseData);
+                if (responseData.Contains("Off")) { lamp[i].Checked = false; }
+                else if (responseData.Contains("On")) { lamp[i].Checked = true; }
+            }
+            CheckBox[] window = { cbtn_window1, cbtn_window2 };
+            for (int i = 0; i < window.Length; i++)
+            {
+                Detect_Status("window", i.ToString(), out responseData);
+                if (responseData.Contains("Open")) { window[i].Checked = false; }
+                else if (responseData.Contains("Closed")) { window[i].Checked = true; }
+            }
+        }
         protected void LampWindow_SendCommand(string x, string y, string z)
         {
             String sendString = x + " " + y + " " + z + "\n";
@@ -148,6 +150,10 @@ namespace Webdashboard
         protected void Connect_Click1(object sender, EventArgs e)
         {
             Connect_2_DaHouse();
+            if (Connection_Validation() == true && PreviousPage != null)
+            {
+                Connection_Controll();
+            }
         }
         protected void cbtn_Lamp1_CheckedChanged(object sender, EventArgs e)
         {

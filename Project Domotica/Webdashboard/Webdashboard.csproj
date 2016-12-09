@@ -122,7 +122,6 @@
     <Content Include="Global.asax" />
     <Content Include="LoginPage.aspx" />
     <Content Include="Opmaak.css" />
-    <Content Include="Global.asax" />
     <Content Include="FirstPage.aspx" />
     <Content Include="Tools\calc.aspx" />
     <Content Include="Web.config" />
