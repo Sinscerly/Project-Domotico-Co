@@ -45,10 +45,21 @@ namespace Webdashboard
             }
 
         }
-
-        protected void lamp_on(string x)
+        protected void Lamp_Toggle(string x, string y)
         {
-            String sendString = "lamp " + x + " on" + "\n";
+            Connect_info.Text = "command sent";
+            if (cbtn_Lamp1.Checked == true)
+            {
+                Lamp_Toggle("0", "on");
+            }
+            else if (cbtn_Lamp1.Checked == false)
+            {
+                Lamp_Toggle("0", "off");
+            }
+        }
+        protected void Lamp_SendCommand(string x, string y)
+        {
+            String sendString = "lamp " + x +" "+ y + "\n";
             byte[] data = Encoding.ASCII.GetBytes(sendString);
             NetworkStream stream = Global.client.GetStream();
             stream.Write(data, 0, data.Length);
@@ -61,7 +72,7 @@ namespace Webdashboard
             Connect_info.Text = responseData;
 
         }
-        protected void lamp_off(string x)
+        protected void Lamp(string x)
         {
             String sendString = "lamp " + x + " off" + "\n";
             byte[] data = Encoding.ASCII.GetBytes(sendString);
@@ -117,66 +128,29 @@ namespace Webdashboard
         }
         protected void cbtn_Lamp1_CheckedChanged(object sender, EventArgs e)
         {
-            Connect_info.Text = "command sent";
-            if (cbtn_Lamp1.Checked == true)
-            {
-                lamp_on("0");
-            }
-            else if (cbtn_Lamp1.Checked == false)
-            {
-                lamp_off("0");
-            }
+            
 
         }
 
         protected void cbtn_Lamp2_CheckedChanged(object sender, EventArgs e)
         {
-            Connect_info.Text = "command sent";
-            if (cbtn_Lamp2.Checked == true)
-            {
-                lamp_on("1");
-            }
-            else if (cbtn_Lamp2.Checked == false)
-            {
-                lamp_off("1");
-            }
+
 
         }
 
         protected void cbtn_Lamp3_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbtn_Lamp3.Checked == true)
-            {
-                lamp_on("2");
-            }
-            else if (cbtn_Lamp3.Checked == false)
-            {
-                lamp_off("2");
-            }
+
         }
 
         protected void cbtn_Lamp4_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbtn_Lamp4.Checked == true)
-            {
-                lamp_on("3");
-            }
-            else if (cbtn_Lamp3.Checked == false)
-            {
-                lamp_off("3");
-            }
+
         }
 
         protected void cbtn_Lamp5_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbtn_Lamp5.Checked == true)
-            {
-                lamp_on("4");
-            }
-            else if (cbtn_Lamp3.Checked == false)
-            {
-                lamp_off("4");
-            }
+
         }
 
         protected void cbtn_window1_CheckedChanged(object sender, EventArgs e)
