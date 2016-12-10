@@ -10,10 +10,13 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
+    <div style="display: table; height: 400px; #position: relative;
+        overflow: hidden; text-align:center;">
+        <div style="#position: absolute; #top: 50%; display: table-cell; vertical-align: middle;">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            
+            </asp:ContentPlaceHolder>
+        </div>
     </div>
     </form>
 </body>
