@@ -30,7 +30,7 @@ namespace Webdashboard
 
             OleDbCommand cmd = new OleDbCommand();
             cmd.Connection = conn;
-            cmd.CommandText = "INSERT INTO GebruikersTabel (GebruikersNaam,Wachtwoord,Voornaam,Achternaam,Geboortedatum,Email) VALUES ('" + CreateUserWizard1.UserName + "', '" + CreateUserWizard1.Password + "', 'Joris', 'Bosma', #" + CreateUserWizard1., 'bosmajoris@ziggo.nl')";
+            cmd.CommandText = "INSERT INTO GebruikersTabel (GebruikersNaam,Wachtwoord,Voornaam,Achternaam,Geboortedatum,Email) VALUES ('" + txtUserName + "', '" + txtPassword + "', '"+txtFirstName+"', '"+txtLastName+"', #" + txtGeboorteD + ", '" + txtEmail + "')";
 
 
             try
