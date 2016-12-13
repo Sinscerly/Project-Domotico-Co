@@ -2,8 +2,9 @@
 body {
 }
 
-.Button {
-     background-color: lightgrey;
+.Button { 
+   
+     background-color: Highlight;
     border: none;
     color: white;
     padding: 15px 32px;
