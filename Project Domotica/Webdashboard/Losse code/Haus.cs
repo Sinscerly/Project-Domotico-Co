@@ -18,10 +18,18 @@ namespace Webdashboard
     {
         public void Check(CheckBox[] x)
         {
-            string responseData = string.Empty;
+            string responseData = string.Empty, y = string.Empty;
             for (int i = 0; i < x.Length; i++)
             {
-                Send_Command("lamp "+ i.ToString(), out responseData);
+                if (x[0].ID == "cbtn_Lamp1")
+                {
+                    y = "Lamp ";
+                }
+                else
+                {
+                    y = "Window ";
+                }
+                Send_Command( y + i.ToString(), out responseData);
                 // if lamp on, checkbox == true
                 x[i].Checked = responseData.Contains("On");
             }
@@ -32,9 +40,9 @@ namespace Webdashboard
             NetworkStream stream = Global.client.GetStream();
             stream.Write(data, 0, data.Length);
 
-            data = new byte[1024];
+            data = new byte[2048];
             ResponseData = string.Empty;
-            Int32 bytes = stream.Read(data, 0, data.Length);
+            int bytes = stream.Read(data, 0, data.Length);
             ResponseData = Encoding.ASCII.GetString(data, 0, bytes);
         }
         public void LampWindow_Command(string x, string y, string z)

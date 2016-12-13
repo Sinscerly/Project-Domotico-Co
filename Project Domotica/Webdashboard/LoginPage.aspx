@@ -129,7 +129,7 @@
                         </table>
                     </td>
                 </tr>
-       
+       </table>
              
         </asp:View>
         <asp:View ID="PasswordRecovery" runat="server">
