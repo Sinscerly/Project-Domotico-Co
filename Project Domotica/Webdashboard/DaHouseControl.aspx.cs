@@ -23,9 +23,8 @@ namespace Webdashboard
             if (Connection_Validation() == false)
             {
                 Connect_2_DaHouse();
-                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "You're connected to your house" + "');", true);
             }
-            if(Connection_Validation() == true)
+            if(Connection_Validation() == true && !Page.IsPostBack)
             {
                 Connection_Controll();
             }
@@ -65,7 +64,7 @@ namespace Webdashboard
                     Global.client = null;
                     Connect_info.Text = "Connection Failed";
                 }
-
+                finally{ }
                 
                 
             }
