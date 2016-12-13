@@ -116,10 +116,11 @@
                                 <td class="auto-style3">
                                     <asp:Label ID="lblGeboorteD" runat="server" Text="Geboortedatum:"></asp:Label>
                                 </td>
-                                <td class="auto-style2">
+                               <td class="auto-style2">
                                     <asp:TextBox ID="txtGeboorteD" runat="server"></asp:TextBox>
-                                </td>
-                            </tr>
+                                </td> 
+                                
+                            </tr> 
                             <tr>
                                 <td>
                                     <asp:Button ID="btnCreate" runat="server" Text="Registreer" OnClick="btnCreate_Click" />

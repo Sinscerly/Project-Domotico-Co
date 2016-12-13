@@ -6,7 +6,9 @@
     
     <p>
         
-     Wat wilt u doen?<p>
+        &nbsp;<p>
+        
+        <strong>Wat wilt u doen?</strong><p>
             <asp:Button ID="ButtonGames" runat="server" Height="43px" OnClick="ButtonGames_Click"  Text="Games" Width="86px" CssClass="Button" />
          
             <asp:Button ID="ButtonEntertainment" runat="server" Height="43px" Text="Entertainment" OnClick="ButtonEntertainment_Click" />

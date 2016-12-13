@@ -26,11 +26,11 @@ namespace Webdashboard
         {
             OleDbConnection conn = new OleDbConnection();
             conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; " +
-                "Data Source=|DataDirectory|LoginData.accdb";
+                "Data Source=|DataDirectory|DashboardDatabase.accdb";
 
             OleDbCommand cmd = new OleDbCommand();
             cmd.Connection = conn;
-            cmd.CommandText = "INSERT INTO GebruikersTabel (GebruikersNaam,Wachtwoord,Voornaam,Achternaam,Geboortedatum,Email) VALUES ('" + txtUserName + "', '" + txtPassword + "', '"+txtFirstName+"', '"+txtLastName+"', #" + txtGeboorteD + ", '" + txtEmail + "')";
+            cmd.CommandText = "INSERT INTO GebruikersTabel (GebruikersNaam,Wachtwoord,Voornaam,Achternaam,Geboortedatum,Email) VALUES  ('" + txtUserName.Text + "', '" + txtPassword.Text + "', '" + txtFirstName.Text + "', '" + txtLastName.Text + "', #" + txtGeboorteD.Text + "#, '" + txtEmail.Text + "')";
 
 
             try
