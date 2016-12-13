@@ -58,20 +58,7 @@ namespace Webdashboard
             CheckBox[] window = { cbtn_window1, cbtn_window2 };
             home.Check(ref lamp, ref window);
         }
-        protected void LampWindow_SendCommand(string x, string y, string z)
-        {
-            String sendString = x + " " + y + " " + z + "\n";
-            byte[] data = Encoding.ASCII.GetBytes(sendString);
-            NetworkStream stream = Global.client.GetStream();
-            stream.Write(data, 0, data.Length);
 
-            data = new byte[1024];
-            String responseData = String.Empty;
-            Int32 bytes = stream.Read(data, 0, data.Length);
-            responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
-            if (responseData != "") { Connect_info.Text = responseData; }
-            
-        }
         protected void heater(string x)
         {
             String sendString = "heater " + x + "\n";
@@ -115,86 +102,87 @@ namespace Webdashboard
         #region Aanroep
         protected void Connect_Click1(object sender, EventArgs e)
         {
-            if (Connection_Validation() == false)
+            if (conn.Validation() == false)
             Connect_2_DaHouse();
             else { Connect_info.Text = "You're already connected to DaHaus"; }
-            if (Connection_Validation() == true)
+            if (conn.Validation() == true)
             {
                 Connection_Controll();
             }
         }
         protected void cbtn_Lamp1_CheckedChanged(object sender, EventArgs e)
         {
-            if (Connection_Validation() == true)
+            if (conn.Validation() == true)
             {
                 Connect_info.Text = "command sent";
                 if (cbtn_Lamp1.Checked == true)
                 {
-                    LampWindow_SendCommand("lamp", "0", "on");
+                    
+                    home.LampWindow_SendCommand("lamp", "0", "on");
                 }
                 else if (cbtn_Lamp1.Checked == false)
                 {
-                    LampWindow_SendCommand("lamp", "0", "off");
+                    home.LampWindow_SendCommand("lamp", "0", "off");
                 }
             }
         }
         protected void cbtn_Lamp2_CheckedChanged(object sender, EventArgs e)
         {
-            if (Connection_Validation() == true)
+            if (conn.Validation() == true)
             {
                 Connect_info.Text = "command sent";
                 if (cbtn_Lamp2.Checked == true)
                 {
-                    LampWindow_SendCommand("lamp", "1", "on");
+                    home.LampWindow_SendCommand("lamp", "1", "on");
                 }
                 else if (cbtn_Lamp2.Checked == false)
                 {
-                    LampWindow_SendCommand("lamp", "1", "off");
+                    home.LampWindow_SendCommand("lamp", "1", "off");
                 }
             }
         }
         protected void cbtn_Lamp3_CheckedChanged(object sender, EventArgs e)
         {
-            if (Connection_Validation() == true)
+            if (conn.Validation() == true)
             {
                 Connect_info.Text = "command sent";
                 if (cbtn_Lamp3.Checked == true)
                 {
-                    LampWindow_SendCommand("lamp", "2", "on");
+                    home.LampWindow_SendCommand("lamp", "2", "on");
                 }
                 else if (cbtn_Lamp3.Checked == false)
                 {
-                    LampWindow_SendCommand("lamp", "2", "off");
+                    home.LampWindow_SendCommand("lamp", "2", "off");
                 }
             }
         }
         protected void cbtn_Lamp4_CheckedChanged(object sender, EventArgs e)
         {
-            if (Connection_Validation() == true)
+            if (conn.Validation() == true)
             {
                 Connect_info.Text = "command sent";
                 if (cbtn_Lamp4.Checked == true)
                 {
-                    LampWindow_SendCommand("lamp", "3", "on");
+                    home.LampWindow_SendCommand("lamp", "3", "on");
                 }
                 else if (cbtn_Lamp4.Checked == false)
                 {
-                    LampWindow_SendCommand("lamp", "3", "off");
+                    home.LampWindow_SendCommand("lamp", "3", "off");
                 }
             }
         }
         protected void cbtn_Lamp5_CheckedChanged(object sender, EventArgs e)
         {
-            if (Connection_Validation() == true)
+            if (conn.Validation() == true)
             {
                 Connect_info.Text = "command sent";
                 if (cbtn_Lamp5.Checked == true)
                 {
-                    LampWindow_SendCommand("lamp", "4", "on");
+                    home.LampWindow_SendCommand("lamp", "4", "on");
                 }
                 else if (cbtn_Lamp5.Checked == false)
                 {
-                    LampWindow_SendCommand("lamp", "4", "off");
+                    home.LampWindow_SendCommand("lamp", "4", "off");
                 }
             }
         }
