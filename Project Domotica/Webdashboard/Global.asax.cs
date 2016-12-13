@@ -21,6 +21,7 @@ namespace Webdashboard
             Application.Lock();
             Application["OnlineUsers"] = (int)Application["OnlineUsers"] + 1;
             Application.UnLock();
+
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
