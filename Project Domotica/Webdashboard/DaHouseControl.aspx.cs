@@ -64,6 +64,9 @@ namespace Webdashboard
                     Global.client = null;
                     Connect_info.Text = "Connection Failed";
                 }
+
+                finally { Global.client.Close(); }
+                
             }
         }
         protected bool Connection_Validation()
