@@ -12,6 +12,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.IO;
 
+
 namespace Webdashboard
 {
     public partial class DaHouseControl : System.Web.UI.Page
@@ -65,7 +66,7 @@ namespace Webdashboard
                     Connect_info.Text = "Connection Failed";
                 }
 
-                finally { Global.client.Close(); }
+                
                 
             }
         }
