@@ -18,37 +18,41 @@ namespace Webdashboard
     {
         public void Connect()
         {
-            if (Global.client != null)
-            { }
-            else
+            try
             {
-                try
-                {
-                    Global.client = new TcpClient();
-                    Global.client.Connect("127.0.0.1", 11000);
-                }
-                catch (Exception ex)
-                {
-                    Global.client = null;
-                }
+                Global.client = new TcpClient();
+                Global.client.Connect("127.0.0.1", 11000);
+            }
+            catch (Exception ex)
+            {
+                Global.client = null;
             }
         }
         public void Close()
         {
-            Global.client.Close();
+            if (Global.client != null)
+            {
+                String sendString = "exit " + "\n";
+                byte[] data = Encoding.ASCII.GetBytes(sendString);
+                NetworkStream stream = Global.client.GetStream();
+                stream.Write(data, 0, data.Length);
+
+                Global.client = null;
+            }
         }
         public bool Validation()
         {
-            if (Global.client != null)
-            {
-                bool connectionvalidator = true;
-                return connectionvalidator;
-            }
-            else
-            {
-                bool connectionvalidator = false;
-                return connectionvalidator;
-            }
+            //if (Global.client != null)
+            //{
+            //    bool connectionvalidator = true;
+            //    return connectionvalidator;
+            //}
+            //else
+            //{
+            //    bool connectionvalidator = false;
+            //    return connectionvalidator;
+            //}
+            return Global.client != null;
         }
     }
 }

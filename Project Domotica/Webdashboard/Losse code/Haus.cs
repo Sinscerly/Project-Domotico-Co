@@ -16,20 +16,14 @@ namespace Webdashboard
 {
     public class Haus
     {
-        public void Check(ref CheckBox[] lamp, ref CheckBox[] window)
+        public void Check(CheckBox[] x)
         {
             string responseData = string.Empty;
-            for (int i = 0; i < lamp.Length; i++)
+            for (int i = 0; i < x.Length; i++)
             {
                 Detect_Status("lamp", i.ToString(), out responseData);
-                if (responseData.Contains("Off")) { lamp[i].Checked = false; }
-                else if (responseData.Contains("On")) { lamp[i].Checked = true; }
-            }
-            for (int i = 0; i < window.Length; i++)
-            {
-                Detect_Status("window", i.ToString(), out responseData);
-                if (responseData.Contains("Open")) { window[i].Checked = false; }
-                else if (responseData.Contains("Closed")) { window[i].Checked = true; }
+                // if lamp on, checkbox == true
+                x[i].Checked = responseData.Contains("On");
             }
         }
         private void Detect_Status(string x, string y, out string responseData)
@@ -44,10 +38,9 @@ namespace Webdashboard
             Int32 bytes = stream.Read(data, 0, data.Length);
             responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
         }
-        public void LampWindow_SendCommand(string x, string y, string z)
+        private void Send_Command(string x)
         {
-            String sendString = x + " " + y + " " + z + "\n";
-            byte[] data = Encoding.ASCII.GetBytes(sendString);
+            byte[] data = Encoding.ASCII.GetBytes(x);
             NetworkStream stream = Global.client.GetStream();
             stream.Write(data, 0, data.Length);
 
@@ -55,6 +48,14 @@ namespace Webdashboard
             String responseData = String.Empty;
             Int32 bytes = stream.Read(data, 0, data.Length);
             responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
+        }
+        public void LampWindow_SendCommand(string x, string y, string z)
+        {
+            Send_Command(x + " " + y + " " + z + "\n");
+        }
+        public void heater(string x)
+        {
+            Send_Command("heater " + x + "\n");
         }
     }
 }
