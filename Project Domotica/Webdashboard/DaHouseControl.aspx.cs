@@ -12,38 +12,24 @@ using System.Net;
 using System.Net.Sockets;
 using System.IO;
 
-
 namespace Webdashboard
 {
     public partial class DaHouseControl : System.Web.UI.Page
     {
-
+        Connection conn = new Connection();
+        Haus home = new Haus();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Connection_Validation() == false)
+            if (conn.Validation() == false)
             {
-                Connect_2_DaHouse();
+                conn.Connect();
             }
-            if(Connection_Validation() == true && !Page.IsPostBack)
+            if (conn.Validation() == true && !Page.IsPostBack)
             {
                 Connection_Controll();
             }
+            conn.Close();
         }
-
-        protected void Detect_Status(string x, string y, out string responseData)
-        {
-            String sendString = x +" " + y + "\n";
-            byte[] data = Encoding.ASCII.GetBytes(sendString);
-            NetworkStream stream = Global.client.GetStream();
-            stream.Write(data, 0, data.Length);
-
-            data = new byte[1024];
-            responseData = String.Empty;
-            Int32 bytes = stream.Read(data, 0, data.Length);
-            responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
-            if (responseData != "") { Connect_info.Text = responseData; }
-        }
-
         protected void Connect_2_DaHouse()
         {
             if (Global.client != null)
@@ -57,43 +43,20 @@ namespace Webdashboard
                     Global.client = new TcpClient();
                     Global.client.Connect("127.0.0.1", 11000);
                     Connect_info.Text = "Connection succesfull";
-
                 }
                 catch (Exception ex)
                 {
                     Global.client = null;
                     Connect_info.Text = "Connection Failed";
                 }
-                finally{ }
-                
-                
-            }
-        }
-        protected bool Connection_Validation()
-        {
-            if(Global.client != null) { bool connectionvalidator = true;  return connectionvalidator; }
-            else { bool connectionvalidator = false;
-                Connect_info.Text = "You're not connected to your house";
-                return connectionvalidator;
             }
         }
         protected void Connection_Controll()
         {
             string responseData = string.Empty;
             CheckBox[] lamp = { cbtn_Lamp1, cbtn_Lamp2, cbtn_Lamp3, cbtn_Lamp4, cbtn_Lamp5 };
-            for (int i = 0; i < lamp.Length; i++)
-            {
-                Detect_Status("lamp", i.ToString(), out responseData);
-                if (responseData.Contains("Off")) { lamp[i].Checked = false; }
-                else if (responseData.Contains("On")) { lamp[i].Checked = true; }
-            }
             CheckBox[] window = { cbtn_window1, cbtn_window2 };
-            for (int i = 0; i < window.Length; i++)
-            {
-                Detect_Status("window", i.ToString(), out responseData);
-                if (responseData.Contains("Open")) { window[i].Checked = false; }
-                else if (responseData.Contains("Closed")) { window[i].Checked = true; }
-            }
+            home.Check(ref lamp, ref window);
         }
         protected void LampWindow_SendCommand(string x, string y, string z)
         {
