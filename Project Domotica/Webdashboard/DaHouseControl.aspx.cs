@@ -70,7 +70,7 @@ namespace Webdashboard
         {
             if(Global.client != null) { bool connectionvalidator = true;  return connectionvalidator; }
             else { bool connectionvalidator = false;
-                Connect_info.Text = "You're not connected to you're house";
+                Connect_info.Text = "You're not connected to your house";
                 return connectionvalidator;
             }
         }
