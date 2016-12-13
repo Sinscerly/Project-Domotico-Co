@@ -27,7 +27,7 @@ namespace Webdashboard
 
             OleDbCommand cmd = new OleDbCommand();
             cmd.Connection = conn;
-            cmd.CommandText = "INSERT INTO GebruikersTabel (GebruikersNaam,Wachtwoord,Voornaam,Achternaam,Geboortedatum,Email)";
+            cmd.CommandText = "INSERT INTO GebruikersTabel (GebruikersNaam,Wachtwoord,Voornaam,Achternaam,Geboortedatum,Email) VALUES ('" + UserName.Text + "', '";
 
             try
             {
@@ -40,5 +40,19 @@ namespace Webdashboard
 
         }
 
+        protected void ContinueButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void CreateUserWizard1_CreatedUser(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnCreate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

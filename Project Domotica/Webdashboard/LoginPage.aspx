@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DashboardMaster.Master" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="Webdashboard.LoginPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
+    <link href="Opmaak.css" rel="stylesheet" type="text/css" /
 
 
 
@@ -82,7 +83,8 @@
             </asp:Login>
         </asp:View>
         <asp:View ID="Register" runat="server">
-            <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" BackColor="#F7F7DE" BorderColor="#CCCC99" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="10pt">
+            #region RegisterWizard
+            <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" BackColor="#F7F7DE" BorderColor="#CCCC99" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="10pt" OnCreatedUser="CreateUserWizard1_CreatedUser">
                 <ContinueButtonStyle BackColor="#FFFBFF" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" ForeColor="#284775" />
                 <CreateUserButtonStyle BackColor="#FFFBFF" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" ForeColor="#284775" />
                 <TitleTextStyle BackColor="#6B696B" Font-Bold="True" ForeColor="#FFFFFF" />
@@ -138,8 +140,6 @@
             <tr>
                 <td align ="right">
                     <asp:Label ID="GeboorteDlabel" runat="server" Text="Geboortedatum"></asp:Label>
-                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="BirthDate"
-                        ErrorMessage="Date of birth is required." ToolTip="Date of birth is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
                 </td>
                 <td>
                     <asp:TextBox ID="TxtGeboorteD" runat="server"></asp:TextBox>
@@ -180,8 +180,12 @@
                     <asp:Literal ID="ErrorMessage" runat="server" EnableViewState="False"></asp:Literal>
                 </td>
             </tr>
+            
         </table>
     </ContentTemplate>
+                        <CustomNavigationTemplate>
+                            <asp:Button ID="btnCreate" runat="server" Text="Create User" OnClick="btnCreate_Click" />
+                        </CustomNavigationTemplate>
                     </asp:CreateUserWizardStep>
                     <asp:CompleteWizardStep ID="CompleteWizardStep1" runat="server">
                     </asp:CompleteWizardStep>
@@ -194,11 +198,7 @@
             </asp:CreateUserWizard> 
 
 
-
-            <asp:Label ID="lblConnectionFeedback" runat="server" Text="Label"></asp:Label>
-
-
-
+#endregion
         </asp:View>
         <asp:View ID="PasswordRecovery" runat="server">
 
@@ -210,4 +210,5 @@
 
         </asp:View>
     </asp:MultiView>
+    <asp:Label ID="lblConnectionFeedback" runat="server" Text="Label"></asp:Label>
 </asp:Content>
