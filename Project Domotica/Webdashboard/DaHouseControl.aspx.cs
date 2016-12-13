@@ -24,7 +24,7 @@ namespace Webdashboard
                 Connect_2_DaHouse();
                 ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "You're connected to your house" + "');", true);
             }
-            if(Connection_Validation() == true && PreviousPage != null)
+            if(Connection_Validation() == true)
             {
                 Connection_Controll();
             }
@@ -149,8 +149,10 @@ namespace Webdashboard
         #region Aanroep
         protected void Connect_Click1(object sender, EventArgs e)
         {
+            if (Connection_Validation() == false)
             Connect_2_DaHouse();
-            if (Connection_Validation() == true && PreviousPage != null)
+            else { Connect_info.Text = "You're already connected to DaHaus"; }
+            if (Connection_Validation() == true)
             {
                 Connection_Controll();
             }
