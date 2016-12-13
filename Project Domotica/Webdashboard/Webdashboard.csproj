@@ -125,6 +125,7 @@
     <Content Include="Games\CountryGuessing.aspx" />
     <Content Include="Games\HitTheDot.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Images\factorio_honeycomb_icon_by_benjii00-d9xu62g.png" />
     <Content Include="LoginPage.aspx" />
     <Content Include="Opmaak.css" />
     <Content Include="FirstPage.aspx" />
