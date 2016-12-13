@@ -44,5 +44,17 @@ namespace Webdashboard
             Int32 bytes = stream.Read(data, 0, data.Length);
             responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
         }
+        public void LampWindow_SendCommand(string x, string y, string z)
+        {
+            String sendString = x + " " + y + " " + z + "\n";
+            byte[] data = Encoding.ASCII.GetBytes(sendString);
+            NetworkStream stream = Global.client.GetStream();
+            stream.Write(data, 0, data.Length);
+
+            data = new byte[1024];
+            String responseData = String.Empty;
+            Int32 bytes = stream.Read(data, 0, data.Length);
+            responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
+        }
     }
 }
