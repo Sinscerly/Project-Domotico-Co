@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DashboardMaster.Master" AutoEventWireup="true" CodeBehind="DaHouseControl.aspx.cs" Inherits="Webdashboard.DaHouseControl" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="Opmaak.css" rel="stylesheet" type="text/css" />
+    
     <title>DaHouse</title>
 </asp:Content>
 
@@ -9,6 +9,7 @@
         <asp:Button ID="Connect" runat="server" Text="Refresh" OnClick="Connect_Click1" />
         <asp:Label ID="Connect_info" runat="server" Text=""></asp:Label> <br />
     </div>
+
     <div>
         <div class="Button">
             Lamp 1
@@ -45,6 +46,8 @@
             <div class="slider round"></div>
             </label>
         </div>
+    </div>
+    <div>
         <br />
         <div class="Button">
             Raam 1
@@ -60,7 +63,9 @@
             <div class="slider round"></div>
             </label>
         </div>
+    </div>
         <br />
+    <div>
         <asp:TextBox ID="Txt_heater" runat="server"></asp:TextBox>
         <asp:Button ID="btn_heater" runat="server" Text="Button" OnClick="Change_Heater" />
     </div>

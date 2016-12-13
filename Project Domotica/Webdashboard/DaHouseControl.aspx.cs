@@ -60,9 +60,10 @@ namespace Webdashboard
             {
                 CheckBox[] Lamps = { cbtn_Lamp1, cbtn_Lamp2, cbtn_Lamp3, cbtn_Lamp4, cbtn_Lamp5 };
                 int i = Lamps.ToList().IndexOf((CheckBox)sender);
-                home.LampWindow_SendCommand("lamp", i.ToString(), Lamps[i].Checked == true ? "on" : "off");
+                home.LampWindow_Command("lamp", i.ToString(), Lamps[i].Checked == true ? "on" : "off");
+                conn.Close();
             }
-            conn.Close();
+            
         }
         protected void Toggle_Window(object sender, EventArgs e)
         {
@@ -71,7 +72,7 @@ namespace Webdashboard
             {
                 CheckBox[] Windows = { cbtn_window1, cbtn_window2 };
                 int i = Windows.ToList().IndexOf((CheckBox)sender);
-                home.LampWindow_SendCommand("window", i.ToString(), Windows[i].Checked == true ? "close" : "open");
+                home.LampWindow_Command("window", i.ToString(), Windows[i].Checked == true ? "close" : "open");
             }
             conn.Close();
         }
@@ -80,7 +81,7 @@ namespace Webdashboard
             conn.Connect();
             if (conn.Validation() == true)
             {
-                home.heater(Txt_heater.Text);
+                Txt_heater.Text = home.heater(Txt_heater.Text);
             }
             conn.Close();
         }
