@@ -2,30 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
     <link href="Opmaak.css" rel="stylesheet" type="text/css" /
-
-
-
-    <style type="text/css">
-        .auto-style1 {
-            height: 38px;
-            text-align: left;
-        }
-        .auto-style2 {
-            width: 173px;
-        }
-        .auto-style3 {
-            text-align: left;
-        }
-    </style>
-
-
-
-
-    <style type="text/css">
-        .auto-style1 {
-            height: 26px;
-        }
-    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex ="0">
@@ -88,7 +64,7 @@
             </asp:Login>
         </asp:View>
         <asp:View ID="Register" runat="server">
-            #region Register
+            
             <table  cellpadding="1" cellspacing="0" style="border-collapse:collapse;">
                 <tr>
                     <td>
@@ -97,50 +73,50 @@
                                         <td align="center" colspan="2" style="color:White;background-color:#6B696B;font-weight:bold;">Registreer</td>
                             </tr>
                             <tr>
-                                <td>
+                                <td class="auto-style3">
                                     <asp:Label ID="lblUserName" runat="server" Text="Gebruikersnaam:"></asp:Label>
                                 </td>
-                                <td>
+                                <td class="auto-style2">
                                     <asp:TextBox ID="txtUserName" runat="server"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td class="auto-style3">
                                     <asp:Label ID="lblPassword" runat="server" Text="Wachtwoord:"></asp:Label>
                                 </td>
-                                <td>
+                                <td class="auto-style2">
                                     <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td class="auto-style3">
                                     <asp:Label ID="lblFirstName" runat="server" Text="Voornaam:"></asp:Label>
                                 </td>
-                                <td>
+                                <td class="auto-style2">
                                     <asp:TextBox ID="txtFirstName" runat="server"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td class="auto-style3">
                                     <asp:Label ID="lblLastName" runat="server" Text="Achternaam:"></asp:Label>
                                 </td>
-                                <td>
+                                <td class="auto-style2">
                                     <asp:TextBox ID="txtLastName" runat="server"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td class="auto-style3">
                                     <asp:Label ID="lblEmail" runat="server" Text="Email:"></asp:Label>
                                 </td>
-                                <td>
+                                <td class="auto-style2">
                                     <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td class="auto-style3">
                                     <asp:Label ID="lblGeboorteD" runat="server" Text="Geboortedatum:"></asp:Label>
                                 </td>
-                                <td>
+                                <td class="auto-style2">
                                     <asp:TextBox ID="txtGeboorteD" runat="server"></asp:TextBox>
                                 </td>
                             </tr>
@@ -153,7 +129,7 @@
                     </td>
                 </tr>
        
-             #endregion
+             
         </asp:View>
         <asp:View ID="PasswordRecovery" runat="server">
 
@@ -165,5 +141,5 @@
 
         </asp:View>
     </asp:MultiView>
-    <asp:Label ID="lblConnectionFeedback" runat="server" Text="Label"></asp:Label>
+    <asp:Label ID="lblConnectionFeedback" runat="server" Text=""></asp:Label>
 </asp:Content>

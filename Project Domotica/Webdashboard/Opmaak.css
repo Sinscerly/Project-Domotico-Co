@@ -79,4 +79,15 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
-}
+} .auto-style1 {
+            
+            height: 26px;
+            text-align: left;
+        }
+        .auto-style2 {
+            width: 173px;
+        }
+        .auto-style3 {
+            text-align: left;
+        }
+
