@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DashboardMaster.Master" AutoEventWireup="true" CodeBehind="DaHouseControl.aspx.cs" Inherits="Webdashboard.DaHouseControl" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    
+    <link href="Opmaak.css" rel="stylesheet" type="text/css" />
     <title>DaHouse</title>
 </asp:Content>
 
