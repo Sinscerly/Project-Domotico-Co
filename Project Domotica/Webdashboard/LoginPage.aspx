@@ -8,10 +8,10 @@
         <asp:View ID="Login" runat="server" >
             <asp:Login ID="Login1" runat="server" BackColor="#F7F7DE" BorderColor="#CCCC99" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="10pt" Height="193px" Width="270px">
                 <LayoutTemplate>
-                    <table cellpadding="1" cellspacing="0" style="border-collapse:collapse;">
+                    <table   style="border-collapse:collapse;">
                         <tr>
                             <td>
-                                <table cellpadding="0">
+                                <table >
                                     <tr>
                                         <td align="center" colspan="2" style="color:White;background-color:#6B696B;font-weight:bold;">Log In</td>
                                     </tr>
@@ -65,10 +65,10 @@
         </asp:View>
         <asp:View ID="Register" runat="server">
             
-            <table  cellpadding="1" cellspacing="0" style="border-collapse:collapse;">
+            <table    style="border-collapse:collapse;">
                 <tr>
                     <td>
-                        <table cellpadding="0">
+                        <table >
                             <tr>
                                         <td align="center" colspan="2" style="color:White;background-color:#6B696B;font-weight:bold;">Registreer</td>
                             </tr>
