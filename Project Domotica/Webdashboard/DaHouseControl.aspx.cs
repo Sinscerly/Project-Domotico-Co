@@ -29,7 +29,7 @@ namespace Webdashboard
                 }
                 if (conn.Validation() == true)
                 {
-                    Connection_Controll();
+                    //Connection_Controll();
                     conn.Close();
                 }
             }
