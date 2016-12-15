@@ -124,6 +124,7 @@
                             <tr>
                                 <td>
                                     <asp:Button ID="btnCreate" runat="server" Text="Registreer" OnClick="btnCreate_Click" />
+                                    <asp:Label ID="lbl_info" runat="server" Text="" />
                                 </td>
                             </tr>
                         </table>

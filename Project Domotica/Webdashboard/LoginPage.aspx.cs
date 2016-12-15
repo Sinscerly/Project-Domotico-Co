@@ -24,6 +24,7 @@ namespace Webdashboard
 
         protected void btnCreate_Click(object sender, EventArgs e)
         {
+            lbl_info.Text = " ";
             OleDbConnection conn = new OleDbConnection();
             conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; " +
                 "Data Source=|DataDirectory|DashboardDatabase.accdb";
@@ -39,8 +40,13 @@ namespace Webdashboard
                 OleDbDataReader reader = cmd.ExecuteReader();
                 reader.Close();
             }
-            catch (Exception exc) { lblConnectionFeedback.Text = exc.Message; }
-            finally { conn.Close(); }
+            catch (Exception exc) { lbl_info.Text = exc.Message; }
+            finally
+            {
+                conn.Close();
+                lbl_info.Text = "Het registreren is gelukt";
+                MultiView1.vie
+            }
         }
     }
 }
