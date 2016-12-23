@@ -14,6 +14,7 @@ namespace Webdashboard
         protected void Application_Start(object sender, EventArgs e)
         {
             Application["OnlineUsers"] = 0;
+            
         }
 
         protected void Session_Start(object sender, EventArgs e)

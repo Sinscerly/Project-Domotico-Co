@@ -18,29 +18,24 @@ namespace Webdashboard
     {
         Connection conn = new Connection();
         Haus home = new Haus();
-
+        Global = new Global();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             bool Validation_Succesfull = false;
-            if(Global.client == null)
+            if (Global.client == null)
             {
-
+                conn.Connect();
             }
-            if (!IsPostBack && Validation_Succesfull == false)
+            Validation_Succesfull = conn.Validation();
+            conn.Close();
+            if (!IsPostBack && Validation_Succesfull == true)
             {
-                if (conn.Validation() == false)
-                {
-                    conn.Connect();
-                }
-                if (conn.Validation() == true)
-                {
-                    Connection_Controll();
-                    conn.Close();
-                }
+                Connection_Controll();
             }
             else
-            { 
-             
+            {
+
                 // checkbox clicked 
             }
         }
@@ -51,8 +46,10 @@ namespace Webdashboard
             CheckBox[] window = { cbtn_window1, cbtn_window2 };
             home.Check_Lamp(lamp);
             home.Check_Window(window);
+            lbl_info.Text = home.heater_Status(Txt_heater.Text);
         }
         #region Aanroep
+        
         protected void Connect_Click1(object sender, EventArgs e)
         {
             conn.Connect();
@@ -61,35 +58,19 @@ namespace Webdashboard
         }
         protected void Toggle_Lamp(object sender, EventArgs e)
         {
-            conn.Connect();
-            if (conn.Validation() == true)
-            {
                 CheckBox[] Lamps = { cbtn_Lamp1, cbtn_Lamp2, cbtn_Lamp3, cbtn_Lamp4, cbtn_Lamp5 };
                 int i = Lamps.ToList().IndexOf((CheckBox)sender);
                 home.LampWindow_Command("lamp", i.ToString(), Lamps[i].Checked == true ? "on" : "off");
-                conn.Close();
-            }
-            
         }
         protected void Toggle_Window(object sender, EventArgs e)
         {
-            conn.Connect();
-            if (conn.Validation() == true)
-            {
                 CheckBox[] Windows = { cbtn_window1, cbtn_window2 };
                 int i = Windows.ToList().IndexOf((CheckBox)sender);
                 home.LampWindow_Command("window", i.ToString(), Windows[i].Checked == true ? "close" : "open");
-            }
-            conn.Close();
         }
         protected void Change_Heater(object sender, EventArgs e)
         {
-            conn.Connect();
-            if (conn.Validation() == true)
-            {
                 lbl_info.Text = home.heater(Txt_heater.Text);
-            }
-            conn.Close();
         }
         #endregion
 

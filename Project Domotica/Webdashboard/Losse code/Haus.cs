@@ -16,6 +16,7 @@ namespace Webdashboard
 {
     public class Haus
     {
+        Connection conn = new Connection();
         public void Check_Lamp(CheckBox[] x)
         {
             string responseData = string.Empty, y = string.Empty;
@@ -40,14 +41,22 @@ namespace Webdashboard
         }
         private void Send_Command(string x, out string ResponseData)
         {
-            byte[] data = Encoding.ASCII.GetBytes(x);
-            NetworkStream stream = Global.client.GetStream();
-            stream.Write(data, 0, data.Length);
 
-            data = new byte[1024];
             ResponseData = string.Empty;
-            Int32 bytes = stream.Read(data, 0, data.Length);
-            ResponseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
+            conn.Connect();
+            if (conn.Validation() == true)
+            {
+                byte[] data = Encoding.ASCII.GetBytes(x);
+                NetworkStream stream = Global.client.GetStream();
+                stream.Write(data, 0, data.Length);
+
+                data = new byte[1024];
+                ResponseData = string.Empty;
+                Int32 bytes = stream.Read(data, 0, data.Length);
+                ResponseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
+
+            }
+            conn.Close();
         }
         public void LampWindow_Command(string x, string y, string z)
         {
@@ -58,6 +67,12 @@ namespace Webdashboard
         {
             string ResponseData = string.Empty;
             Send_Command("heater " + x + "\n", out ResponseData);
+            return ResponseData;
+        }
+        public string heater_Status(string x)
+        {
+            string ResponseData = string.Empty;
+            Send_Command("heater \n", out ResponseData);
             return ResponseData;
         }
     }

@@ -119,23 +119,12 @@ namespace Webdashboard
         {
             Connection conn = new Connection();
             bool Connection_Succesfull = false;
-            if (Global.client != null)
-            {
-                conn.Close();
-            }
-            if(Global.client == null)
+            if (Global.client == null)
             {
                 conn.Connect();
-                if (Global.client != null)
-                {
-                    Connection_Succesfull = true;
-                }
-                else
-                {
-                    Connection_Succesfull = false;
-                }
-                conn.Close();
             }
+            Connection_Succesfull = conn.Validation();
+            conn.Close();
             if (Connection_Succesfull == true)
             {
                 Response.Redirect("DaHouseControl.aspx");
