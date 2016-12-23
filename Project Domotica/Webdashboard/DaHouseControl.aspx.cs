@@ -82,7 +82,7 @@ namespace Webdashboard
             conn.Connect();
             if (conn.Validation() == true)
             {
-                Txt_heater.Text = home.heater(Txt_heater.Text);
+                lbl_info.Text = home.heater(Txt_heater.Text);
             }
             conn.Close();
         }
