@@ -16,20 +16,24 @@ namespace Webdashboard
 {
     public class Haus
     {
-        public void Check(CheckBox[] x)
+        public void Check_Lamp(CheckBox[] x)
         {
             string responseData = string.Empty, y = string.Empty;
             for (int i = 0; i < x.Length; i++)
             {
-                if (x[0].ID == "cbtn_Lamp1")
-                {
-                    y = "Lamp ";
-                }
-                else
-                {
-                    y = "Window ";
-                }
-                Send_Command( y + i.ToString(), out responseData);
+                y = "Lamp " +i.ToString();
+                Send_Command(y, out responseData);
+                // if lamp on, checkbox == true
+                x[i].Checked = responseData.Contains("On");
+            }
+        }
+        public void Check_Window(CheckBox[] x)
+        {
+            string responseData = string.Empty, y = string.Empty;
+            for (int i = 0; i < x.Length; i++)
+            {
+                y = "Window " + i.ToString();
+                Send_Command(y , out responseData);
                 // if lamp on, checkbox == true
                 x[i].Checked = responseData.Contains("On");
             }

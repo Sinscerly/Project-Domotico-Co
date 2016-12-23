@@ -29,7 +29,7 @@ namespace Webdashboard
                 }
                 if (conn.Validation() == true)
                 {
-                    //Connection_Controll();
+                    Connection_Controll();
                     conn.Close();
                 }
             }
@@ -44,8 +44,8 @@ namespace Webdashboard
             string responseData = string.Empty;
             CheckBox[] lamp = { cbtn_Lamp1, cbtn_Lamp2, cbtn_Lamp3, cbtn_Lamp4, cbtn_Lamp5 };
             CheckBox[] window = { cbtn_window1, cbtn_window2 };
-            home.Check(lamp);
-            home.Check(window);
+            home.Check_Lamp(lamp);
+            home.Check_Window(window);
         }
         #region Aanroep
         protected void Connect_Click1(object sender, EventArgs e)
