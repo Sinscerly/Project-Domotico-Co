@@ -19,6 +19,14 @@ namespace Webdashboard
 
         }
 
+        protected void BTNRegister_Click(object sender, EventArgs e)
+        {
+            
+        }
 
+        protected void BTNChangePass_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

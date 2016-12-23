@@ -71,9 +71,7 @@
     </div>
 
     <asp:Label ID="lbl_info" runat="server" Text="Label"></asp:Label>
-
-    <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="Txt_heater" ErrorMessage="Voer getal tussen de 12 en 35" MaximumValue="35" MinimumValue="12"></asp:RangeValidator>
-
+<asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="Txt_heater" ErrorMessage="Voer getal tussen de 12 en 35" MaximumValue="35" MinimumValue="12"></asp:RangeValidator>
 </asp:Content>
 
 
