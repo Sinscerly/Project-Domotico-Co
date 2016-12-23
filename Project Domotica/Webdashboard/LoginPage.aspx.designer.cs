@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Webdashboard
-{
-
-
-    public partial class LoginPage
-    {
-
+namespace Webdashboard {
+    
+    
+    public partial class LoginPage {
+        
         /// <summary>
         /// Login1 control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace Webdashboard
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Login Login1;
-
+        
         /// <summary>
         /// ChangePassword1 control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace Webdashboard
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ChangePassword ChangePassword1;
-
+        
         /// <summary>
         /// LoginStatus1 control.
         /// </summary>
@@ -40,5 +38,14 @@ namespace Webdashboard
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LoginStatus LoginStatus1;
+        
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
     }
 }

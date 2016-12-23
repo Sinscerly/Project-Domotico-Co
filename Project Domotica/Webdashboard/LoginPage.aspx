@@ -8,4 +8,5 @@
         <asp:ChangePassword ID="ChangePassword1" runat="server"></asp:ChangePassword>
         <asp:LoginStatus ID="LoginStatus1" runat="server" />
 
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
 </asp:Content>
