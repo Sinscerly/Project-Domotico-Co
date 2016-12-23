@@ -43,5 +43,10 @@ namespace Webdashboard
         {
             MultiView1.SetActiveView(Login);
         }
+
+        protected void CreateUserWizard1_CreatedUser(object sender, EventArgs e)
+        {
+
+        }
     }
 }
