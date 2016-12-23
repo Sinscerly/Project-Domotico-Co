@@ -6,6 +6,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
+        <asp:Button ID="BackToApps" runat="server" CssClass="Button" OnClick="BackToApps_Click" Text="Back To Apps" />
         <asp:Button ID="Connect" runat="server" Text="Refresh" OnClick="Connect_Click1" CssClass="Button" />
         <asp:Label ID="Connect_info" runat="server" Text=""></asp:Label> <br />
     </div>

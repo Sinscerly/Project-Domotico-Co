@@ -87,5 +87,12 @@ namespace Webdashboard
             conn.Close();
         }
         #endregion
+
+       
+
+        protected void BackToApps_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("FirstPage.aspx");
+        }
     }
 }
