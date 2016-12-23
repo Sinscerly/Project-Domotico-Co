@@ -6,7 +6,8 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
-        <asp:Button ID="Connect" runat="server" Text="Refresh" OnClick="Connect_Click1" />
+        <asp:Button ID="BackToApps" runat="server" CssClass="Button" OnClick="BackToApps_Click" Text="Back To Apps" />
+        <asp:Button ID="Connect" runat="server" Text="Refresh" OnClick="Connect_Click1" CssClass="Button" />
         <asp:Label ID="Connect_info" runat="server" Text=""></asp:Label> <br />
     </div>
 
@@ -14,8 +15,8 @@
         <div class="Slider_Button">
             Lamp 1
             <label class="switch">
-            <asp:CheckBox ID="cbtn_Lamp1" runat="server" OnCheckedChanged="Toggle_Lamp" AutoPostBack="True" />
-            <div class="slider round"></div>
+				<asp:CheckBox ID="cbtn_Lamp1" runat="server" OnCheckedChanged="Toggle_Lamp" AutoPostBack="True" />
+				<div class="slider round"></div>
             </label>
         </div>
         <div class="Slider_Button">
@@ -67,7 +68,7 @@
         <br />
     <div>
         <asp:TextBox ID="Txt_heater" runat="server"></asp:TextBox>
-        <asp:Button ID="btn_heater" runat="server" Text="Button" OnClick="Change_Heater" />
+        <asp:Button ID="btn_heater" runat="server" Text="Button" OnClick="Change_Heater" CssClass="Button" Width="78px" />
     </div>
 
     <asp:Label ID="lbl_info" runat="server"></asp:Label>

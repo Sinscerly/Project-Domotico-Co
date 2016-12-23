@@ -48,13 +48,15 @@ namespace Webdashboard
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Button1.PostBackUrl = "Games/HitTheDot.aspx";
+            Response.Redirect("Games/HitTheDot.aspx");
+            
                  
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            Button2.PostBackUrl = "Games/CountryGuessing.aspx";
+            Response.Redirect("Games/CountryGuessing.aspx");
+          
         }
 
         protected void Button3_Click(object sender, EventArgs e)
@@ -119,15 +121,18 @@ namespace Webdashboard
             bool Connection_Succesfull = false;
             if (Global.client != null)
             {
-                Connection_Succesfull = true;
-                lblError.Text = "Connection already open";
+                conn.Close();
             }
-            else
+            if(Global.client == null)
             {
                 conn.Connect();
                 if (Global.client != null)
                 {
                     Connection_Succesfull = true;
+                }
+                else
+                {
+                    Connection_Succesfull = false;
                 }
                 conn.Close();
             }
@@ -170,7 +175,8 @@ namespace Webdashboard
 
         protected void CalcButton_Click(object sender, EventArgs e)
         {
-            CalcButton.PostBackUrl = "Tools/calc.aspx";
+            Response.Redirect("Tools/calc.aspx");
+            
         }
 
         protected void InhollandButton_Click(object sender, EventArgs e)
