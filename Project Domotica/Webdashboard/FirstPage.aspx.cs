@@ -18,8 +18,8 @@ namespace Webdashboard
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
+         
+        } 
 
         protected void ButtonGames_Click(object sender, EventArgs e)
         {
@@ -35,6 +35,14 @@ namespace Webdashboard
                 Button1.Visible = false;
                 Button2.Visible = false;
                 Button3.Visible = false;
+            }
+
+            if (Button1.Visible == true)
+            {
+                YoutubeButton.Visible = false;
+                NetflixButton.Visible = false;
+                CalcButton.Visible = false;
+                InhollandButton.Visible = false;
             }
         }
 
@@ -74,6 +82,15 @@ namespace Webdashboard
                 YoutubeButton.Visible = false;
                 NetflixButton.Visible = false;
                 
+            }
+
+            if (YoutubeButton.Visible == true)
+            {
+                Button1.Visible = false;
+                Button2.Visible = false;
+                Button3.Visible = false;
+                CalcButton.Visible = false;
+                InhollandButton.Visible = false;
             }
         }
 
@@ -137,6 +154,16 @@ namespace Webdashboard
                 CalcButton.Visible = false;
                 InhollandButton.Visible = false;
 
+            }
+
+            if (CalcButton.Visible == true)
+
+            {
+                Button1.Visible = false;
+                Button2.Visible = false;
+                Button3.Visible = false;
+                YoutubeButton.Visible = false;
+                NetflixButton.Visible = false;
             }
         }
 

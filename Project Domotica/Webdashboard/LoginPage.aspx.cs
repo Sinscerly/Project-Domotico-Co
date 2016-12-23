@@ -33,7 +33,7 @@ namespace Webdashboard
 
             OleDbCommand cmd = new OleDbCommand();
             cmd.Connection = conn;
-            cmd.CommandText = "INSERT INTO GebruikersTabel (GebruikersNaam,Wachtwoord,Voornaam,Achternaam,Geboortedatum,Email) VALUES  ('" + txtUserName.Text + "', '" + txtPassword.Text + "', '" + txtFirstName.Text + "', '" + txtLastName.Text + "', #" + txtGeboorteD.Text + "#, '" + txtEmail.Text + "')";
+            cmd.CommandText = "INSERT INTO GebruikersTabel (GebruikersNaam,Wachtwoord,Voornaam,Achternaam,Geboortedatum,Email) VALUES  ('" + txtUserName.Text + "', '" +  txtPassword.Text + "', '" + txtFirstName.Text + "', '" + txtLastName.Text + "', #" + txtGeboorteD.Text + "#, '" + txtEmail.Text + "')";
 
 
             try
@@ -92,6 +92,27 @@ namespace Webdashboard
                 }
             }
             return cipherText;
+        }
+
+        protected void LoginButton_Click(object sender, EventArgs e)
+        {
+            OleDbConnection conn = new OleDbConnection();
+            conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; " +
+                "Data Source=|DataDirectory|DashboardDatabase.accdb";
+
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = "SELECT * FROM GebruikersTabel";
+
+
+            try
+            {
+                conn.Open();
+                OleDbDataReader reader = cmd.ExecuteReader();
+                reader.Close();
+            }
+            catch (Exception exc) { lblConnectionFeedback.Text = exc.Message; }
+            finally { conn.Close(); }
         }
     }
 }
