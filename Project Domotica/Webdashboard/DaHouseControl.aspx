@@ -14,8 +14,8 @@
         <div class="Slider_Button">
             Lamp 1
             <label class="switch">
-            <asp:CheckBox ID="cbtn_Lamp1" runat="server" OnCheckedChanged="Toggle_Lamp" AutoPostBack="True" />
-            <div class="slider round"></div>
+				<asp:CheckBox ID="cbtn_Lamp1" runat="server" OnCheckedChanged="Toggle_Lamp" AutoPostBack="True" />
+				<div class="slider round"></div>
             </label>
         </div>
         <div class="Slider_Button">

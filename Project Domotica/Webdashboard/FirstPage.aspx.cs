@@ -121,15 +121,18 @@ namespace Webdashboard
             bool Connection_Succesfull = false;
             if (Global.client != null)
             {
-                Connection_Succesfull = true;
-                lblError.Text = "Connection already open";
+                conn.Close();
             }
-            else
+            if(Global.client == null)
             {
                 conn.Connect();
                 if (Global.client != null)
                 {
                     Connection_Succesfull = true;
+                }
+                else
+                {
+                    Connection_Succesfull = false;
                 }
                 conn.Close();
             }
