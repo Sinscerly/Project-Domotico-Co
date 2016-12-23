@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DashboardMaster.Master" AutoEventWireup="true" CodeBehind="FirstPage.aspx.cs" Inherits="Webdashboard.FirstPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-   <link href="Opmaak.css" rel="stylesheet" type="text/css" />
+    <link href="Opmaak.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
@@ -15,7 +15,7 @@
 
                 <asp:Button ID="ToolsButton" runat="server" Height="44px" OnClick="Button4_Click1" Text="Tools" Width="74px" CssClass="Button" />
 
-            <asp:Button ID="DomoticaButton" runat="server" Height="44px" Text="Domotica" Width="71px" OnClick="Domotica_OnClick" />
+            <asp:Button ID="DomoticaButton" runat="server" Height="44px" Text="Domotica" Width="71px" OnClick="Domotica_OnClick" CssClass="Button" />
 
                 </p>
         </p>

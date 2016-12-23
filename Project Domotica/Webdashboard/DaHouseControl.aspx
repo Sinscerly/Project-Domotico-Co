@@ -6,7 +6,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
-        <asp:Button ID="Connect" runat="server" Text="Refresh" OnClick="Connect_Click1" />
+        <asp:Button ID="Connect" runat="server" Text="Refresh" OnClick="Connect_Click1" CssClass="Button" />
         <asp:Label ID="Connect_info" runat="server" Text=""></asp:Label> <br />
     </div>
 
@@ -67,7 +67,7 @@
         <br />
     <div>
         <asp:TextBox ID="Txt_heater" runat="server"></asp:TextBox>
-        <asp:Button ID="btn_heater" runat="server" Text="Button" OnClick="Change_Heater" />
+        <asp:Button ID="btn_heater" runat="server" Text="Button" OnClick="Change_Heater" CssClass="Button" Width="78px" />
     </div>
 
     <asp:Label ID="lbl_info" runat="server"></asp:Label>
