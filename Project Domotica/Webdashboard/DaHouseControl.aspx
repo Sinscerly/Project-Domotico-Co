@@ -11,35 +11,35 @@
     </div>
 
     <div>
-        <div class="Button">
+        <div class="Slider_Button">
             Lamp 1
             <label class="switch">
             <asp:CheckBox ID="cbtn_Lamp1" runat="server" OnCheckedChanged="Toggle_Lamp" AutoPostBack="True" />
             <div class="slider round"></div>
             </label>
         </div>
-        <div class="Button">
+        <div class="Slider_Button">
             Lamp 2
             <label class="switch">
             <asp:CheckBox ID="cbtn_Lamp2" runat="server" AutoPostBack="True" OnCheckedChanged="Toggle_Lamp" />
             <div class="slider round"></div>
             </label>
         </div>
-        <div class="Button">
+        <div class="Slider_Button">
             Lamp 3
             <label class="switch">
             <asp:CheckBox ID="cbtn_Lamp3" runat="server" AutoPostBack="True" OnCheckedChanged="Toggle_Lamp" />
             <div class="slider round"></div>
             </label>
         </div>
-        <div class="Button">
+        <div class="Slider_Button">
             Lamp 4
             <label class="switch">
             <asp:CheckBox ID="cbtn_Lamp4" runat="server" AutoPostBack="True" OnCheckedChanged="Toggle_Lamp" />
             <div class="slider round"></div>
             </label>
         </div>
-        <div class="Button">
+        <div class="Slider_Button">
             Lamp 5
             <label class="switch">
             <asp:CheckBox ID="cbtn_Lamp5" runat="server" AutoPostBack="True" OnCheckedChanged="Toggle_Lamp" />
@@ -49,14 +49,14 @@
     </div>
     <div>
         <br />
-        <div class="Button">
+        <div class="Slider_Button">
             Raam 1
             <label class="switch">
             <asp:CheckBox ID="cbtn_window1" runat="server" OnCheckedChanged="Toggle_Window" AutoPostBack="True" />
             <div class="slider round"></div>
             </label>
         </div>
-        <div class="Button">
+        <div class="Slider_Button">
             Raam 2
             <label class="switch">
             <asp:CheckBox ID="cbtn_window2" runat="server" OnCheckedChanged="Toggle_Window" AutoPostBack="True" />
