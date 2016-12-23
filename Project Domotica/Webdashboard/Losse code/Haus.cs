@@ -21,7 +21,7 @@ namespace Webdashboard
             string responseData = string.Empty, y = string.Empty;
             for (int i = 0; i < x.Length; i++)
             {
-                y = "Lamp " +i.ToString();
+                y = "Lamp " +i.ToString() + "\n";
                 Send_Command(y, out responseData);
                 // if lamp on, checkbox == true
                 x[i].Checked = responseData.Contains("On");
@@ -32,10 +32,10 @@ namespace Webdashboard
             string responseData = string.Empty, y = string.Empty;
             for (int i = 0; i < x.Length; i++)
             {
-                y = "Window " + i.ToString();
+                y = "Window " + i.ToString() + "\n";
                 Send_Command(y , out responseData);
                 // if lamp on, checkbox == true
-                x[i].Checked = responseData.Contains("On");
+                x[i].Checked = responseData.Contains("Close");
             }
         }
         private void Send_Command(string x, out string ResponseData)
@@ -44,10 +44,10 @@ namespace Webdashboard
             NetworkStream stream = Global.client.GetStream();
             stream.Write(data, 0, data.Length);
 
-            data = new byte[2048];
+            data = new byte[1024];
             ResponseData = string.Empty;
-            int bytes = stream.Read(data, 0, data.Length);
-            ResponseData = Encoding.ASCII.GetString(data, 0, bytes);
+            Int32 bytes = stream.Read(data, 0, data.Length);
+            ResponseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
         }
         public void LampWindow_Command(string x, string y, string z)
         {
