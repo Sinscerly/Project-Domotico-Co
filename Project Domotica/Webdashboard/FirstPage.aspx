@@ -1,21 +1,21 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DashboardMaster.Master" AutoEventWireup="true" CodeBehind="FirstPage.aspx.cs" Inherits="Webdashboard.FirstPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="Opmaak.css" rel="stylesheet" type="text/css" />
+   <link href="Opmaak.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
-    <p>
+    <p> 
         
         &nbsp;<p>
         
-        <strong>Wat wilt u doen?</strong><p>
+        <strong>What would you like to do?</strong><p>
             <asp:Button ID="ButtonGames" runat="server" Height="43px" OnClick="ButtonGames_Click"  Text="Games" Width="86px" CssClass="Button" />
          
             <asp:Button ID="ButtonEntertainment" runat="server" Height="43px" Text="Entertainment" OnClick="ButtonEntertainment_Click" />
 
-            <asp:Button ID="DomoticaButton" runat="server" Height="44px" Text="Domotica" Width="71px" OnClick="ButtonZorg_Click" />
-
                 <asp:Button ID="ToolsButton" runat="server" Height="44px" OnClick="Button4_Click1" Text="Tools" Width="74px" />
+
+            <asp:Button ID="DomoticaButton" runat="server" Height="44px" Text="Domotica" Width="71px" OnClick="ButtonZorg_Click" />
 
                 </p>
         </p>
@@ -31,7 +31,7 @@
 
                 </p>
         <p>
-            <asp:Button ID="CalcButton" runat="server" Height="29px" OnClick="CalcButton_Click" Text="Rekenmachine" Visible="False" Width="135px" />
+            <asp:Button ID="CalcButton" runat="server" Height="29px" OnClick="CalcButton_Click" Text="Calculator" Visible="False" Width="135px" />
             <asp:Button ID="InhollandButton" runat="server" Height="30px" OnClick="InhollandButton_Click" Text="Email Inholland" Visible="False" Width="120px" />
     </p>
         <p>

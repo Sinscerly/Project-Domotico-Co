@@ -31,15 +31,6 @@ namespace Webdashboard {
         protected global::System.Web.UI.WebControls.Button ButtonEntertainment;
         
         /// <summary>
-        /// DomoticaButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button DomoticaButton;
-        
-        /// <summary>
         /// ToolsButton control.
         /// </summary>
         /// <remarks>
@@ -47,6 +38,15 @@ namespace Webdashboard {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ToolsButton;
+        
+        /// <summary>
+        /// DomoticaButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button DomoticaButton;
         
         /// <summary>
         /// Button1 control.
