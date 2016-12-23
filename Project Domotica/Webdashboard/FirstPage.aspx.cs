@@ -113,31 +113,32 @@ namespace Webdashboard
             
         }
 
-        protected void ButtonZorg_Click(object sender, EventArgs e)
+        protected void Domotica_OnClick(object sender, EventArgs e)
         {
-
+            Connection conn = new Connection();
+            bool Connection_Succesfull = false;
             if (Global.client != null)
             {
+                Connection_Succesfull = true;
                 lblError.Text = "Connection already open";
             }
             else
             {
-                try
+                conn.Connect();
+                if (Global.client != null)
                 {
-                    Global.client = new TcpClient();
-                    Global.client.Connect("127.0.0.1", 11000);
-                   // lblError.Text = "Connection succesfull";
-
+                    Connection_Succesfull = true;
                 }
-                catch (Exception ex)
-                {
-                    Global.client = null;
-                    lblError.Text = "Connection Failed, Open DaHaus First";
-                }
+                conn.Close();
             }
-
-
-            DomoticaButton.PostBackUrl = "DaHouseControl.aspx";
+            if (Connection_Succesfull == true)
+            {
+                Response.Redirect("DaHouseControl.aspx");
+            }
+            else
+            {
+                lblError.Text = "You need to open DaHaus first!";
+            }
         }
 
         protected void Button4_Click1(object sender, EventArgs e)
