@@ -113,7 +113,7 @@ namespace CustomMembership
 
             // Initialize the abstract base class.
             base.Initialize(name, config);
-            
+
             applicationName = GetConfigValue(config["applicationName"], System.Web.Hosting.HostingEnvironment.ApplicationVirtualPath);
             passwordAttemptWindow = Convert.ToInt32(GetConfigValue(config["passwordAttemptWindow"], "10"));
             minRequiredNonAlphanumericCharacters = Convert.ToInt32(GetConfigValue(config["minRequiredNonAlphanumericCharacters"], "0"));
@@ -231,7 +231,7 @@ namespace CustomMembership
 
             ValidatePasswordEventArgs args = new ValidatePasswordEventArgs(username, password, true);
             OnValidatingPassword(args);
-            
+
             if (args.Cancel || (password.Length < minRequiredPasswordLength))
             {
                 status = MembershipCreateStatus.InvalidPassword;
@@ -271,7 +271,7 @@ namespace CustomMembership
                         status = MembershipCreateStatus.UserRejected;
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     string bok = ex.Message;
                     status = MembershipCreateStatus.ProviderError;
@@ -280,7 +280,7 @@ namespace CustomMembership
                 {
                     conn.Close();
                 }
-                
+
                 return GetUser(username, false);
             }
             else
@@ -318,7 +318,7 @@ namespace CustomMembership
                     // 'AccessOleDbRoleProvider' is used, i.e. if the
                     // 'usersinroles' table exists...
                     string[] restrictionValues = new string[4] { null, null, null, "TABLE" };
-                    bool tblExists = false; 
+                    bool tblExists = false;
                     DataTable schemaInformation = conn.GetSchema("Tables", restrictionValues);
                     foreach (DataRow row in schemaInformation.Rows)
                     {
@@ -479,7 +479,7 @@ namespace CustomMembership
 
             return users;
         }
-        
+
         public override MembershipUserCollection GetAllUsers(int pageIndex, int pageSize, out int totalRecords)
         {
             // Needed for displaying all users in WAT
@@ -565,7 +565,7 @@ namespace CustomMembership
                 if (reader.HasRows)
                 {
                     reader.Read();
-                    u = new MembershipUser( this.Name, // ProviderBase.Name is the friendly name used to refer to the Provider during configuration
+                    u = new MembershipUser(this.Name, // ProviderBase.Name is the friendly name used to refer to the Provider during configuration
                                             reader.GetString(1), // username from DB
                                             reader.GetValue(0), // id from DB
                                             reader.GetString(2), //emailaddress from DB
@@ -810,7 +810,7 @@ namespace CustomMembership
         //
         // Password encryption & utility functions
         //
-        
+
         // Compares password values based on Hashing (salt included in correctHash)
         // This method is used directly by public methods of this MembershipProvider
         private bool CheckPassword(string password, string correctHash)
@@ -824,7 +824,7 @@ namespace CustomMembership
             string passHash = Sha256Hex(salt + password);
             return string.Compare(validHash, passHash) == 0;
         }
-        
+
         // Returns the hashed password as a 128 character hex string
         // This method is used directly by public methods of this MembershipProvider
         private string HashPassword(string password)
