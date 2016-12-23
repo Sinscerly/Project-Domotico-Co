@@ -21,7 +21,12 @@ namespace Webdashboard
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            bool Validation_Succesfull = false;
+            if(Global.client == null)
+            {
+
+            }
+            if (!IsPostBack && Validation_Succesfull == false)
             {
                 if (conn.Validation() == false)
                 {
