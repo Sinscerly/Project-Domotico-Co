@@ -70,8 +70,9 @@
         <asp:Button ID="btn_heater" runat="server" Text="Button" OnClick="Change_Heater" />
     </div>
 
-    <asp:Label ID="lbl_info" runat="server" Text="Label"></asp:Label>
-<asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="Txt_heater" ErrorMessage="Voer getal tussen de 12 en 35" MaximumValue="35" MinimumValue="12"></asp:RangeValidator>
+    <asp:Label ID="lbl_info" runat="server"></asp:Label>
+    <br />
+<asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="Txt_heater" ErrorMessage="Use a number between 12 and 35" MaximumValue="35" MinimumValue="12"></asp:RangeValidator>
 </asp:Content>
 
 
