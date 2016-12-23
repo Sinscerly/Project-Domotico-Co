@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Webdashboard.Losse_code
 {
-    public class CheckLogin
+    public class Class1
     {
     }
 }
