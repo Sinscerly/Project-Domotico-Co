@@ -149,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccessOleDbMembershipProvider.cs" />
+    <Compile Include="Losse code\CheckLogin.cs" />
     <Compile Include="Losse code\Connection.cs" />
     <Compile Include="DaHouseControl.aspx.cs">
       <DependentUpon>DaHouseControl.aspx</DependentUpon>
