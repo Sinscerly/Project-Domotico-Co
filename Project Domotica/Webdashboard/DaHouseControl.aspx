@@ -71,7 +71,6 @@
     </div>
 
     <asp:Label ID="lbl_info" runat="server" Text="Label"></asp:Label>
-
 </asp:Content>
 
 
