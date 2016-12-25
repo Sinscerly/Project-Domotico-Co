@@ -161,6 +161,9 @@ body {
 .Window_Group {
 
 } 
+.Heater_Group {
+    margin-top: 15px;
+}
 
 .Slider_Button {
 

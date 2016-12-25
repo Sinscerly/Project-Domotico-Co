@@ -12,7 +12,8 @@
         <asp:Label ID="Connect_info" runat="server" Text=""></asp:Label> <br />
     </div>
     <br />
-    <div dlass="Main">
+    <div class="Main">
+            <div>
         <div class="Lamp_Group">
             <div class="Slider_Button">
                 Lamp 1
@@ -67,8 +68,9 @@
                 </label>
             </div>
         </div>
+            </div>
         <br />
-        <div>
+        <div class="Heater_Group">
             <asp:Panel ID="Panel1" runat="server" DefaultButton="btn_heater">
                 <asp:TextBox ID="Txt_heater" runat="server"></asp:TextBox>
                 <asp:Button ID="btn_heater" runat="server" Text="Button" OnClick="Change_Heater" CssClass="Button" Width="78px" /> 
