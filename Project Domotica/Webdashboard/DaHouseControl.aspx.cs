@@ -18,25 +18,32 @@ namespace Webdashboard
     {
         Connection conn = new Connection();
         Haus home = new Haus();
-        Global = new Global();
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Controlling if DaHaus is turned on.
             bool Validation_Succesfull = false;
             if (Global.client == null)
             {
                 conn.Connect();
             }
-            Validation_Succesfull = conn.Validation();
-            conn.Close();
-            if (!IsPostBack && Validation_Succesfull == true)
+            // Validation_Succesfull = conn.Validation();
+            if (Validation_Succesfull = conn.Validation() == true)
             {
-                Connection_Controll();
+                conn.Close();
             }
             else
             {
-
-                // checkbox clicked 
+                ScriptManager.RegisterStartupScript(
+                    this,
+                    this.GetType(),
+                    "alert",
+                    "alert('DaHaus Crasht or isn't opened, You'll be redirected to the Homepage'); window.open('FirstPage.aspx');", true);
+            }
+            // Getting all the possible information from DaHaus
+            if (!IsPostBack && Validation_Succesfull == true)
+            {
+                Connection_Controll();
             }
         }
         protected void Connection_Controll()

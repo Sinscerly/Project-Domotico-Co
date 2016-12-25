@@ -18,6 +18,7 @@ namespace Webdashboard
     {
         public void Connect()
         {
+            // Following the try-catch-finally way, but the finally you can find under the Close() methode.
             try
             {
                 Global.client = new TcpClient();
@@ -32,26 +33,19 @@ namespace Webdashboard
         {
             if (Global.client != null)
             {
+                // Closing connection on the program for this thread.
                 String sendString = "exit " + "\n";
                 byte[] data = Encoding.ASCII.GetBytes(sendString);
                 NetworkStream stream = Global.client.GetStream();
                 stream.Write(data, 0, data.Length);
 
+                // Setting Global.client to null, so that the systems knows that the connection is closed.
                 Global.client = null;
             }
         }
         public bool Validation()
         {
-            //if (Global.client != null)
-            //{
-            //    bool connectionvalidator = true;
-            //    return connectionvalidator;
-            //}
-            //else
-            //{
-            //    bool connectionvalidator = false;
-            //    return connectionvalidator;
-            //}
+            // If there is a Connection, boolean = True. Else False
             return Global.client != null;
         }
     }

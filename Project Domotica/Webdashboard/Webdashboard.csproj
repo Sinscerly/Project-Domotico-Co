@@ -124,7 +124,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Games\CountryGuessing.aspx" />
     <Content Include="Games\HitTheDot.aspx" />
-    <Content Include="Games\index.html" />
+    <Content Include="Games\2048.html" />
     <Content Include="Global.asax" />
     <Content Include="Images\Background.jpg" />
     <Content Include="Images\FirstPageButtons.png" />
