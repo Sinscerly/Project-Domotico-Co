@@ -20,9 +20,9 @@
                 </p>
         </p>
         <p>
-            <asp:Button ID="Hit_The_Dot" runat="server" Height="38px" OnClick="Button1_Click" Text="Hit the dot" Visible="False" CssClass="Button" PostBackUrl="~/Games/HitTheDot.aspx" />
-            <asp:Button ID="Country_Guessing" runat="server" Height="38px" OnClick="Button2_Click" Text="Country Guessing" Visible="False" CssClass="Button" PostBackUrl="~/Games/CountryGuessing.aspx" />
-            <asp:Button ID="G2048" runat="server" Height="38px" OnClick="Button3_Click" Text="2048" Width="61px" Visible="False" CssClass="Button" PostBackUrl="~/Games/2048.html" />
+            <asp:Button ID="Hit_The_Dot" runat="server" Height="38px" Text="Hit the dot" Visible="False" CssClass="Button" PostBackUrl="~/Games/HitTheDot.aspx" />
+            <asp:Button ID="Country_Guessing" runat="server" Height="38px" Text="Country Guessing" Visible="False" CssClass="Button" PostBackUrl="~/Games/CountryGuessing.aspx" />
+            <asp:Button ID="G2048" runat="server" Height="38px" Text="2048" Width="61px" Visible="False" CssClass="Button" PostBackUrl="~/Games/2048.html" />
 
                 </p>
         <p>

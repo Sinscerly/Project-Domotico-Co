@@ -129,7 +129,7 @@ namespace Webdashboard
             {
                 Hit_The_Dot.Visible = false;
                 Country_Guessing.Visible = false;
-                2048.Visible = false;
+                G2048.Visible = false;
                 YoutubeButton.Visible = false;
                 NetflixButton.Visible = false;
             }

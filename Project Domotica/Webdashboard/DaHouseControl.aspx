@@ -69,12 +69,14 @@
         </div>
         <br />
         <div>
-            <asp:TextBox ID="Txt_heater" runat="server"></asp:TextBox>
-            <asp:Button ID="btn_heater" runat="server" Text="Button" OnClick="Change_Heater" CssClass="Button" Width="78px" /> 
-            <br />
-            <asp:Label ID="lbl_info" runat="server"></asp:Label> 
-            <br />
-            <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="Txt_heater" ErrorMessage="Use a number between 12 and 35" MaximumValue="35" MinimumValue="12"></asp:RangeValidator>
+            <asp:Panel ID="Panel1" runat="server" DefaultButton="btn_heater">
+                <asp:TextBox ID="Txt_heater" runat="server"></asp:TextBox>
+                <asp:Button ID="btn_heater" runat="server" Text="Button" OnClick="Change_Heater" CssClass="Button" Width="78px" /> 
+                <br />
+                <asp:Label ID="lbl_info" runat="server"></asp:Label> 
+                <br />
+                <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="Txt_heater" ErrorMessage="Use a number between 12 and 35" MaximumValue="35" MinimumValue="12"></asp:RangeValidator>
+            </asp:Panel>
         </div>
         <br />
     </div>
