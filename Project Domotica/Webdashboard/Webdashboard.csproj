@@ -129,7 +129,7 @@
     <Content Include="Images\FirstPageButtons.png" />
     <Content Include="LoginPage.aspx" />
     <Content Include="Opmaak.css" />
-    <Content Include="FirstPage.aspx" />
+    <Content Include="restricted\FirstPage.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -165,11 +165,11 @@
     <Compile Include="DashboardMaster.Master.designer.cs">
       <DependentUpon>DashboardMaster.Master</DependentUpon>
     </Compile>
-    <Compile Include="FirstPage.aspx.cs">
+    <Compile Include="restricted\FirstPage.aspx.cs">
       <DependentUpon>FirstPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FirstPage.aspx.designer.cs">
+    <Compile Include="restricted\FirstPage.aspx.designer.cs">
       <DependentUpon>FirstPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Games\CountryGuessing.aspx.cs">
