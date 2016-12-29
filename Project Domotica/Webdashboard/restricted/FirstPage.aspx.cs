@@ -23,21 +23,21 @@ namespace Webdashboard
 
         protected void ButtonGames_Click(object sender, EventArgs e)
         {
-            if (Button1.Visible == false)
+            if (Hit_The_Dot.Visible == false)
             {
-                Button1.Visible = true;
-                Button2.Visible = true;
-                Button3.Visible = true;
+                Hit_The_Dot.Visible = true;
+                Country_Guessing.Visible = true;
+                G2048.Visible = true;
                 
             }
             else
             {
-                Button1.Visible = false;
-                Button2.Visible = false;
-                Button3.Visible = false;
+                Hit_The_Dot.Visible = false;
+                Country_Guessing.Visible = false;
+                G2048.Visible = false;
             }
 
-            if (Button1.Visible == true)
+            if (Hit_The_Dot.Visible == true)
             {
                 YoutubeButton.Visible = false;
                 NetflixButton.Visible = false;
@@ -46,51 +46,23 @@ namespace Webdashboard
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Games/HitTheDot.aspx");
-            
-                 
-        }
-
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Games/CountryGuessing.aspx");
-          
-        }
-
-        protected void Button3_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                System.Diagnostics.Process.Start( "http://gabrielecirulli.github.io/2048/");
-            }
-            catch (Exception exc) { lblError.Text = exc.Message; }
-
-           
-        }
-
         protected void ButtonEntertainment_Click(object sender, EventArgs e)
         {
             if (YoutubeButton.Visible == false)
             {
                 YoutubeButton.Visible = true;
                 NetflixButton.Visible = true;
-                
-
             }
             else
             {
                 YoutubeButton.Visible = false;
-                NetflixButton.Visible = false;
-                
+                NetflixButton.Visible = false;    
             }
-
             if (YoutubeButton.Visible == true)
             {
-                Button1.Visible = false;
-                Button2.Visible = false;
-                Button3.Visible = false;
+                Hit_The_Dot.Visible = false;
+                Country_Guessing.Visible = false;
+                G2048.Visible = false;
                 CalcButton.Visible = false;
                 InhollandButton.Visible = false;
             }
@@ -112,28 +84,18 @@ namespace Webdashboard
                 System.Diagnostics.Process.Start("https://www.netflix.com/nl/");
             }
             catch (Exception exc) { lblError.Text = exc.Message; }
-            
         }
 
         protected void Domotica_OnClick(object sender, EventArgs e)
         {
             Connection conn = new Connection();
             bool Connection_Succesfull = false;
-            if (Global.client != null)
-            {
-                conn.Close();
-            }
-            if(Global.client == null)
+            if (Global.client == null)
             {
                 conn.Connect();
-                if (Global.client != null)
-                {
-                    Connection_Succesfull = true;
-                }
-                else
-                {
-                    Connection_Succesfull = false;
-                }
+            }
+            if (Connection_Succesfull = conn.Validation() == true)
+            {
                 conn.Close();
             }
             if (Connection_Succesfull == true)
@@ -165,9 +127,9 @@ namespace Webdashboard
             if (CalcButton.Visible == true)
 
             {
-                Button1.Visible = false;
-                Button2.Visible = false;
-                Button3.Visible = false;
+                Hit_The_Dot.Visible = false;
+                Country_Guessing.Visible = false;
+                G2048.Visible = false;
                 YoutubeButton.Visible = false;
                 NetflixButton.Visible = false;
             }

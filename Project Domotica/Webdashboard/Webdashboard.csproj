@@ -124,9 +124,20 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Games\CountryGuessing.aspx" />
     <Content Include="Games\HitTheDot.aspx" />
+    <Content Include="Games\2048.html" />
     <Content Include="Global.asax" />
     <Content Include="Images\Background.jpg" />
     <Content Include="Images\FirstPageButtons.png" />
+    <Content Include="Games\js\animframe_polyfill.js" />
+    <Content Include="Games\js\application.js" />
+    <Content Include="Games\js\bind_polyfill.js" />
+    <Content Include="Games\js\classlist_polyfill.js" />
+    <Content Include="Games\js\game_manager.js" />
+    <Content Include="Games\js\grid.js" />
+    <Content Include="Games\js\html_actuator.js" />
+    <Content Include="Games\js\keyboard_input_manager.js" />
+    <Content Include="Games\js\local_storage_manager.js" />
+    <Content Include="Games\js\tile.js" />
     <Content Include="LoginPage.aspx" />
     <Content Include="Opmaak.css" />
     <Content Include="restricted\FirstPage.aspx" />
@@ -144,6 +155,11 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Games\style\fonts\clear-sans.css" />
+    <Content Include="Games\style\fonts\ClearSans-Bold-webfont.svg" />
+    <Content Include="Games\style\fonts\ClearSans-Light-webfont.svg" />
+    <Content Include="Games\style\fonts\ClearSans-Regular-webfont.svg" />
+    <Content Include="Games\style\main.css" />
     <Content Include="Tools\calc.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -213,6 +229,14 @@
     </Content>
     <Content Include="DashboardMaster.Master" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Games\style\helpers.scss" />
+    <Content Include="Games\style\main.scss" />
+    <Content Include="Games\style\fonts\ClearSans-Bold-webfont.eot" />
+    <Content Include="Games\style\fonts\ClearSans-Bold-webfont.woff" />
+    <Content Include="Games\style\fonts\ClearSans-Light-webfont.eot" />
+    <Content Include="Games\style\fonts\ClearSans-Light-webfont.woff" />
+    <Content Include="Games\style\fonts\ClearSans-Regular-webfont.eot" />
+    <Content Include="Games\style\fonts\ClearSans-Regular-webfont.woff" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

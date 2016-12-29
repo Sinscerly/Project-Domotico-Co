@@ -49,31 +49,31 @@ namespace Webdashboard {
         protected global::System.Web.UI.WebControls.Button DomoticaButton;
         
         /// <summary>
-        /// Button1 control.
+        /// Hit_The_Dot control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button Hit_The_Dot;
         
         /// <summary>
-        /// Button2 control.
+        /// Country_Guessing control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button Country_Guessing;
         
         /// <summary>
-        /// Button3 control.
+        /// G2048 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.Button G2048;
         
         /// <summary>
         /// YoutubeButton control.
