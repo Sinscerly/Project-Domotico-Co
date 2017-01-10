@@ -81,6 +81,9 @@
             </asp:Panel>
         </div>
         <br />
+        <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/212023/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&median=60&results=5000&title=Temperatuur&type=line&yaxismax=27&yaxismin=15"></iframe>
+
+        <br />
     </div>
 </asp:Content>
 

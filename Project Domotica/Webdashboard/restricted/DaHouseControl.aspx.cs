@@ -33,7 +33,7 @@ namespace Webdashboard
             }
             else
             {
-                Response.Redirect("restricted/FirstPage.aspx");
+                Response.Redirect("FirstPage.aspx");
             }
             // Getting all the possible information from DaHaus
             if (!IsPostBack && conn.Validation() == true)
