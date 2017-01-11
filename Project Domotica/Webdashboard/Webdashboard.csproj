@@ -163,7 +163,7 @@
     <Content Include="Games\style\fonts\ClearSans-Light-webfont.svg" />
     <Content Include="Games\style\fonts\ClearSans-Regular-webfont.svg" />
     <Content Include="Games\style\main.css" />
-    <Content Include="Tools\calc.aspx" />
+    <Content Include="restricted\Tools\calc.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -217,11 +217,11 @@
     </Compile>
     <Compile Include="Losse code\Haus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tools\calc.aspx.cs">
+    <Compile Include="restricted\Tools\calc.aspx.cs">
       <DependentUpon>calc.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Tools\calc.aspx.designer.cs">
+    <Compile Include="restricted\Tools\calc.aspx.designer.cs">
       <DependentUpon>calc.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
