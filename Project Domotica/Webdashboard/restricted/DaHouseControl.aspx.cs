@@ -68,7 +68,7 @@ namespace Webdashboard
         {
                 CheckBox[] Windows = { cbtn_window1, cbtn_window2 };
                 int i = Windows.ToList().IndexOf((CheckBox)sender);
-                home.LampWindow_Command("window", i.ToString(), Windows[i].Checked == true ? "close" : "open");
+                home.LampWindow_Command("window", i.ToString(), Windows[i].Checked == true ? "close " : "open ");
         }
         protected void Change_Heater(object sender, EventArgs e)
         {
