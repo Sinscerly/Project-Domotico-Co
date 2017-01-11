@@ -152,5 +152,15 @@ namespace Webdashboard
 
 
         }
+
+        protected void G2048_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void Hit_The_Dot_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
