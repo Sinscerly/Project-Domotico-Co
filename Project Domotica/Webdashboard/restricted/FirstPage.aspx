@@ -31,7 +31,7 @@
 
                 </p>
         <p>
-            <asp:Button ID="CalcButton" runat="server" Height="29px" OnClick="CalcButton_Click" Text="Calculator" Visible="False" Width="135px" CssClass="Button" PostBackUrl="~/Tools/calc.aspx" />
+            <asp:Button ID="CalcButton" runat="server" Height="29px" OnClick="CalcButton_Click" Text="Calculator" Visible="False" Width="135px" CssClass="Button" PostBackUrl="~/restricted/Tools/calc.aspx" />
             <asp:Button ID="InhollandButton" runat="server" Height="30px" OnClick="InhollandButton_Click" Text="Email Inholland" Visible="False" Width="120px" CssClass="Button" />
     </p>
         <p>
