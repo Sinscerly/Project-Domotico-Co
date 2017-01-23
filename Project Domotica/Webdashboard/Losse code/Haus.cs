@@ -19,61 +19,66 @@ namespace Webdashboard
         Connection conn = new Connection();
         public void Check_Lamp(CheckBox[] x)
         {
+            //Get's the information from all lamps
             string responseData = string.Empty, y = string.Empty;
             for (int i = 0; i < x.Length; i++)
             {
                 y = "Lamp " + i.ToString() + "\n";
                 Send_Command(y, out responseData);
-                // if lamp on, checkbox == true
+                // if lamp == On => checkbox == true
                 x[i].Checked = responseData.Contains("On");
             }
         }
         public void Check_Window(CheckBox[] x)
         {
+            //Get's the information from all windows
             string responseData = string.Empty, y = string.Empty;
             for (int i = 0; i < x.Length; i++)
             {
                 y = "Window " + i.ToString() + "\n";
                 Send_Command(y , out responseData);
-                // if lamp on, checkbox == true
+                // if window == Close => checkbox == true
                 x[i].Checked = responseData.Contains("Close");
             }
         }
-        private void Send_Command(string x, out string ResponseData)
-        {
-
-            ResponseData = string.Empty;
-            //conn.Connect();
-            if (conn.Validation() == true)
-            {
-                byte[] data = Encoding.ASCII.GetBytes(x);
-                NetworkStream stream = Global.client.GetStream();
-                stream.Write(data, 0, data.Length);
-
-                data = new byte[1024];
-                ResponseData = string.Empty;
-                Int32 bytes = stream.Read(data, 0, data.Length);
-                ResponseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
-
-            }
-            //conn.Close();
-        }
-        public void LampWindow_Command(string x, string y, string z)
-        {
-            string ResponseData = string.Empty;
-            Send_Command(x + " " + y + " " + z + "\n", out ResponseData);
-        }
-        public string heater(string x)
-        {
-            string ResponseData = string.Empty;
-            Send_Command("heater " + x + "\n", out ResponseData);
-            return ResponseData;
-        }
         public string heater_Status(string x)
         {
+            //Get's the information from the heater
             string ResponseData = string.Empty;
             Send_Command("heater \n", out ResponseData);
             return ResponseData;
         }
+        private void Send_Command(string x, out string ResponseData)
+        {
+            ResponseData = string.Empty;
+            if (conn.Validation() == true)
+            {
+                //Send the data to DaHaus
+                byte[] data = Encoding.ASCII.GetBytes(x);
+                NetworkStream stream = Global.client.GetStream();
+                stream.Write(data, 0, data.Length);
+                data = new byte[1024];
+                ResponseData = string.Empty;
+                //Read the data output from DaHaus
+                Int32 bytes = stream.Read(data, 0, data.Length);
+                ResponseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
+            }
+        }
+        public void LampWindow_Command(string X, string Y, string Z)
+        {
+            //Makes the command used to controll a lamp or window
+            string ResponseData = string.Empty;
+            //X is for what it is(lamp or window). Y is for the lamp's or window's number. Z is for the commando(On or Off, Close or Open).
+            Send_Command(X + " " + Y + " " + Z + "\n", out ResponseData);
+        }
+        public string heater(string X)
+        {
+            //Makes the command used to controll the heater
+            string ResponseData = string.Empty;
+            //X stands for the amount degrees it has to be on(a number between 12, 35).
+            Send_Command("heater " + X + "\n", out ResponseData);
+            return ResponseData;
+        }
+
     }
 }

@@ -21,6 +21,7 @@ namespace Webdashboard
             // Following the try-catch-finally way, but the finally you can find under the Close() methode.
             try
             {
+                //Making a new connection with DaHaus
                 Global.client = new TcpClient();
                 Global.client.Connect("127.0.0.1", 11000);
             }
