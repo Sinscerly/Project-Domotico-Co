@@ -103,6 +103,7 @@ namespace Webdashboard
             }
             else
             {
+                conn.Close();
                 lblError.Text = "You need to open DaHaus first!";
             }
         }

@@ -21,6 +21,7 @@ namespace Webdashboard
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            bool Connection = false;
             // Controlling if DaHaus is turned on.
             if (Global.client == null)
             {
@@ -29,6 +30,7 @@ namespace Webdashboard
             // Validation_Succesfull = conn.Validation();
             if (conn.Validation() == true)
             {
+                Connection = true;
                 conn.Close();
             }
             else
@@ -36,7 +38,7 @@ namespace Webdashboard
                 Response.Redirect("FirstPage.aspx");
             }
             // Getting all the possible information from DaHaus
-            if (!IsPostBack && conn.Validation() == true)
+            if (!IsPostBack && Connection == true)
             {
                 Connection_Controll();
             }
@@ -54,9 +56,7 @@ namespace Webdashboard
         
         protected void Connect_Click1(object sender, EventArgs e)
         {
-            conn.Connect();
             Connection_Controll();
-            conn.Close();
         }
         protected void Toggle_Lamp(object sender, EventArgs e)
         {
