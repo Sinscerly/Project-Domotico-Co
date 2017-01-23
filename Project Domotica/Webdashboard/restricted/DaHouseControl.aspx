@@ -73,7 +73,7 @@
         <div class="Heater_Group">
             <asp:Panel ID="Panel1" runat="server" DefaultButton="btn_heater">
                 <asp:TextBox ID="Txt_heater" runat="server"></asp:TextBox>
-                <asp:Button ID="btn_heater" runat="server" Text="Button" OnClick="Change_Heater" CssClass="Button" Width="78px" /> 
+                <asp:Button ID="btn_heater" runat="server" Text="Set heater" OnClick="Change_Heater" CssClass="Button" Width="78px" /> 
                 <br />
                 <asp:Label ID="lbl_info" runat="server"></asp:Label> 
                 <br />
