@@ -31,7 +31,7 @@ namespace Webdashboard
             if (conn.Validation() == true)
             {
                 Connection = true;
-                conn.Close();
+                //conn.Close();
             }
             else
             {
@@ -43,6 +43,14 @@ namespace Webdashboard
                 Connection_Controll();
             }
         }
+        protected void Page_LoadComplete()
+        {
+            if (Global.client != null)
+            {
+                conn.Close();
+            }
+        }
+
         protected void Connection_Controll()
         {
             string responseData = string.Empty;

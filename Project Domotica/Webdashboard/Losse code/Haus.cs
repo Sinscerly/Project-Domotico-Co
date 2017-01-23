@@ -22,7 +22,7 @@ namespace Webdashboard
             string responseData = string.Empty, y = string.Empty;
             for (int i = 0; i < x.Length; i++)
             {
-                y = "Lamp " +i.ToString() + "\n";
+                y = "Lamp " + i.ToString() + "\n";
                 Send_Command(y, out responseData);
                 // if lamp on, checkbox == true
                 x[i].Checked = responseData.Contains("On");
@@ -43,7 +43,7 @@ namespace Webdashboard
         {
 
             ResponseData = string.Empty;
-            conn.Connect();
+            //conn.Connect();
             if (conn.Validation() == true)
             {
                 byte[] data = Encoding.ASCII.GetBytes(x);
@@ -56,7 +56,7 @@ namespace Webdashboard
                 ResponseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
 
             }
-            conn.Close();
+            //conn.Close();
         }
         public void LampWindow_Command(string x, string y, string z)
         {
