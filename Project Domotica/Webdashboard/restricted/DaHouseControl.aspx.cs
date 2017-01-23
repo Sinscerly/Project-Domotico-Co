@@ -81,6 +81,7 @@ namespace Webdashboard
         protected void BackToApps_Click(object sender, EventArgs e)
         {
             Response.Redirect("FirstPage.aspx");
+            
         }
     }
 }
