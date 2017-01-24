@@ -49,5 +49,9 @@ namespace Webdashboard
 
         }
 
+        protected void btnDeleteUser_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
