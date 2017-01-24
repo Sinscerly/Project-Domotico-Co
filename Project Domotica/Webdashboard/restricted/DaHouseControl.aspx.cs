@@ -61,7 +61,10 @@ namespace Webdashboard
         #region Aanroep
         protected void Connect_Click1(object sender, EventArgs e)
         {
-            Connection_Controll();
+            if (conn.Validation() == true)
+            {
+                Connection_Controll();
+            }
         }
         protected void Toggle_Lamp(object sender, EventArgs e)
         {
