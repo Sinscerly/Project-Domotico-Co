@@ -180,4 +180,9 @@
         
         
         
+    <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
+    <asp:Button ID="btnDeleteUser" runat="server" CssClass="Button" Text="Delete User" />
+        
+        
+        
 </asp:Content>
