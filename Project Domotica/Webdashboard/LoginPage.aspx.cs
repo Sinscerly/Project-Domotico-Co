@@ -21,7 +21,7 @@ namespace Webdashboard
 
         protected void BTNRegister_Click(object sender, EventArgs e)
         {
-            
+            MultiView1.SetActiveView(Register);
         }
 
         protected void BTNChangePass_Click(object sender, EventArgs e)
@@ -52,6 +52,11 @@ namespace Webdashboard
         protected void btnDeleteUser_Click(object sender, EventArgs e)
         {
             
+        }
+
+        protected void LoginButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
