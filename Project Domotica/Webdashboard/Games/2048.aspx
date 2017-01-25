@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DashboardMaster.Master" AutoEventWireup="true" CodeBehind="2048.aspx.cs" Inherits="Webdashboard.Games._2048" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+    
     <!DOCTYPE html>
 <html>
 <head>

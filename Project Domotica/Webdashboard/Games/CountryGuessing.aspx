@@ -1,11 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DashboardMaster.Master" AutoEventWireup="true" CodeBehind="CountryGuessing.aspx.cs" Inherits="Webdashboard.Games.CountryGuessing" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-    <title></title>
-    <SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript"><!--
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DashboardMaster.Master" AutoEventWireup="true" CodeBehind="CountryGuessing.aspx.cs" Inherits="Webdashboard.Games.CountryGuessing" StyleSheetTheme="" %><asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+     
+    <HEAD>
+ 
+<!-- This script and many more are available free online at -->
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+<!-- Original:  ShuvoRim  (shuvorim@hotmail.com) -->
+<!-- Web Site:  http://www.shuvorim.tk -->
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript"><!--
  
 /*
  * Program - Country Guessing Game
@@ -327,6 +328,20 @@
  
 <STYLE TYPE="text/css"><!--
  
+body {
+
+     background-image: url("Images/Background.jpg");
+    color:lightblue;
+   text-align:center;
+   position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%) 
+      
+
+}
+
 .tab { border: solid 1 #000000; }
  
 .td1 { font-family: Helvetica, sans-serif, Verdana, Arial; font-size: 13; font-weight: bold; background-color: #FF9900; color: #FFFFFF; border: 0; }
@@ -339,9 +354,10 @@
  
 //--></STYLE>
  
-</head>
-<body>
-        <BODY onLoad=stat() onKeyPress=catchKeyCode()>
+</HEAD>
+    <BODY onLoad=stat() onKeyPress=catchKeyCode()>
+        
+        
  
 <!-- STEP THREE: Copy this code into the BODY of your HTML document  -->
  
@@ -375,22 +391,14 @@
 </TABLE>
 </FORM>
  
-<p><center>
-<font face="arial, helvetica" size"-2">Free JavaScripts provided<br>
-by <a href="http://javascriptsource.com">The JavaScript Source</a></font>
-</center><p>
- 
-    
-    <div>
-   
- 
-    </div>
-    </form>
-</body>
-</html>
 
+ 
 
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:Button ID="Button1" runat="server" Text="Back to Apps" CssClass="Button" PostBackUrl="~/restricted/FirstPage.aspx" />
+    <link href="Opmaak.css" rel="stylesheet" type="text/css" />
 </asp:Content>
+
+

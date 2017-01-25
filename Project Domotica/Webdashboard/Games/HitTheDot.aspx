@@ -1,12 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DashboardMaster.Master" AutoEventWireup="true" CodeBehind="HitTheDot.aspx.cs" Inherits="Webdashboard.Games.HitTheDot" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
+    
     <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
+
     <title></title>
      
+    
 <SCRIPT LANGUAGE="JavaScript">
 <!-- Original:  Josh Birk  -->
  
@@ -208,21 +210,18 @@ they are selected randomly by the computer.<BR>
 <li>1 point per hit, minus 1 point per miss.<BR>
 </ol></td></tr></table></center>
  
-<p><center>
-<font face="arial, helvetica" size="-2">Free JavaScripts provided<br>
-by <a href="http://javascriptsource.com">The JavaScript Source</a></font>
-</center><p>
+
  
 
     
     <div>
-
     </div>
     </form>
+
 </body>
 </html>
 
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
 </asp:Content>
