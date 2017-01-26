@@ -126,7 +126,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Games\CountryGuessing.aspx" />
     <Content Include="Games\HitTheDot.aspx" />
-    <Content Include="Games\2048.html" />
     <Content Include="Global.asax" />
     <Content Include="Images\Background.jpg" />
     <Content Include="Images\FirstPageButtons.png" />
@@ -142,7 +141,7 @@
     <Content Include="Games\js\tile.js" />
     <Content Include="LoginPage.aspx" />
     <Content Include="Opmaak.css" />
-    <Content Include="restricted\FirstPage.aspx" />
+    <Content Include="FirstPage.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -193,11 +192,11 @@
     <Compile Include="DashboardMaster.Master.designer.cs">
       <DependentUpon>DashboardMaster.Master</DependentUpon>
     </Compile>
-    <Compile Include="restricted\FirstPage.aspx.cs">
+    <Compile Include="FirstPage.aspx.cs">
       <DependentUpon>FirstPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="restricted\FirstPage.aspx.designer.cs">
+    <Compile Include="FirstPage.aspx.designer.cs">
       <DependentUpon>FirstPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Games\CountryGuessing.aspx.cs">

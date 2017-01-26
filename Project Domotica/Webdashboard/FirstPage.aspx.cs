@@ -99,7 +99,7 @@ namespace Webdashboard
             }
             if (Connection_Succesfull == true)
             {
-                Response.Redirect("DaHouseControl.aspx");
+                Response.Redirect("restricted/DaHouseControl.aspx");
             }
             else
             {
