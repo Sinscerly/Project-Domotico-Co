@@ -1,8 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DashboardMaster.Master" AutoEventWireup="true" CodeBehind="calc.aspx.cs" Inherits="Webdashboard.Tools.calc" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
     <html>
 <head>
 <title>HTML Calculator</title>
+
 </head>
 <body bgcolor= "#000000" text= "gold">
 <form name="calculator" >
