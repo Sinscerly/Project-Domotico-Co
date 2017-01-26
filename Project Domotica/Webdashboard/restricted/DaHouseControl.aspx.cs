@@ -21,6 +21,7 @@ namespace Webdashboard
         
         protected void Page_Load(object sender, EventArgs e)
         {
+
             // Controlling if DaHaus is turned on.
             if (Global.client == null)
             {
