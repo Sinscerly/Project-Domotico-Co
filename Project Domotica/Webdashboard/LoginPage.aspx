@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex ="0">
         <asp:View ID="Login" runat="server">
-            <asp:Login ID="Login1" runat="server" DestinationPageUrl="~/restricted/FirstPage.aspx">
+            <asp:Login ID="Login1" runat="server" DestinationPageUrl="~/FirstPage.aspx">
                 <LayoutTemplate>
                     <table cellpadding="1" cellspacing="0" style="border-collapse:collapse;">
                         <tr>

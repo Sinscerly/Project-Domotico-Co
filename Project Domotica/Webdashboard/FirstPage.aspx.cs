@@ -87,24 +87,32 @@ namespace Webdashboard
 
         protected void Domotica_OnClick(object sender, EventArgs e)
         {
-            Connection conn = new Connection();
-            bool Connection_Succesfull = false;
-            if (Global.client == null)
+            HttpCookie obj2cookie = Request.Cookies["membercookie"];
+            if (obj2cookie != null)
             {
-                conn.Connect();
-            }
-            if (Connection_Succesfull = conn.Validation() == true)
-            {
-                conn.Close();
-            }
-            if (Connection_Succesfull == true)
-            {
-                Response.Redirect("DaHouseControl.aspx");
+                Connection conn = new Connection();
+                bool Connection_Succesfull = false;
+                if (Global.client == null)
+                {
+                    conn.Connect();
+                }
+                if (Connection_Succesfull = conn.Validation() == true)
+                {
+                    conn.Close();
+                }
+                if (Connection_Succesfull == true)
+                {
+                    Response.Redirect("restricted/DaHouseControl.aspx");
+                }
+                else
+                {
+                    conn.Close();
+                    lblError.Text = "You need to open DaHaus first!";
+                }
             }
             else
             {
-                conn.Close();
-                lblError.Text = "You need to open DaHaus first!";
+                Response.Redirect("LoginPage.aspx");
             }
         }
 
