@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex ="0">
         <asp:View ID="Login" runat="server">
-            <asp:Login ID="Login1" runat="server" DestinationPageUrl="~/FirstPage.aspx">
+            <asp:Login ID="Login1" runat="server" DestinationPageUrl="~/restricted/FirstPage.aspx">
                 <LayoutTemplate>
                     <table cellpadding="1" cellspacing="0" style="border-collapse:collapse;">
                         <tr>
@@ -45,7 +45,7 @@
                                     </tr>
                                     <tr>
                                         <td align="right" colspan="2">
-                                            <asp:Button ID="LoginButton" runat="server" CommandName="Login" CssClass="Button" Text="Log In" ValidationGroup="Login1" />
+                                            <asp:Button ID="LoginButton" runat="server" CommandName="Login" CssClass="Button" Text="Log In" ValidationGroup="Login1" OnClick="LoginButton_Click" />
                                         </td>
                                     </tr>
                                 </table>
