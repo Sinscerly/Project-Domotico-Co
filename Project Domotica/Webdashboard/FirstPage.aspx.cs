@@ -42,6 +42,7 @@ namespace Webdashboard
                 NetflixButton.Visible = false;
                 CalcButton.Visible = false;
                 InhollandButton.Visible = false;
+                MakeYourButton.Visible = false;
             }
         }
 
@@ -64,25 +65,18 @@ namespace Webdashboard
                 G2048.Visible = false;
                 CalcButton.Visible = false;
                 InhollandButton.Visible = false;
+                MakeYourButton.Visible = false;
             }
         }
 
         protected void Button4_Click(object sender, EventArgs e)
         {
-            try
-            {
-                System.Diagnostics.Process.Start("www.youtube.com");
-            }
-            catch ( Exception exc) { lblError.Text = exc.Message; } 
+            Response.Redirect("https://www.youtube.com");
         }
 
         protected void NetflixButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                System.Diagnostics.Process.Start("https://www.netflix.com/nl/");
-            }
-            catch (Exception exc) { lblError.Text = exc.Message; }
+            Response.Redirect("https://www.netflix.com/nl/");
         }
 
         protected void Domotica_OnClick(object sender, EventArgs e)
@@ -123,6 +117,7 @@ namespace Webdashboard
             {
                 CalcButton.Visible = true;
                 InhollandButton.Visible = true;
+                MakeYourButton.Visible = true;
 
 
             }
@@ -130,6 +125,7 @@ namespace Webdashboard
             {
                 CalcButton.Visible = false;
                 InhollandButton.Visible = false;
+                MakeYourButton.Visible = false;
 
             }
 
@@ -153,14 +149,8 @@ namespace Webdashboard
         protected void InhollandButton_Click(object sender, EventArgs e)
         {
 
-            
-         try
-         {
-             System.Diagnostics.Process.Start("https://webmail.inholland.nl");
-         }
-         catch (Exception exc) { lblError.Text = exc.Message; }
-
-
+            Response.Redirect("https://webmail.inholland.nl");
+       
         }
 
         protected void G2048_Click(object sender, EventArgs e)
@@ -171,6 +161,28 @@ namespace Webdashboard
         protected void Hit_The_Dot_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void MakeYourButton_Click(object sender, EventArgs e)
+        {
+            if (Label1.Visible == false)
+
+            {
+                Label1.Visible = true;
+                Label2.Visible = true;
+                txtButtonnaam.Visible = true;
+                txtLinkAdres.Visible = true;
+                SubmitMYB.Visible = true;
+
+            }
+            else 
+            {
+                Label1.Visible = false;
+                Label2.Visible = false;
+                txtButtonnaam.Visible = false;
+                txtLinkAdres.Visible = false;
+                SubmitMYB.Visible = false;
+            }
         }
     }
 }

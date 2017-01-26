@@ -94,7 +94,7 @@ namespace Webdashboard
             {
                 conn.Close();
             }
-            Response.Redirect("FirstPage.aspx");
+            Response.Redirect("~/FirstPage.aspx");
             
         }
     }

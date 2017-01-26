@@ -33,6 +33,23 @@
         <p>
             <asp:Button ID="CalcButton" runat="server" Height="29px" OnClick="CalcButton_Click" Text="Calculator" Visible="False" Width="135px" CssClass="Button" PostBackUrl="~/restricted/Tools/calc.aspx" />
             <asp:Button ID="InhollandButton" runat="server" Height="30px" OnClick="InhollandButton_Click" Text="Email Inholland" Visible="False" Width="120px" CssClass="Button" />
+            <asp:Button ID="MakeYourButton" runat="server" CssClass="Button" Height="30px" OnClick="MakeYourButton_Click" Text="Make Your Button!" Visible="False" Width="126px" />
+    </p>
+    <p>
+            &nbsp;</p>
+    <p>
+            &nbsp;</p>
+    <p>
+            <asp:Label ID="Label1" runat="server" Text="Button naam: " Visible="False"></asp:Label>
+            <asp:TextBox ID="txtButtonnaam" runat="server" Visible="False"></asp:TextBox>
+    </p>
+    <p>
+            <asp:Label ID="Label2" runat="server" Text="Link adres: " Visible="False"></asp:Label>
+&nbsp;
+            <asp:TextBox ID="txtLinkAdres" runat="server" Visible="False"></asp:TextBox>
+    </p>
+    <p>
+            <asp:Button ID="SubmitMYB" runat="server" CssClass="Button" Text="Submit" Visible="False" />
     </p>
         <p>
             <asp:Label ID="lblError" runat="server"></asp:Label>
