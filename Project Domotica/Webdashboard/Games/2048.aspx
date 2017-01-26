@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   <title>2048</title>
-
+    <body background="Images/Background.jpg"> </body>
   <link href="style/main.css" rel="stylesheet" type="text/css">
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
@@ -21,6 +21,7 @@
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
 <body>
+
   <div class="container">
     <div class="heading">
       <h1 class="title">2048</h1>
@@ -105,4 +106,5 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
 </asp:Content>
