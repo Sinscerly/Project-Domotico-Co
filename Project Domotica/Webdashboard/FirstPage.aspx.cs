@@ -16,6 +16,7 @@ namespace Webdashboard
 {
     public partial class FirstPage : System.Web.UI.Page
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
         } 
@@ -40,9 +41,14 @@ namespace Webdashboard
             {
                 YoutubeButton.Visible = false;
                 NetflixButton.Visible = false;
+                UselessButton.Visible = false;
                 CalcButton.Visible = false;
                 InhollandButton.Visible = false;
                 MakeYourButton.Visible = false;
+
+                UselessButton.Visible = false;
+                lblUseless.Visible = false;
+                lblUselessTeller.Visible = false;
             }
         }
 
@@ -52,11 +58,18 @@ namespace Webdashboard
             {
                 YoutubeButton.Visible = true;
                 NetflixButton.Visible = true;
+                UselessButton.Visible = true;
+
             }
             else
             {
                 YoutubeButton.Visible = false;
-                NetflixButton.Visible = false;    
+                NetflixButton.Visible = false;
+
+                UselessButton.Visible = false;
+                lblUseless.Visible = false;
+                lblUselessTeller.Visible = false;
+
             }
             if (YoutubeButton.Visible == true)
             {
@@ -137,6 +150,10 @@ namespace Webdashboard
                 G2048.Visible = false;
                 YoutubeButton.Visible = false;
                 NetflixButton.Visible = false;
+
+                UselessButton.Visible = false;
+                lblUseless.Visible = false;
+                lblUselessTeller.Visible = false;
             }
         }
 
@@ -183,6 +200,33 @@ namespace Webdashboard
                 txtLinkAdres.Visible = false;
                 SubmitMYB.Visible = false;
             }
+        }
+
+        protected void SubmitMYB_Click(object sender, EventArgs e)
+        {
+            Button button2 = new Button();
+            button2.Text = txtButtonnaam.Text;
+            button2.Click += new EventHandler(button2_Click);
+            Panel1.Controls.Add(button2);
+            
+            
+        }
+        protected void button2_Click(object sender, EventArgs e)
+        {
+           string linkadres =  txtLinkAdres.Text;
+            Response.Redirect("linkadres");
+        }
+
+        protected void UselessButton_Click(object sender, EventArgs e)
+        {
+            if (lblUseless.Visible == false)
+            { lblUseless.Visible = true;
+                lblUselessTeller.Visible = true; }
+            int UselessTeller = 0;
+            UselessTeller++;
+
+            lblUselessTeller.Text = UselessTeller.ToString();
+            
         }
     }
 }

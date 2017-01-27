@@ -28,7 +28,11 @@
         <p>
             <asp:Button ID="YoutubeButton" runat="server" Height="31px" OnClick="Button4_Click" Text="Youtube" Visible="False" Width="82px" CssClass="Button" />
             <asp:Button ID="NetflixButton" runat="server" Height="32px" Text="Netflix" Visible="False" Width="74px" OnClick="NetflixButton_Click" CssClass="Button" />
-
+            <asp:Button ID="UselessButton" runat="server" Text="UselessButton" Visible="False" CssClass="Button" Height="31px" OnClick="UselessButton_Click" />
+                </p>
+    <p>
+            <asp:Label ID="lblUseless" runat="server" Text="Clicked on the UselessButton:  " Visible="False"></asp:Label>
+            <asp:Label ID="lblUselessTeller" runat="server" Visible="False"></asp:Label>
                 </p>
         <p>
             <asp:Button ID="CalcButton" runat="server" Height="29px" OnClick="CalcButton_Click" Text="Calculator" Visible="False" Width="135px" CssClass="Button" PostBackUrl="~/restricted/Tools/calc.aspx" />
@@ -36,7 +40,9 @@
             <asp:Button ID="MakeYourButton" runat="server" CssClass="Button" Height="30px" OnClick="MakeYourButton_Click" Text="Make Your Button!" Visible="False" Width="126px" />
     </p>
     <p>
-            &nbsp;</p>
+            </p>
+    <asp:Panel ID="Panel1" runat="server">
+    </asp:Panel>
     <p>
             &nbsp;</p>
     <p>
@@ -49,7 +55,7 @@
             <asp:TextBox ID="txtLinkAdres" runat="server" Visible="False"></asp:TextBox>
     </p>
     <p>
-            <asp:Button ID="SubmitMYB" runat="server" CssClass="Button" Text="Submit" Visible="False" />
+            <asp:Button ID="SubmitMYB" runat="server" CssClass="Button" Text="Submit" Visible="False" OnClick="SubmitMYB_Click" />
     </p>
         <p>
             <asp:Label ID="lblError" runat="server"></asp:Label>

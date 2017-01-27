@@ -94,6 +94,33 @@ namespace Webdashboard {
         protected global::System.Web.UI.WebControls.Button NetflixButton;
         
         /// <summary>
+        /// UselessButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button UselessButton;
+        
+        /// <summary>
+        /// lblUseless control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUseless;
+        
+        /// <summary>
+        /// lblUselessTeller control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUselessTeller;
+        
+        /// <summary>
         /// CalcButton control.
         /// </summary>
         /// <remarks>
@@ -119,6 +146,15 @@ namespace Webdashboard {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button MakeYourButton;
+        
+        /// <summary>
+        /// Panel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
         /// Label1 control.
