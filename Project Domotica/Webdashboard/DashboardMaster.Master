@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="Master.css" rel="stylesheet" type="text/css" />
     <link href="content/css/bootstrap.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -13,11 +14,15 @@
 
     <form id="form1" runat="server">
         <div id="header">
-
+            <!-- Header for navigation menu and title-->
+            <div id="nav">
+                <ul>
+                    <li><a class="active" href="#home">Home</a></li>
+                    <li><a href="#news">News</a></li>
+                </ul>
+            </div>
         </div>
-        <div id="nav">
-
-        </div>
+        
         <div id="Mid section">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             
