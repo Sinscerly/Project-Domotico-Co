@@ -12,13 +12,19 @@
 <body>
 
     <form id="form1" runat="server">
-        <div>
+        <div id="header">
 
         </div>
-        <div>
+        <div id="nav">
+
+        </div>
+        <div id="Mid section">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             
             </asp:ContentPlaceHolder>
+        </div>
+        <div id="footer">
+
         </div>
     </form>
 </body>
