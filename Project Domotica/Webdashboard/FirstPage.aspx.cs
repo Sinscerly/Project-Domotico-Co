@@ -235,7 +235,7 @@ namespace Webdashboard
             OleDbCommand cmd = new OleDbCommand();
             cmd.Connection = conn;
 
-            cmd.CommandText = string.Format("SELECT scores.Useless FROM Scores WHERE scores.id = '6' ");
+            cmd.CommandText = string.Format("SELECT scores.Useless FROM Scores WHERE scores.id = 6 ");
 
             lblUselessTeller.Text = "";
            
@@ -247,8 +247,7 @@ namespace Webdashboard
                 OleDbDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    lblUselessTeller.Text += String.Format("{0}",
-            reader["Useless"].ToString());
+                    lblUselessTeller.Text = string.Format(reader["Useless"].ToString());
 
                 }
 
