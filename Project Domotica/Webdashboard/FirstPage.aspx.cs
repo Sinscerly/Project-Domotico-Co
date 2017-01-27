@@ -11,6 +11,7 @@ using System.Text;
 using System.Net;
 using System.Net.Sockets;
 using System.IO;
+using System.Data.OleDb;
 
 namespace Webdashboard
 {
@@ -222,11 +223,47 @@ namespace Webdashboard
             if (lblUseless.Visible == false)
             { lblUseless.Visible = true;
                 lblUselessTeller.Visible = true; }
-            int UselessTeller = 0;
-            UselessTeller++;
-
-            lblUselessTeller.Text = UselessTeller.ToString();
             
+
+            
+
+            OleDbConnection conn = new OleDbConnection();
+            conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" +
+                Server.MapPath(@"\App_data") + @"\DashboardDatabase.accdb";
+
+
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.Connection = conn;
+
+            cmd.CommandText = string.Format("SELECT scores.Useless FROM Scores WHERE scores.id = '6' ");
+
+            lblUselessTeller.Text = "";
+           
+
+            try
+            {
+                conn.Open();
+
+                OleDbDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    lblUselessTeller.Text += String.Format("{0}",
+            reader["Useless"].ToString());
+
+                }
+
+
+            }
+            catch (Exception exc)
+            {
+                lblUselessTeller.Text = exc.Message;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+
         }
     }
 }
