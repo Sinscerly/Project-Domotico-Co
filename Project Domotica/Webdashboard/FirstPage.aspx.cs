@@ -223,76 +223,77 @@ namespace Webdashboard
             if (lblUseless.Visible == false)
             { lblUseless.Visible = true;
                 lblUselessTeller.Visible = true; }
-            
-
-            
-
-            OleDbConnection conn = new OleDbConnection();
-            conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" +
-                Server.MapPath(@"\App_data") + @"\DashboardDatabase.accdb";
-
-            OleDbCommand cmd = new OleDbCommand();
-            cmd.Connection = conn;
-
-            cmd.CommandText = string.Format("UPDATE scores  SET scores.useless = scores.useless + 1   WHERE scores.id = 6 ");
-
-            lblUselessTeller.Text = "";
 
 
-            try
+            HttpCookie obj2cookie = Request.Cookies["membercookie"];
+            if (obj2cookie != null)
             {
-                conn.Open();
+                OleDbConnection conn = new OleDbConnection();
+                conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" +
+                    Server.MapPath(@"\App_data") + @"\DashboardDatabase.accdb";
 
-                OleDbDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
+                OleDbCommand cmd = new OleDbCommand();
+                cmd.Connection = conn;
+                int test = 3;
+                cmd.CommandText = string.Format("UPDATE scores  SET scores.useless = scores.useless + 1   WHERE scores.id = {0} ", test);
+
+                lblUselessTeller.Text = "";
+
+
+                try
                 {
-                    lblUselessTeller.Text = string.Format(reader["Useless"].ToString());
+                    conn.Open();
 
+                    OleDbDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        lblUselessTeller.Text = string.Format(reader["Useless"].ToString());
+                    }
+
+                }
+                catch (Exception exc)
+                {
+                    lblUselessTeller.Text = exc.Message;
+                }
+                finally
+                {
+                    conn.Close();
                 }
 
 
-            }
-            catch (Exception exc)
-            {
-                lblUselessTeller.Text = exc.Message;
-            }
-            finally
-            {
-                conn.Close();
-            }
+
+                OleDbCommand cmd2 = new OleDbCommand();
+                cmd2.Connection = conn;
+
+                cmd2.CommandText = string.Format("SELECT scores.Useless FROM Scores WHERE scores.id = {0} ", test);
+
+                lblUselessTeller.Text = "";
 
 
-
-            OleDbCommand cmd2 = new OleDbCommand();
-            cmd2.Connection = conn;
-
-            cmd2.CommandText = string.Format("SELECT scores.Useless FROM Scores WHERE scores.id = 6 ");
-
-            lblUselessTeller.Text = "";
-           
-
-            try
-            {
-                conn.Open();
-
-                OleDbDataReader reader = cmd2.ExecuteReader();
-                while (reader.Read())
+                try
                 {
-                    lblUselessTeller.Text = string.Format(reader["Useless"].ToString());
+                    conn.Open();
+
+                    OleDbDataReader reader = cmd2.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        lblUselessTeller.Text = string.Format(reader["Useless"].ToString());
+
+                    }
+
 
                 }
-
-
+                catch (Exception exc)
+                {
+                    lblUselessTeller.Text = exc.Message;
+                }
+                finally
+                {
+                    conn.Close();
+                }
             }
-            catch (Exception exc)
-            {
-                lblUselessTeller.Text = exc.Message;
-            }
-            finally
-            {
-                conn.Close();
-            }
-
+            else
+            { lblUselessTeller.Text = "Can not show the count, please login first"; }
 
         }
     }
