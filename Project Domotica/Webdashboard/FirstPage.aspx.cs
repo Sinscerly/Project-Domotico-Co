@@ -215,7 +215,7 @@ namespace Webdashboard
         protected void button2_Click(object sender, EventArgs e)
         {
            string linkadres =  txtLinkAdres.Text;
-            Response.Redirect("linkadres");
+            Response.Redirect(linkadres);
         }
 
         protected void UselessButton_Click(object sender, EventArgs e)
@@ -260,17 +260,13 @@ namespace Webdashboard
                 {
                     conn.Close();
                 }
-
-
-
+                
                 OleDbCommand cmd2 = new OleDbCommand();
                 cmd2.Connection = conn;
-
                 cmd2.CommandText = string.Format("SELECT scores.Useless FROM Scores WHERE scores.id = {0} ", ID);
 
                 lblUselessTeller.Text = "";
-
-
+                
                 try
                 {
                     conn.Open();
@@ -279,10 +275,8 @@ namespace Webdashboard
                     while (reader.Read())
                     {
                         lblUselessTeller.Text = string.Format(reader["Useless"].ToString());
-
                     }
-
-
+                    
                 }
                 catch (Exception exc)
                 {
