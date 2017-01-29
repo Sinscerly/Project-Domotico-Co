@@ -35,15 +35,27 @@
             <asp:Label ID="lblUselessTeller" runat="server" Visible="False"></asp:Label>
                 </p>
         <p>
+            <asp:Button ID="LinksButton" runat="server" Text="Links" CssClass="Button" Height="27px" OnClick="LinksButton_Click" Width="56px" Visible="False" />
             <asp:Button ID="CalcButton" runat="server" Height="29px" OnClick="CalcButton_Click" Text="Calculator" Visible="False" Width="135px" CssClass="Button" PostBackUrl="~/restricted/Tools/calc.aspx" />
             <asp:Button ID="InhollandButton" runat="server" Height="30px" OnClick="InhollandButton_Click" Text="Email Inholland" Visible="False" Width="120px" CssClass="Button" />
-            <asp:Button ID="MakeYourButton" runat="server" CssClass="Button" Height="30px" OnClick="MakeYourButton_Click" Text="Make Your Button!" Visible="False" Width="126px" />
     </p>
     <p>
-            </p>
+        <asp:Button ID="CustomButton1" runat="server" Text="Button1" CssClass="Button" Height="33px" Width="93px" Visible="False" OnClick="CustomButton1_Click" />
+        <asp:Button ID="CustomButton2" runat="server" Text="Button2" CssClass="Button" Height="32px" Width="93px" Visible="False" OnClick="CustomButton2_Click" />
+        <asp:Button ID="CustomButton3" runat="server" Text="Button3" CssClass="Button" Height="32px" Width="93px" Visible="False" OnClick="CustomButton3_Click" />
+           <asp:Button ID="Customize" runat="server" Text="Customize" CssClass="Button" Height="20px" Width="67px" Visible="False" OnClick="Customize_Click"/>
+         </p>
+        <p>
+          
+        </p>
     <asp:Panel ID="Panel1" runat="server">
     </asp:Panel>
     <p>
+        <asp:ListBox ID="ListBox" runat="server" Visible="False">
+            <asp:ListItem>Button 1</asp:ListItem>
+            <asp:ListItem>Button 2</asp:ListItem>
+            <asp:ListItem>Button 3</asp:ListItem>
+        </asp:ListBox>
             &nbsp;</p>
     <p>
             <asp:Label ID="Label1" runat="server" Text="Button naam: " Visible="False"></asp:Label>

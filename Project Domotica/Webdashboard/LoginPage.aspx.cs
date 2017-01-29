@@ -76,7 +76,6 @@ namespace Webdashboard
                 {
                     UserID = Convert.ToInt16(reader["id"]);
                 }
-
             }
            
             finally

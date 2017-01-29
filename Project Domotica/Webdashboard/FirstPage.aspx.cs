@@ -17,6 +17,7 @@ namespace Webdashboard
 {
     public partial class FirstPage : System.Web.UI.Page
     {
+        static string link = "";
         
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -45,7 +46,8 @@ namespace Webdashboard
                 UselessButton.Visible = false;
                 CalcButton.Visible = false;
                 InhollandButton.Visible = false;
-                MakeYourButton.Visible = false;
+                LinksButton.Visible = false;
+                
 
                 UselessButton.Visible = false;
                 lblUseless.Visible = false;
@@ -79,7 +81,8 @@ namespace Webdashboard
                 G2048.Visible = false;
                 CalcButton.Visible = false;
                 InhollandButton.Visible = false;
-                MakeYourButton.Visible = false;
+                LinksButton.Visible = false;
+
             }
         }
 
@@ -131,7 +134,8 @@ namespace Webdashboard
             {
                 CalcButton.Visible = true;
                 InhollandButton.Visible = true;
-                MakeYourButton.Visible = true;
+                LinksButton.Visible = true;
+
 
 
             }
@@ -139,7 +143,8 @@ namespace Webdashboard
             {
                 CalcButton.Visible = false;
                 InhollandButton.Visible = false;
-                MakeYourButton.Visible = false;
+                LinksButton.Visible = false;
+
 
             }
 
@@ -183,40 +188,38 @@ namespace Webdashboard
 
         protected void MakeYourButton_Click(object sender, EventArgs e)
         {
-            if (Label1.Visible == false)
-
-            {
-                Label1.Visible = true;
-                Label2.Visible = true;
-                txtButtonnaam.Visible = true;
-                txtLinkAdres.Visible = true;
-                SubmitMYB.Visible = true;
-
-            }
-            else 
-            {
-                Label1.Visible = false;
-                Label2.Visible = false;
-                txtButtonnaam.Visible = false;
-                txtLinkAdres.Visible = false;
-                SubmitMYB.Visible = false;
-            }
+            
         }
 
         protected void SubmitMYB_Click(object sender, EventArgs e)
         {
-            Button button2 = new Button();
-            button2.Text = txtButtonnaam.Text;
-            button2.Click += new EventHandler(button2_Click);
-            Panel1.Controls.Add(button2);
+            
+            if (ListBox.SelectedIndex == 0)
+            {
+                CustomButton1.Text = txtButtonnaam.Text;
+                link = txtLinkAdres.Text;
+            }
+            else if (ListBox.SelectedIndex == 1)
+            {
+                CustomButton2.Text = txtButtonnaam.Text;
+                link = txtLinkAdres.Text;
+            }
+            else if (ListBox.SelectedIndex == 2)
+            {
+                CustomButton3.Text = txtButtonnaam.Text;
+                link = txtLinkAdres.Text;
+            }
+
+
+
+          // Button button2 = new Button();
+          // button2.Text = txtButtonnaam.Text;
+          // button2.Click += new EventHandler(button2_Click);
+          // Panel1.Controls.Add(button2);
             
             
         }
-        protected void button2_Click(object sender, EventArgs e)
-        {
-           string linkadres =  txtLinkAdres.Text;
-            Response.Redirect(linkadres);
-        }
+        
 
         protected void UselessButton_Click(object sender, EventArgs e)
         {
@@ -290,6 +293,70 @@ namespace Webdashboard
             else
             { lblUselessTeller.Text = "Can not show the count, please login first"; }
 
+        }
+
+        protected void LinksButton_Click(object sender, EventArgs e)
+        {
+            if (CustomButton1.Visible == false)
+            { CustomButton1.Visible = true;
+                CustomButton2.Visible = true;
+                CustomButton3.Visible = true;
+
+                Customize.Visible = true;
+               
+            }
+            else
+            {
+                CustomButton1.Visible = false;
+                CustomButton2.Visible = false;
+                CustomButton3.Visible = false;
+
+                Customize.Visible = false;
+                
+            }
+
+
+        }
+
+        protected void Customize_Click(object sender, EventArgs e)
+        {
+            if (Label1.Visible == false)
+
+            {
+                Label1.Visible = true;
+                Label2.Visible = true;
+                txtButtonnaam.Visible = true;
+                txtLinkAdres.Visible = true;
+                SubmitMYB.Visible = true;
+                ListBox.Visible = true;
+
+            }
+            else
+            {
+                Label1.Visible = false;
+                Label2.Visible = false;
+                txtButtonnaam.Visible = false;
+                txtLinkAdres.Visible = false;
+                SubmitMYB.Visible = false;
+                ListBox.Visible = false;
+            }
+
+            
+        }
+
+        protected void CustomButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(link);
+        }
+
+        protected void CustomButton2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(link);
+        }
+
+        protected void CustomButton3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(link);
         }
     }
 }

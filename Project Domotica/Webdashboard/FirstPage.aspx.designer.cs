@@ -121,6 +121,15 @@ namespace Webdashboard {
         protected global::System.Web.UI.WebControls.Label lblUselessTeller;
         
         /// <summary>
+        /// LinksButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button LinksButton;
+        
+        /// <summary>
         /// CalcButton control.
         /// </summary>
         /// <remarks>
@@ -139,13 +148,40 @@ namespace Webdashboard {
         protected global::System.Web.UI.WebControls.Button InhollandButton;
         
         /// <summary>
-        /// MakeYourButton control.
+        /// CustomButton1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button MakeYourButton;
+        protected global::System.Web.UI.WebControls.Button CustomButton1;
+        
+        /// <summary>
+        /// CustomButton2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button CustomButton2;
+        
+        /// <summary>
+        /// CustomButton3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button CustomButton3;
+        
+        /// <summary>
+        /// Customize control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Customize;
         
         /// <summary>
         /// Panel1 control.
@@ -155,6 +191,15 @@ namespace Webdashboard {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel1;
+        
+        /// <summary>
+        /// ListBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox ListBox;
         
         /// <summary>
         /// Label1 control.
