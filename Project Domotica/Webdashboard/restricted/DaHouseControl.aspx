@@ -5,6 +5,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<div class="Content">
     <div class="TopBar">
         
         <asp:Button ID="BackToApps" runat="server" CssClass="Button" OnClick="BackToApps_Click" Text="Back To Apps" />
@@ -86,6 +87,7 @@
 
         <br />
     </div>
+</div>
 </asp:Content>
 
 
