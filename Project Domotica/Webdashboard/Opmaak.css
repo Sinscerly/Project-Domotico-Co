@@ -113,12 +113,12 @@
     0 -1px 0 #6b8659;
 }
 
-
-
+/* Location of placement on the page*/
 body {
-
     background-image: url("Images/Background.jpg");
-    color:lightblue;
+}
+.Content {
+   color:lightblue;
    text-align:center;
    position: absolute;
         top: 50%;
@@ -129,10 +129,7 @@ body {
 }
 
 
-
 .Button { 
-   
-      
         border-style: none;
     border-color: inherit;
     border-width: medium;
