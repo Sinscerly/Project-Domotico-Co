@@ -225,8 +225,8 @@ namespace Webdashboard
                 lblUselessTeller.Visible = true; }
 
 
-            HttpCookie obj2cookie = Request.Cookies["membercookie"];
-            if (obj2cookie != null)
+            HttpCookie CookieLogin = Request.Cookies["CookieID"];
+            if (CookieLogin != null)
             {
                 OleDbConnection conn = new OleDbConnection();
                 conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" +
@@ -234,8 +234,9 @@ namespace Webdashboard
 
                 OleDbCommand cmd = new OleDbCommand();
                 cmd.Connection = conn;
-                int test = 3;
-                cmd.CommandText = string.Format("UPDATE scores  SET scores.useless = scores.useless + 1   WHERE scores.id = {0} ", test);
+                string ID =  CookieLogin["UserID"].ToString();
+
+                cmd.CommandText = string.Format("UPDATE scores  SET scores.useless = scores.useless + 1   WHERE scores.id = {0} ", ID);
 
                 lblUselessTeller.Text = "";
 
@@ -265,7 +266,7 @@ namespace Webdashboard
                 OleDbCommand cmd2 = new OleDbCommand();
                 cmd2.Connection = conn;
 
-                cmd2.CommandText = string.Format("SELECT scores.Useless FROM Scores WHERE scores.id = {0} ", test);
+                cmd2.CommandText = string.Format("SELECT scores.Useless FROM Scores WHERE scores.id = {0} ", ID);
 
                 lblUselessTeller.Text = "";
 
