@@ -212,7 +212,7 @@ namespace Webdashboard
                     cmd2.Connection = conn;
                     string ID = CookieLogin["UserID"].ToString();
                     cmd2.CommandText = string.Format("update Buttons  SET Button1 = '{0}'  where buttons.id = {1}", txtButtonnaam.Text, ID);
-
+                    
                     try
                     {
                         conn.Open();
@@ -221,19 +221,45 @@ namespace Webdashboard
                         while (reader.Read())
                         {
                             CustomButton1.Text = string.Format(reader["Button1"].ToString());
+                           
                         }
 
                     }
                     catch (Exception exc)
                     {
-                        lblUselessTeller.Text = exc.Message;
+                        lblError.Text = exc.Message;
                     }
                     finally
                     {
                         conn.Close();
                     }
 
-                    
+                    OleDbCommand cmd3 = new OleDbCommand();
+                    cmd3.Connection = conn;
+                    cmd3.CommandText = string.Format("update Buttons  SET link1 = '{0}'  where buttons.id = {1}", txtLinkAdres.Text, ID);
+
+                    try
+                    {
+                        conn.Open();
+
+                        OleDbDataReader reader = cmd3.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            link = string.Format(reader["link1"].ToString());
+
+                        }
+
+                    }
+                    catch (Exception exc)
+                    {
+                        lblError.Text = exc.Message;
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+
+
                 }
                 else
                 {
@@ -279,6 +305,31 @@ namespace Webdashboard
                     {
                         conn.Close();
                     }
+
+                    OleDbCommand cmd3 = new OleDbCommand();
+                    cmd3.Connection = conn;
+                    cmd3.CommandText = string.Format("update Buttons  SET link2 = '{0}'  where buttons.id = {1}", txtLinkAdres.Text, ID);
+
+                    try
+                    {
+                        conn.Open();
+
+                        OleDbDataReader reader = cmd3.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            link = string.Format(reader["link2"].ToString());
+
+                        }
+
+                    }
+                    catch (Exception exc)
+                    {
+                        lblError.Text = exc.Message;
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
                 }
                 else
                 {
@@ -319,6 +370,31 @@ namespace Webdashboard
                     catch (Exception exc)
                     {
                         lblUselessTeller.Text = exc.Message;
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+
+                    OleDbCommand cmd3 = new OleDbCommand();
+                    cmd3.Connection = conn;
+                    cmd3.CommandText = string.Format("update Buttons  SET link3 = '{0}'  where buttons.id = {1}", txtLinkAdres.Text, ID);
+
+                    try
+                    {
+                        conn.Open();
+
+                        OleDbDataReader reader = cmd3.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            link = string.Format(reader["link3"].ToString());
+
+                        }
+
+                    }
+                    catch (Exception exc)
+                    {
+                        lblError.Text = exc.Message;
                     }
                     finally
                     {
@@ -541,17 +617,126 @@ namespace Webdashboard
 
         protected void CustomButton1_Click(object sender, EventArgs e)
         {
-            Response.Redirect(link);
+
+            HttpCookie CookieLogin = Request.Cookies["CookieID"];
+            if (CookieLogin != null)
+            {
+                OleDbConnection conn = new OleDbConnection();
+                conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" +
+                    Server.MapPath(@"\App_data") + @"\DashboardDatabase.accdb";
+
+                OleDbCommand cmd = new OleDbCommand();
+                cmd.Connection = conn;
+                string ID = CookieLogin["UserID"].ToString();
+
+                cmd.CommandText = string.Format("select link1 from buttons WHERE id = {0} ", ID);
+                
+                try
+                {
+                    conn.Open();
+
+                    OleDbDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        link = string.Format(reader["link1"].ToString());
+                    }
+
+                }
+                catch (Exception exc)
+                {
+                    lblError.Text = exc.Message;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+                    Response.Redirect(link);
+            }
+                
+            else
+            lblError.Text = "You need to login first";
         }
 
         protected void CustomButton2_Click(object sender, EventArgs e)
         {
-            Response.Redirect(link);
+            HttpCookie CookieLogin = Request.Cookies["CookieID"];
+            if (CookieLogin != null)
+            {
+                OleDbConnection conn = new OleDbConnection();
+                conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" +
+                    Server.MapPath(@"\App_data") + @"\DashboardDatabase.accdb";
+
+                OleDbCommand cmd = new OleDbCommand();
+                cmd.Connection = conn;
+                string ID = CookieLogin["UserID"].ToString();
+
+                cmd.CommandText = string.Format("select link2 from buttons WHERE id = {0} ", ID);
+
+                try
+                {
+                    conn.Open();
+
+                    OleDbDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        link = string.Format(reader["link2"].ToString());
+                    }
+
+                }
+                catch (Exception exc)
+                {
+                    lblError.Text = exc.Message;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+                Response.Redirect(link);
+            }
+
+            else
+                lblError.Text = "You need to login first";
         }
 
         protected void CustomButton3_Click(object sender, EventArgs e)
         {
-            Response.Redirect(link);
+            HttpCookie CookieLogin = Request.Cookies["CookieID"];
+            if (CookieLogin != null)
+            {
+                OleDbConnection conn = new OleDbConnection();
+                conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" +
+                    Server.MapPath(@"\App_data") + @"\DashboardDatabase.accdb";
+
+                OleDbCommand cmd = new OleDbCommand();
+                cmd.Connection = conn;
+                string ID = CookieLogin["UserID"].ToString();
+
+                cmd.CommandText = string.Format("select link3 from buttons WHERE id = {0} ", ID);
+
+                try
+                {
+                    conn.Open();
+
+                    OleDbDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        link = string.Format(reader["link3"].ToString());
+                    }
+
+                }
+                catch (Exception exc)
+                {
+                    lblError.Text = exc.Message;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+                Response.Redirect(link);
+            }
+
+            else
+                lblError.Text = "You need to login first";
         }
     }
 }
