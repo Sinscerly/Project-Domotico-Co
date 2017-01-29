@@ -196,28 +196,142 @@ namespace Webdashboard
             
             if (ListBox.SelectedIndex == 0)
             {
-                CustomButton1.Text = txtButtonnaam.Text;
                 link = txtLinkAdres.Text;
+
+                HttpCookie CookieLogin = Request.Cookies["CookieID"];
+               
+
+                if (CookieLogin != null)
+                {
+                    OleDbConnection conn = new OleDbConnection();
+                    conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" +
+                    Server.MapPath(@"\App_data") + @"\DashboardDatabase.accdb";
+                    
+
+                    OleDbCommand cmd2 = new OleDbCommand();
+                    cmd2.Connection = conn;
+                    string ID = CookieLogin["UserID"].ToString();
+                    cmd2.CommandText = string.Format("update Buttons  SET Button1 = '{0}'  where buttons.id = {1}", txtButtonnaam.Text, ID);
+
+                    try
+                    {
+                        conn.Open();
+
+                        OleDbDataReader reader = cmd2.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            CustomButton1.Text = string.Format(reader["Button1"].ToString());
+                        }
+
+                    }
+                    catch (Exception exc)
+                    {
+                        lblUselessTeller.Text = exc.Message;
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+
+                    
+                }
+                else
+                {
+                    lblError.Text = "You need to relog in";
+                }
+
             }
             else if (ListBox.SelectedIndex == 1)
             {
                 CustomButton2.Text = txtButtonnaam.Text;
                 link = txtLinkAdres.Text;
+                HttpCookie CookieLogin = Request.Cookies["CookieID"];
+
+
+                if (CookieLogin != null)
+                {
+                    OleDbConnection conn = new OleDbConnection();
+                    conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" +
+                    Server.MapPath(@"\App_data") + @"\DashboardDatabase.accdb";
+
+
+                    OleDbCommand cmd2 = new OleDbCommand();
+                    cmd2.Connection = conn;
+                    string ID = CookieLogin["UserID"].ToString();
+                    cmd2.CommandText = string.Format("update Buttons  SET Button2 = '{0}'  where buttons.id = {1}", txtButtonnaam.Text, ID);
+
+                    try
+                    {
+                        conn.Open();
+
+                        OleDbDataReader reader = cmd2.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            CustomButton2.Text = string.Format(reader["Button2"].ToString());
+                        }
+
+                    }
+                    catch (Exception exc)
+                    {
+                        lblUselessTeller.Text = exc.Message;
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                }
+                else
+                {
+                    lblError.Text = "You need to relog in";
+                }
+
             }
             else if (ListBox.SelectedIndex == 2)
             {
-                CustomButton3.Text = txtButtonnaam.Text;
                 link = txtLinkAdres.Text;
+
+                HttpCookie CookieLogin = Request.Cookies["CookieID"];
+
+
+                if (CookieLogin != null)
+                {
+                    OleDbConnection conn = new OleDbConnection();
+                    conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" +
+                    Server.MapPath(@"\App_data") + @"\DashboardDatabase.accdb";
+
+
+                    OleDbCommand cmd2 = new OleDbCommand();
+                    cmd2.Connection = conn;
+                    string ID = CookieLogin["UserID"].ToString();
+                    cmd2.CommandText = string.Format("update Buttons  SET Button3 = '{0}'  where buttons.id = {1}", txtButtonnaam.Text, ID);
+
+                    try
+                    {
+                        conn.Open();
+
+                        OleDbDataReader reader = cmd2.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            CustomButton3.Text = string.Format(reader["Button3"].ToString());
+                        }
+
+                    }
+                    catch (Exception exc)
+                    {
+                        lblUselessTeller.Text = exc.Message;
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                }
+                else
+                {
+                    lblError.Text = "You need to relog in";
+                }
             }
+           
 
-
-
-          // Button button2 = new Button();
-          // button2.Text = txtButtonnaam.Text;
-          // button2.Click += new EventHandler(button2_Click);
-          // Panel1.Controls.Add(button2);
-            
-            
         }
         
 
@@ -313,6 +427,87 @@ namespace Webdashboard
 
                 Customize.Visible = false;
                 
+            }
+            HttpCookie CookieLogin = Request.Cookies["CookieID"];
+            if (CookieLogin != null)
+            {
+                OleDbConnection conn = new OleDbConnection();
+                conn.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" +
+                    Server.MapPath(@"\App_data") + @"\DashboardDatabase.accdb";
+
+                string ID = CookieLogin["UserID"].ToString();
+
+                OleDbCommand cmd3 = new OleDbCommand();
+                cmd3.Connection = conn;
+                cmd3.CommandText = string.Format("SELECT button1 FROM buttons WHERE id = {0} ", ID);
+
+                try
+                {
+                    conn.Open();
+
+                    OleDbDataReader reader = cmd3.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        CustomButton1.Text = string.Format(reader["button1"].ToString());
+                    }
+
+                }
+                catch (Exception exc)
+                {
+                    lblError.Text = exc.Message;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
+                OleDbCommand cmd4 = new OleDbCommand();
+                cmd4.Connection = conn;
+                cmd4.CommandText = string.Format("SELECT button2 FROM buttons WHERE id = {0} ", ID);
+
+                try
+                {
+                    conn.Open();
+
+                    OleDbDataReader reader = cmd4.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        CustomButton2.Text = string.Format(reader["button2"].ToString());
+                    }
+
+                }
+                catch (Exception exc)
+                {
+                    lblError.Text = exc.Message;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
+                OleDbCommand cmd5 = new OleDbCommand();
+                cmd5.Connection = conn;
+                cmd5.CommandText = string.Format("SELECT button3 FROM buttons WHERE id = {0} ", ID);
+
+                try
+                {
+                    conn.Open();
+
+                    OleDbDataReader reader = cmd5.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        CustomButton3.Text = string.Format(reader["button3"].ToString());
+                    }
+
+                }
+                catch (Exception exc)
+                {
+                    lblError.Text = exc.Message;
+                }
+                finally
+                {
+                    conn.Close();
+                }
             }
 
 
