@@ -3,11 +3,9 @@
     <link href="Opmaak.css" rel="stylesheet" type="text/css" />
     <title>DaHouse</title>
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<div class="Content">
+<div>
     <div class="TopBar">
-        
         <asp:Button ID="BackToApps" runat="server" CssClass="Button" OnClick="BackToApps_Click" Text="Back To Apps" />
         <asp:Button ID="Connect" runat="server" Text="Refresh" OnClick="Connect_Click1" CssClass="Button" />
         <br />
@@ -15,7 +13,7 @@
     </div>
     <br />
     <div class="Main">
-            <div>
+    <div>
         <div class="Lamp_Group">
             <div class="Slider_Button">
                 Lamp 1
@@ -70,7 +68,7 @@
                 </label>
             </div>
         </div>
-            </div>
+    </div>
         <br />
         <div class="Heater_Group">
             <asp:Panel ID="Panel1" runat="server" DefaultButton="btn_heater">
@@ -84,7 +82,7 @@
         </div>
         <br />
         <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/212023/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&median=60&results=5000&title=Temperatuur&type=line&yaxismax=27&yaxismin=15"></iframe>
-
+        
         <br />
     </div>
 </div>

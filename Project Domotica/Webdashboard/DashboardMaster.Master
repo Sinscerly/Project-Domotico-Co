@@ -19,11 +19,14 @@
                 <ul>
                     <li><a class="active" href="#home">Home</a></li>
                     <li><a href="#news">News</a></li>
+                
+                <asp:Label ID="lbl_WelcomeUser" runat="server" Text=""></asp:Label>
+
                 </ul>
             </div>
         </div>
         
-        <div id="Mid section">
+        <div id="Section">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             
             </asp:ContentPlaceHolder>
