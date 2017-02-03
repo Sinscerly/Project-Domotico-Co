@@ -511,6 +511,12 @@ namespace Webdashboard
                 CustomButton3.Visible = false;
 
                 Customize.Visible = false;
+                txtButtonnaam.Visible = false;
+                txtLinkAdres.Visible = false;
+                lblButtonNaam.Visible = false;
+                LblLinkAdres.Visible = false;
+                ListBox.Visible = false;
+                SubmitMYB.Visible = false;
                 
             }
             HttpCookie CookieLogin = Request.Cookies["CookieID"];
@@ -600,11 +606,11 @@ namespace Webdashboard
 
         protected void Customize_Click(object sender, EventArgs e)
         {
-            if (Label1.Visible == false)
+            if (lblButtonNaam.Visible == false)
 
             {
-                Label1.Visible = true;
-                Label2.Visible = true;
+                lblButtonNaam.Visible = true;
+                LblLinkAdres.Visible = true;
                 txtButtonnaam.Visible = true;
                 txtLinkAdres.Visible = true;
                 SubmitMYB.Visible = true;
@@ -613,8 +619,8 @@ namespace Webdashboard
             }
             else
             {
-                Label1.Visible = false;
-                Label2.Visible = false;
+                lblButtonNaam.Visible = false;
+                LblLinkAdres.Visible = false;
                 txtButtonnaam.Visible = false;
                 txtLinkAdres.Visible = false;
                 SubmitMYB.Visible = false;

@@ -61,11 +61,11 @@
         </asp:ListBox>
             &nbsp;</p>
     <p>
-            <asp:Label ID="Label1" runat="server" Text="Button naam: " Visible="False"></asp:Label>
+            <asp:Label ID="lblButtonNaam" runat="server" Text="Button naam: " Visible="False"></asp:Label>
             <asp:TextBox ID="txtButtonnaam" runat="server" Visible="False"></asp:TextBox>
     </p>
     <p>
-            <asp:Label ID="Label2" runat="server" Text="Link adres: " Visible="False"></asp:Label>
+            <asp:Label ID="LblLinkAdres" runat="server" Text="Link adres: " Visible="False"></asp:Label>
 &nbsp;
             <asp:TextBox ID="txtLinkAdres" runat="server" Visible="False"></asp:TextBox>
     </p>
