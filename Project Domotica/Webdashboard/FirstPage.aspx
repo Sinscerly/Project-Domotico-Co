@@ -9,6 +9,9 @@
         &nbsp;<p>
         
         <strong>What would you like to do?</strong><p>
+        
+            <asp:Button ID="LoginButton" runat="server" CssClass="Button" OnClick="LoginButton_Click" PostBackUrl="~/LoginPage.aspx" Text="Login" Visible="False" />
+        <p>
             <asp:Button ID="ButtonGames" runat="server" Height="43px" OnClick="ButtonGames_Click"  Text="Games" Width="86px" CssClass="Button" />
          
             <asp:Button ID="ButtonEntertainment" runat="server" Height="43px" Text="Entertainment" OnClick="ButtonEntertainment_Click" CssClass="Button" />
