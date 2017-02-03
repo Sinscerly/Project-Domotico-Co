@@ -77,14 +77,11 @@ namespace Webdashboard
                     UserID = Convert.ToInt16(reader["id"]);
                 }
             }
-           
             finally
             {
                 conn.Close();
             }
-
-
-
+            
             HttpCookie CookieLogin = new HttpCookie("CookieID");
             DateTime datum = DateTime.Now;
 
@@ -92,6 +89,28 @@ namespace Webdashboard
 
             CookieLogin.Expires = datum.AddMinutes(15);
             Response.Cookies.Add(CookieLogin);
+
+            OleDbCommand cmd2 = new OleDbCommand();
+            cmd2.Connection = conn;
+            cmd2.CommandText = string.Format("update Users  SET LastLogin = '{0}'  where Users.id = {1}", datum, UserID);
+
+            string LastLogin = datum.ToString();
+
+            try
+            {
+                conn.Open();
+
+                OleDbDataReader reader = cmd2.ExecuteReader();
+                while (reader.Read())
+                {
+                  LastLogin = string.Format(reader["LastLogin"].ToString());
+                }
+            }
+            finally
+            {
+                conn.Close();
+            }
+            
         }
 
         protected void UserName_TextChanged(object sender, EventArgs e)
