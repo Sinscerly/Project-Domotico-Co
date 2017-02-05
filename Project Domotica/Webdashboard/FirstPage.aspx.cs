@@ -21,15 +21,7 @@ namespace Webdashboard
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            HttpCookie obj2cookie = Request.Cookies["membercookie"];
-            if (obj2cookie != null)
-            {
-                LoginButton.Visible = false;
-            }
-            else
-            {
-                LoginButton.Visible = true;
-            }
+
         } 
 
         protected void ButtonGames_Click(object sender, EventArgs e)

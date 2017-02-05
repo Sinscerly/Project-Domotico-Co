@@ -21,17 +21,14 @@ li a {
     padding: 14px 16px;
     text-decoration: none;
 }
-/*
-a:hover:not(.active) {
-    background-color: #111;
+
+a:hover.active {
+    background-color: #4CAF00;
 }
-*/
+
 
 .active {
 background-color:#4CAF50;
-}
-.logout {
-    background-color: #4CAF50;
 }
 
 .Button { 

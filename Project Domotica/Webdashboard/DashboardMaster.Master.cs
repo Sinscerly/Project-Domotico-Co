@@ -15,6 +15,7 @@ namespace Webdashboard
         {
             if (Request.Cookies["membercookie"] != null)
             {
+                lbl_LogOut_In.Text = "Log Out";
                 string ID = string.Empty, USER = string.Empty;
                 HttpCookie CookieLogin = Request.Cookies["CookieID"];
                 if (CookieLogin != null)
@@ -64,6 +65,7 @@ namespace Webdashboard
             else
             {
                 lbl_WelcomeUser.Text = "You're not yet logged in.";
+                lbl_LogOut_In.Text = "Log In";
             }
         }
         protected void Page_LoadComplete()

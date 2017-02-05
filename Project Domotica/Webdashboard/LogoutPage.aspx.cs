@@ -11,23 +11,27 @@ namespace Webdashboard
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Connection conn = new Connection();
             if (Request.Cookies["membercookie"] != null)
             {
-                HttpCookie myCookie = new HttpCookie("membercookie");
-                myCookie.Expires = DateTime.Now.AddDays(-1d);
-                Response.Cookies.Add(myCookie);
+                Connection conn = new Connection();
+                if (Request.Cookies["membercookie"] != null)
+                {
+                    HttpCookie myCookie = new HttpCookie("membercookie");
+                    myCookie.Expires = DateTime.Now.AddDays(-1d);
+                    Response.Cookies.Add(myCookie);
+                }
+                if (Request.Cookies["CookieID"] != null)
+                {
+                    HttpCookie myCookie = new HttpCookie("CookieID");
+                    myCookie.Expires = DateTime.Now.AddDays(-1d);
+                    Response.Cookies.Add(myCookie);
+                }
+                if (Global.client != null)
+                {
+                    conn.Close();
+                }
             }
-            if (Request.Cookies["CookieID"] != null)
-            {
-                HttpCookie myCookie = new HttpCookie("CookieID");
-                myCookie.Expires = DateTime.Now.AddDays(-1d);
-                Response.Cookies.Add(myCookie);
-            }
-            if (Global.client != null)
-            {
-                conn.Close();
-            }
+            else { Response.Redirect("LoginPage.aspx"); }
             Response.Redirect("FirstPage.aspx");
         }
     }
