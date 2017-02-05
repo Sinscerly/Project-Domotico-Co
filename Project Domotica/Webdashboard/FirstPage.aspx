@@ -6,7 +6,7 @@
     <div class="Content">
     <p> 
         
-        &nbsp;<p>
+        &nbsp;&nbsp;<p>
         
         <strong>What would you like to do?</strong><p>
             <asp:Button ID="ButtonGames" runat="server" Height="43px" OnClick="ButtonGames_Click"  Text="Games" Width="86px" CssClass="Button" />
@@ -16,6 +16,8 @@
                 <asp:Button ID="ToolsButton" runat="server" Height="44px" OnClick="Button4_Click1" Text="Tools" Width="74px" CssClass="Button" />
 
             <asp:Button ID="DomoticaButton" runat="server" Height="44px" Text="Domotica" Width="71px" OnClick="Domotica_OnClick" CssClass="Button" />
+
+            <asp:Button ID="PersonalButton" runat="server"  Height="44px" Width="124px" Text="Personal settings" CssClass="Button" OnClick="PersonalButton_Click" />
 
                 </p>
         </p>

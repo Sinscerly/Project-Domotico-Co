@@ -4,6 +4,7 @@
     <link href="Opmaak.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="Content">
     <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex ="0">
         <asp:View ID="Login" runat="server">
             <asp:Login ID="Login1" runat="server" DestinationPageUrl="~/FirstPage.aspx">
@@ -95,5 +96,5 @@
     </asp:MultiView>
         
         
-        
+        </div>
     </asp:Content>

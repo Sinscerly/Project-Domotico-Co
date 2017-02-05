@@ -154,6 +154,7 @@
     <Content Include="restricted\Images\Background.jpg" />
     <Content Include="restricted\Images\FirstPageButtons.png" />
     <Content Include="restricted\Opmaak.css" />
+    <Content Include="restricted\Settings.aspx" />
     <Content Include="restricted\Web.config" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -226,6 +227,13 @@
     </Compile>
     <Compile Include="Losse code\Haus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="restricted\Settings.aspx.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="restricted\Settings.aspx.designer.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+    </Compile>
     <Compile Include="restricted\Tools\calc.aspx.cs">
       <DependentUpon>calc.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

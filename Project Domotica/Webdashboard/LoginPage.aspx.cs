@@ -35,11 +35,7 @@ namespace Webdashboard
             MultiView1.SetActiveView(Login);
         }
 
-        protected void ChangePassword1_ChangedPassword(object sender, EventArgs e)
-        {
-            MultiView1.SetActiveView(Login);
-        }
-
+       
         protected void CancelPushButton_Click(object sender, EventArgs e)
         {
             MultiView1.SetActiveView(Login);
