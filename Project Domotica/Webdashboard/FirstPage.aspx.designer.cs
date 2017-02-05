@@ -13,6 +13,15 @@ namespace Webdashboard {
     public partial class FirstPage {
         
         /// <summary>
+        /// LoginButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button LoginButton;
+        
+        /// <summary>
         /// ButtonGames control.
         /// </summary>
         /// <remarks>
@@ -211,13 +220,13 @@ namespace Webdashboard {
         protected global::System.Web.UI.WebControls.ListBox ListBox;
         
         /// <summary>
-        /// Label1 control.
+        /// lblButtonNaam control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label lblButtonNaam;
         
         /// <summary>
         /// txtButtonnaam control.
@@ -229,13 +238,13 @@ namespace Webdashboard {
         protected global::System.Web.UI.WebControls.TextBox txtButtonnaam;
         
         /// <summary>
-        /// Label2 control.
+        /// LblLinkAdres control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label LblLinkAdres;
         
         /// <summary>
         /// txtLinkAdres control.

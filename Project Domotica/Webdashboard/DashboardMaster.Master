@@ -18,13 +18,13 @@
             <div id="nav">
                 <ul>
                     <li class="standard"><a class="active" href="http://localhost:63340/FirstPage.aspx">Home</a></li>
-                    <li class="standard"><a href="#news">News</a></li>
-                    <li id="logout"><asp:Button ID="BtnLogout" runat="server" Text="Logout" CssClass="Button" Height="48px" OnClick="BtnLogout_Click" /></li>
+                    <li><a href="#news">News</a></li>
+<li id="logout"><asp:Button ID="BtnLogout" runat="server" Text="Logout" CssClass="Button" Height="48px" OnClick="BtnLogout_Click" /></li>
                 </ul>
             </div>
         </div>
         
-        <div id="Mid section">
+        <div id="Section">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             
             </asp:ContentPlaceHolder>
