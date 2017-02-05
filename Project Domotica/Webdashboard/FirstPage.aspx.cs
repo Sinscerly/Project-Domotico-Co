@@ -21,7 +21,7 @@ namespace Webdashboard
         
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lblError.Text = "";
         } 
 
         protected void ButtonGames_Click(object sender, EventArgs e)
@@ -744,10 +744,6 @@ namespace Webdashboard
                 lblError.Text = "You need to login first";
         }
 
-        protected void LoginButton_Click(object sender, EventArgs e)
-        {
-            
-        }
         protected void PersonalButton_Click(object sender, EventArgs e)
         {
             HttpCookie obj2cookie = Request.Cookies["membercookie"];

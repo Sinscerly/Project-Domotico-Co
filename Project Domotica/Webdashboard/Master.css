@@ -28,11 +28,11 @@ a:hover.active {
 
 
 .active {
-background-color:#4CAF50;
+    background-color:#4CAF50;
 }
 
 .Button { 
-        border-style: none;
+    border-style: none;
     border-color: inherit;
     border-width: medium;
     border-radius:15px;
