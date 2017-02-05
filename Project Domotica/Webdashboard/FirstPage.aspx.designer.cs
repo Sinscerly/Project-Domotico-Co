@@ -58,6 +58,15 @@ namespace Webdashboard {
         protected global::System.Web.UI.WebControls.Button DomoticaButton;
         
         /// <summary>
+        /// PersonalButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button PersonalButton;
+        
+        /// <summary>
         /// Hit_The_Dot control.
         /// </summary>
         /// <remarks>

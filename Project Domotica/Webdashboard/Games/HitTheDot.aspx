@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DashboardMaster.Master" AutoEventWireup="true" CodeBehind="HitTheDot.aspx.cs" Inherits="Webdashboard.Games.HitTheDot" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    
+    <link href="Opmaak.css" rel="stylesheet" type="text/css" />
     <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">

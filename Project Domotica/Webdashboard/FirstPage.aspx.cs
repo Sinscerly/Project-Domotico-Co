@@ -756,5 +756,17 @@ namespace Webdashboard
         {
             
         }
+        protected void PersonalButton_Click(object sender, EventArgs e)
+        {
+            HttpCookie obj2cookie = Request.Cookies["membercookie"];
+            if (obj2cookie == null)
+            {
+                lblError.Text = "You need to login first";
+            }
+            else
+            {
+                Response.Redirect("Settings.aspx");
+            }
+        }
     }
 }

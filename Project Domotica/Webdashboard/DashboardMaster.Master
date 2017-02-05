@@ -17,11 +17,9 @@
             <!-- Header for navigation menu and title-->
             <div id="nav">
                 <ul>
-                    <li><a class="active" href="#home">Home</a></li>
-                    <li><a href="#news">News</a></li>
-                
-                <asp:Label ID="lbl_WelcomeUser" runat="server" Text=""></asp:Label>
-
+                    <li class="standard"><a class="active" href="http://localhost:63340/FirstPage.aspx">Home</a></li>
+                    <li><asp:Label ID="lbl_WelcomeUser" runat="server" Text="Label"></asp:Label></li>
+                    <li class="logout"><a class="logout" href="http://localhost:63340/LogoutPage.aspx">Log out</a></li>
                 </ul>
             </div>
         </div>
