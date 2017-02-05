@@ -19,7 +19,8 @@
                 <ul>
                     <li class="standard"><a class="active" href="http://localhost:63340/FirstPage.aspx">Home</a></li>
                     <li><a href="#news">News</a></li>
-<li id="logout"><asp:Button ID="BtnLogout" runat="server" Text="Logout" CssClass="Button" Height="48px" OnClick="BtnLogout_Click" /></li>
+                    <li id="logout"><asp:Button ID="BtnLogout" runat="server" Text="Logout" CssClass="Button" Height="48px" OnClick="BtnLogout_Click" /></li>
+                    <asp:Label ID="lbl_WelcomeUser" runat="server" Text="Label"></asp:Label>
                 </ul>
             </div>
         </div>

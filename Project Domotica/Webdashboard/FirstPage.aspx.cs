@@ -759,31 +759,13 @@ namespace Webdashboard
         protected void PersonalButton_Click(object sender, EventArgs e)
         {
             HttpCookie obj2cookie = Request.Cookies["membercookie"];
-            if (obj2cookie != null)
+            if (obj2cookie == null)
             {
-                Connection conn = new Connection();
-                bool Connection_Succesfull = false;
-                if (Global.client == null)
-                {
-                    conn.Connect();
-                }
-                if (Connection_Succesfull = conn.Validation() == true)
-                {
-                    conn.Close();
-                }
-                if (Connection_Succesfull == true)
-                {
-                    Response.Redirect("restricted/Settings.aspx");
-                }
-                else
-                {
-                    conn.Close();
-                    lblError.Text = "You need to open DaHaus first!";
-                }
+                lblError.Text = "You need to login first";
             }
             else
             {
-                Response.Redirect("LoginPage.aspx");
+                Response.Redirect("Settings.aspx")
             }
         }
     }
