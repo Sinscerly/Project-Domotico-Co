@@ -10,6 +10,7 @@ namespace Webdashboard
 {
     public partial class DashboardMaster : System.Web.UI.MasterPage
     {
+        Connection conn = new Connection();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.Cookies["membercookie"] != null)
@@ -68,23 +69,6 @@ namespace Webdashboard
         protected void Page_LoadComplete()
         {
             
-        }
-
-        protected void BtnLogout_Click(object sender, EventArgs e)
-        {
-            if (Request.Cookies["membercookie"] != null)
-            {
-                HttpCookie myCookie = new HttpCookie("membercookie");
-                myCookie.Expires = DateTime.Now.AddDays(-1d);
-                Response.Cookies.Add(myCookie);
-            }
-            if (Request.Cookies["CookieID"] != null)
-            {
-                HttpCookie myCookie = new HttpCookie("CookieID");
-                myCookie.Expires = DateTime.Now.AddDays(-1d);
-                Response.Cookies.Add(myCookie);
-            }
-            Response.Redirect(Request.RawUrl);
         }
     }
 }

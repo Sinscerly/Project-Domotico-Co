@@ -122,6 +122,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Games\2048.aspx" />
     <Content Include="Games\Opmaak.css" />
+    <Content Include="LogoutPage.aspx" />
     <Content Include="Master.css" />
     <Content Include="restricted\DaHouseControl.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -177,6 +178,13 @@
     </Compile>
     <Compile Include="Games\2048.aspx.designer.cs">
       <DependentUpon>2048.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogoutPage.aspx.cs">
+      <DependentUpon>LogoutPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogoutPage.aspx.designer.cs">
+      <DependentUpon>LogoutPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Losse code\CheckLogin.cs" />
     <Compile Include="Losse code\Connection.cs" />

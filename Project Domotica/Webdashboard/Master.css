@@ -10,7 +10,7 @@ li.standard {
     float: left;
 }
 
-li#logout{
+li.logout{
     float: right;
 }
 
@@ -29,6 +29,9 @@ a:hover:not(.active) {
 
 .active {
 background-color:#4CAF50;
+}
+.logout {
+    background-color: #4CAF50;
 }
 
 .Button { 
