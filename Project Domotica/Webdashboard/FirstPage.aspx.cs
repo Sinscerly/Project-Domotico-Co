@@ -765,7 +765,7 @@ namespace Webdashboard
             }
             else
             {
-                Response.Redirect("Settings.aspx");
+                Response.Redirect("restricted/Settings.aspx");
             }
         }
     }
