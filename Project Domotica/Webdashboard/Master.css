@@ -10,7 +10,7 @@ li.standard {
     float: left;
 }
 
-li#logout{
+li.logout{
     float: right;
 }
 
@@ -22,16 +22,17 @@ li a {
     text-decoration: none;
 }
 
-a:hover:not(.active) {
-    background-color: #111;
+a:hover.active {
+    background-color: #4CAF00;
 }
 
+
 .active {
-background-color:#4CAF50;
+    background-color:#4CAF50;
 }
 
 .Button { 
-        border-style: none;
+    border-style: none;
     border-color: inherit;
     border-width: medium;
     border-radius:15px;

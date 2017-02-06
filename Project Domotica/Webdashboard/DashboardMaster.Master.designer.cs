@@ -31,13 +31,13 @@ namespace Webdashboard {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// BtnLogout control.
+        /// lbl_LogOut_In control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnLogout;
+        protected global::System.Web.UI.WebControls.Label lbl_LogOut_In;
         
         /// <summary>
         /// lbl_WelcomeUser control.
