@@ -212,8 +212,9 @@ namespace Webdashboard
                     OleDbCommand cmd2 = new OleDbCommand();
                     cmd2.Connection = conn;
                     string ID = CookieLogin["UserID"].ToString();
-                    cmd2.CommandText = string.Format("update Buttons  SET Button1 = '{0}'  where buttons.id = {1}", txtButtonnaam.Text, ID);
-                    
+                    cmd2.CommandText = string.Format("update Buttons  SET Button1 = @txtButtonNaam  where buttons.id = {0}", ID);
+                    cmd2.Parameters.AddWithValue("@txtButtonNaam", txtButtonnaam.Text);
+
                     try
                     {
                         conn.Open();
@@ -237,8 +238,8 @@ namespace Webdashboard
 
                     OleDbCommand cmd3 = new OleDbCommand();
                     cmd3.Connection = conn;
-                    cmd3.CommandText = string.Format("update Buttons  SET link1 = '{0}'  where buttons.id = {1}", txtLinkAdres.Text, ID);
-
+                    cmd3.CommandText = string.Format("update Buttons  SET link1 = @txtLink  where buttons.id = {0}", ID);
+                    cmd3.Parameters.AddWithValue("@txtLink", txtLinkAdres.Text);
                     try
                     {
                         conn.Open();
@@ -285,8 +286,8 @@ namespace Webdashboard
                     OleDbCommand cmd2 = new OleDbCommand();
                     cmd2.Connection = conn;
                     string ID = CookieLogin["UserID"].ToString();
-                    cmd2.CommandText = string.Format("update Buttons  SET Button2 = '{0}'  where buttons.id = {1}", txtButtonnaam.Text, ID);
-
+                    cmd2.CommandText = string.Format("update Buttons  SET Button2 = @txtButtonNaam  where buttons.id = {0}",ID);
+                    cmd2.Parameters.AddWithValue("@txtButtonNaam", txtButtonnaam.Text);
                     try
                     {
                         conn.Open();
@@ -309,8 +310,8 @@ namespace Webdashboard
 
                     OleDbCommand cmd3 = new OleDbCommand();
                     cmd3.Connection = conn;
-                    cmd3.CommandText = string.Format("update Buttons  SET link2 = '{0}'  where buttons.id = {1}", txtLinkAdres.Text, ID);
-
+                    cmd3.CommandText = string.Format("update Buttons  SET link2 = @txtLink  where buttons.id = {0}", ID);
+                    cmd3.Parameters.AddWithValue("@txtLink", txtLinkAdres.Text);
                     try
                     {
                         conn.Open();
@@ -355,8 +356,8 @@ namespace Webdashboard
                     OleDbCommand cmd2 = new OleDbCommand();
                     cmd2.Connection = conn;
                     string ID = CookieLogin["UserID"].ToString();
-                    cmd2.CommandText = string.Format("update Buttons  SET Button3 = '{0}'  where buttons.id = {1}", txtButtonnaam.Text, ID);
-
+                    cmd2.CommandText = string.Format("update Buttons  SET Button3 = @txtButtonNaam  where buttons.id = {0}", ID);
+                    cmd2.Parameters.AddWithValue("@txtButtonNaam", txtButtonnaam.Text);
                     try
                     {
                         conn.Open();
@@ -379,8 +380,8 @@ namespace Webdashboard
 
                     OleDbCommand cmd3 = new OleDbCommand();
                     cmd3.Connection = conn;
-                    cmd3.CommandText = string.Format("update Buttons  SET link3 = '{0}'  where buttons.id = {1}", txtLinkAdres.Text, ID);
-
+                    cmd3.CommandText = string.Format("update Buttons  SET link3 = @txtLink  where buttons.id = {0}", ID);
+                    cmd3.Parameters.AddWithValue("@txtLink", txtLinkAdres.Text);
                     try
                     {
                         conn.Open();
@@ -430,8 +431,8 @@ namespace Webdashboard
                 cmd.Connection = conn;
                 string ID =  CookieLogin["UserID"].ToString();
 
-                cmd.CommandText = string.Format("UPDATE scores  SET scores.useless = scores.useless + 1   WHERE scores.id = {0} ", ID);
-
+                cmd.CommandText = string.Format("UPDATE scores  SET scores.useless = scores.useless + 1   WHERE scores.id = @ID ");
+                cmd.Parameters.AddWithValue("@ID", ID);
                 lblUselessTeller.Text = "";
 
 
