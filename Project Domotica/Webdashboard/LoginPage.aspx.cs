@@ -61,8 +61,10 @@ namespace Webdashboard
             cmd.Connection = conn;
             int UserID = 0;
             string txtUserName = Login1.UserName;
-            cmd.CommandText = string.Format("select id from users where username = '{0}'",  txtUserName);
-            
+            cmd.CommandText = string.Format("select id from users where username = @username");
+
+            cmd.Parameters.AddWithValue("@username", txtUserName);
+
             try
             {
                 conn.Open();
