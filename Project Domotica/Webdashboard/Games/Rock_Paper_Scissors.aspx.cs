@@ -14,14 +14,6 @@ namespace Webdashboard.Games
 
         }
 
-        protected void Retry()
-        {
-            lbl_PlayerHasChosen.Text = "";
-            lbl_ComputerHasChosen.Text = "";
-            lbl_WhoWins.Text = "";
-            ResetVisablility(0);
-        }
-
         protected void UserChose(object sender, EventArgs e)
         {
             Button button = (Button)sender;
@@ -29,33 +21,31 @@ namespace Webdashboard.Games
             ResetVisablility(1);
             lbl_PlayerHasChosen.Text = User_Plays;
             string ComputerHasChosen = ComputerChose();
-            System.Threading.Thread.Sleep(5000);
+            System.Threading.Thread.Sleep(3000);
             lbl_ComputerHasChosen.Text = ComputerHasChosen;
             lbl_WhoWins.Text = FindWinner(User_Plays, ComputerHasChosen);
-
             ResetVisablility(2);
-            
         }
         protected string FindWinner(string x, string y)
         {
-            int z;  return "You've WON!!";
+            int z = 0;
             // z stands for
             // 0 -> Draw
             // 1 -> Win
             // 2 -> Lose
-            if (x == y)
+            if(x == y)
             {
                 z = 0;
             }
-            if (x == "Rock")
+            else if (x == "Rock")
             {
                 if(y == "Paper")
                 {
-                    z = 1;
+                    z = 2;
                 }
                 else
                 {
-                    z = 2;
+                    z = 1;
                 }
             }
             else if( x == "Paper")
@@ -81,22 +71,71 @@ namespace Webdashboard.Games
                 }
             }
             // get's one of the dynamic comments back.
-
+            return GetComment(z);
         }
         protected string GetComment(int x)
         {
             Random rnd = new Random();
-            if(x == 0)
+            if (x == 0)
             {
-                int number = rnd.Next(0, 2);
+                int number = rnd.Next(0, 4);
                 switch (number)
                 {
                     case 0:
                         return "Sorry you didn't won, but don't be so sadly. It's a draw.";
                     case 1:
-                        return
+                        return "Good job, you made it to a draw.";
+                    case 2:
+                        return "You played yourself into a draw, no one won this round.";
+                    default:
+                        return "It's a draw";
                 }
             }
+            else if (x == 1)
+            {
+                int number = rnd.Next(0, 7);
+                switch (number)
+                {
+                    case 0:
+                        return "Congratulations you won this game.";
+                    case 1:
+                        return "No way that you have won from me.";
+                    case 2:
+                        return "I want a revanche, I don't accept that i lose from a person like you.";
+                    case 3:
+                        return "You're so good, you've won from me.";
+                    case 4:
+                        return "Well done, you won this round.";
+                    case 5:
+                        return "You've won, we're you cheating??";
+                    default:
+                        return "You won";
+                }
+            }
+            else if (x == 2)
+            {
+                int number = rnd.Next(0, 7);
+                switch (number)
+                {
+                    case 0:
+                        return "HAHA, I've won.";
+                    case 1:
+                        return "You cannot win from me.";
+                    case 2:
+                        return "Well you lost.";
+                    case 3:
+                        return "You know you're playing against me, I win everytime.";
+                    case 4:
+                        return "I did it, again. Ohhhh.";
+                    case 5:
+                        return "Whaaoooo, I won.";
+                    case 6:
+                        return "You cannot beat Glados!";
+                    default:
+                        return "I've won from you.";
+                }
+            }
+            return "I don't know it, do you?";
         }
 
 
@@ -147,8 +186,21 @@ namespace Webdashboard.Games
         }
         protected void ERROR()
         {
-            Retry();
+            Restart();
             Response.Write("<script>alert('The game has crashed, sorry for this problem.')</script>");
+        }
+
+        protected void Retry(object sender, EventArgs e)
+        {
+            Restart();
+        }
+
+        protected void Restart()
+        {
+            lbl_PlayerHasChosen.Text = "";
+            lbl_ComputerHasChosen.Text = "";
+            lbl_WhoWins.Text = "";
+            ResetVisablility(0);
         }
     }
 }

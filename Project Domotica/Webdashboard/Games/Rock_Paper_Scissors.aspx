@@ -12,13 +12,17 @@
         <div>
             <br />
             <asp:Label ID="lbl_PlayerHasChosen" runat="server" Text=""></asp:Label>
+            &nbsp;
             <asp:Label ID="lbl_ComputerHasChosen" runat="server" Text=""></asp:Label>
+            <br />
             <br />
             <asp:Label ID="lbl_WhoWins" runat="server" Font-Size="XX-Large"></asp:Label>
             <br />
+            <br />
+            <br />
         </div>
         <div>
-            <asp:Button ID="btn_Retry" runat="server" Text="Retry" Visible="False" CssClass="Button" OnClick="Retry"/>
+            <asp:Button ID="btn_Retry" runat="server" Text="Play again" Visible="False" CssClass="Button" OnClick="Retry"/>
         </div>
     </div>
     
