@@ -78,7 +78,9 @@ namespace Webdashboard
                 Response.Cookies.Add(myCookie);
             }
 
-            
+            Response.Redirect(Request.RawUrl);
+
+
         }
     }
 }
