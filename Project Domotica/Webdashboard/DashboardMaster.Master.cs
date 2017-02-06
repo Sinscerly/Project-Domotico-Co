@@ -70,7 +70,7 @@ namespace Webdashboard
         }
         protected void Page_LoadComplete()
         {
-            
+
         }
     }
 }
